@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>gylgyl2000: Survey Form</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Zilla+Slab:wght@300&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<div class="container">
+    <header class="header">
+        <h1 id="title" class="text-center">Survey form programming language</h1>
+        <p id="description" class="description text-center">
+            What is your favorite programming language?
+        </p>
+    </header>
+    <form id="survey-form">
+        <div class="form-group">
+            <label id="name-label" for="name">Name</label>
+            <div class="ico-label">
+                <i class="fa fa-user">
+                </i>
+            </div>
+            <input
+                type="text"
+                name="name"
+                id="name"
+                class="form-control"
+                placeholder="Your name"
+                required
+            />
+        </div>
+        <div class="form-group">
+            <label id="email-label" for="email">Email</label>
+            <div class="ico-label">
+                <i class="fa fa-envelope">
+                </i>
+            </div>
+            <input
+                type="email"
+                name="email"
+                id="email"
+                class="form-control"
+                placeholder="email@domaine.com"
+                required
+            />
+        </div>
+        <div class="form-group">
+            <label id="number-label" for="number">Age</label>
+            <div class="ico-label">
+                <i class="fa fa-birthday-cake">
+                </i>
+            </div>
+            <input
+              type="number"
+              name="age"
+              id="number"
+              min="10"
+              max="99"
+              class="form-control"
+              placeholder="Your age"
+            />
+        </div>
+        <div class="form-group">
+            <label id="activity-label" for="activity">What is your activity as a developer?</label>
+            <div class="ico-label">
+                <i class="fa fa-coffee">
+                </i>
+            </div>
+            <select id="dropdown" name="role" class="form-control" required>
+              <option disabled selected value>Select your activity</option>
+              <option value="student">Non-professional</option>
+              <option value="student">Student</option>
+              <option value="job">Junior developer</option>
+              <option value="learner">Senior developer</option>
+              <option value="preferNo">That does not concern you</option>
+              <option value="other">Other</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label id="time-label" for="time">How much time do you code per day?</label>
+            <container class="radio">
+            <div class="ico-label">
+                <i class="fa fa-hourglass-half">
+                </i>
+            </div>
+            <div class="radio-input">
+                <label>
+                    <input
+                     name="how-much-time"
+                        value="0to1hour"
+                        type="radio"
+                        class="input-radio"
+                    />0 to 1 hour
+                </label>
+                <label>
+                 <input
+                        name="how-much-time"
+                        value="1to4hours"
+                        type="radio"
+                        class="input-radio"
+                    />1 to 4 hours
+                </label>
+                <label>
+                    <input
+                        name="how-much-time"
+                        value="5to8hours"
+                        type="radio"
+                        class="input-radio"
+                    />5 to 8 hours
+                </label>
+                <label>
+                    <input
+                        name="how-much-time"
+                        value="8+hours"
+                        type="radio"
+                        class="input-radio"
+                    />more than 8 hours
+                </label>
+            </div>
+            </container>
+        </div>
+        <div class="form-group">
+            <label id="favorite-label" for="time">Your favorite programming language(s)</label>
+            <container class="checkbox">
+            <div class="ico-label">
+                <i class="fa fa-code">
+                </i>
+            </div>
+            <div class="checkbox-input">
+                <label>
+                    <input
+                        name="favorite"
+                        value="java"
+                        type="checkbox"
+                        class="input-checkbox"
+                    />Java
+                </label>
+                <label>
+                    <input
+                        name="favorite"
+                        value="javascript"
+                        type="checkbox"
+                        class="input-checkbox"
+                    />JavaScript
+                </label>
+                <label>
+                    <input
+                        name="favorite"
+                        value="php"
+                        type="checkbox"
+                        class="input-checkbox"
+                    />PHP
+                </label>
+                <label>
+                    <input
+                        name="favorite"
+                        value="python"
+                        type="checkbox"
+                        class="input-checkbox"
+                    />Python
+                </label>
+                <label>
+                    <input
+                        name="favorite"
+                        value="ruby"
+                        type="checkbox"
+                        class="input-checkbox"
+                    />Ruby
+                </label>
+                <label>
+                    <input
+                        name="favorite"
+                        value="c++"
+                        type="checkbox"
+                        class="input-checkbox"
+                    />C++
+                </label>
+                <label>
+                    <input
+                        name="favorite"
+                        value="C#"
+                        type="checkbox"
+                        class="input-checkbox"
+                    />C#
+                </label>
+                <label>
+                    <input
+                        name="favorite"
+                        value="perl"
+                        type="checkbox"
+                        class="input-checkbox"
+                    />Perl
+                </label>
+            </div>
+            </container>
+        </div>
+        <div class="form-group">
+            <label id="favorite-label" for="time">Comments and suggestions?</label>
+            <textarea
+              id="comments"
+              class="input-textarea"
+              name="comment"
+              placeholder="Enter your comment here..."
+            >
+            </textarea>
+        </div>
+        <div class="form-group">
+            <button type="submit" id="submit" class="submit-button">
+              Submit
+            </button>
+        </div>
+    </form>
+</div>
+<script src='https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

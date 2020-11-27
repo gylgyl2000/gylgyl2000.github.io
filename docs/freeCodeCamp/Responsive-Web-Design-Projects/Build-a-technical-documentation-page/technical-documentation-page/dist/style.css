@@ -1,0 +1,441 @@
+html {
+    font-family: Sentinel SSm A,Sentinel SSm B,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.7;
+    --maxWidth: 1284px;
+    scrollbar-color: #666 #201c29;
+    color: #fff;
+    background: #100e17;
+}
+
+#site-header {
+    text-align: center;
+    position: relative;
+    border-top-color: currentcolor;
+    border-top-style: none;
+    border-top-width: 0px;
+    border-bottom: 25px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(90deg,#ff8a00,#e52e71);
+    margin: 15px 0 10px 0;
+    padding: 0;
+    left: 16em;
+    max-width: 50em;
+    height: 4em;
+}
+
+#source {
+    float: right;
+    margin-top: -30px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 900;
+    margin: 2.5rem 0 0 0;
+    line-height: 1;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+
+h3 {
+    font-size: 1.6rem;
+}
+
+#h3 {
+    font-size: 1.6rem !important;
+    line-height: 2rem;
+    margin-top: 1rem !important;
+}
+
+#h4 {
+    font-size: 1.4rem !important;
+    line-height: 2rem;
+    margin-top: 1rem !important;
+}
+
+#h4bis {
+    font-size: 1.4rem !important;
+    line-height: 2rem;
+    margin-top: 0rem !important;
+}
+
+header h1 {
+    font-family: Ringside Regular A,Ringside Regular B,Rubik,Lato,Lucida Grande,Lucida Sans Unicode,Tahoma,Sans-Serif;
+    font-style: normal;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+#navbar {
+    position: fixed;
+    min-width: 15em;
+    height: 90%;
+    margin: 0 0 0 12px;
+    top: 1em;
+}
+
+@media (max-width: 460px) {
+    #site-header {
+        left: 0;
+    }
+    #navbar {
+        display: none;
+    }
+    #main-doc {
+        margin: 0 !important;
+        padding: 1rem 2rem !important;
+        line-height: 1.2 !important;
+        font-size: 0.9em;
+    }
+}
+
+#navbar header {
+    text-align: center;
+    font-size: 1.4em;
+}
+
+#navbar ul {
+    height: 88%;
+    padding: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#navbar ul {
+    list-style: none;
+    list-style-image: none;
+    padding: 0;
+    margin: 0;
+}
+
+#navbar ul li a {
+    display: block;
+    padding: .25rem 0;
+    border-bottom: 1px solid #201c29;
+    color: #c2c2c2;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+#navbar ul li a:hover {
+    background: linear-gradient(90deg,#ff8a00,#e52e71);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    text-shadow: none;
+    border-bottom-color: #ff8a00;
+}
+
+#navbar #ul-li  {
+    margin-left: 30px;
+}
+
+#navbar #ul-li-ul-li  {
+    margin-left: 60px;
+}
+
+/* #navbar header {
+    font-family: Ringside Regular A,Ringside Regular B,Rubik,Lato,Lucida Grande,Lucida Sans Unicode,Tahoma,Sans-Serif;
+    font-style: normal;
+    font-size: 2.5rem;
+    font-weight: 700;
+} */
+
+#main-doc {
+    max-width: 800px;
+    margin: 0 0 0 16em;
+    background: #fff;
+    line-height: 1.6;
+    overflow-wrap: break-word;
+    padding: 2rem 4rem;
+    border-radius: 8px;
+    color: #2e2f3e;
+}
+
+#main-doc header {
+    font-family: Ringside Regular A,Ringside Regular B,Rubik,Lato,Lucida Grande,Lucida Sans Unicode,Tahoma,Sans-Serif;
+    font-style: normal;
+    font-size: 1.8rem;
+    letter-spacing: -.03rem;
+    font-weight: 700;
+    margin-top: 1.5em;
+}
+
+#Introduction header {
+    margin-top: 0;
+}
+
+#Properties_for_the_Parent_Grid_Container .container {
+    background: linear-gradient(rgba(156,39,176,.2),#fff);
+    padding: .1rem 2rem;
+    border-radius: 20px;
+}
+
+#Properties_for_the_Children_Grid_Items .container {
+    background: linear-gradient(rgba(255,138,0,.2),#fff);
+    padding: .1rem 2rem;
+    border-radius: 20px;
+}
+
+article  a {
+    color: #007db5;
+}
+
+#source a:hover,
+article a:hover {
+    text-decoration: underline;
+    text-decoration-color: currentcolor;
+    -webkit-text-decoration-color: #ccc;
+    text-decoration-color: #ccc;
+    background: linear-gradient(90deg,#ff8a00,#e52e71);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    text-shadow: none;
+}
+
+#img-div {
+    width: 20em;
+}
+
+code {
+    font-family: monospace;
+    font-size: .8em;
+    background: #fff6ea;
+    word-wrap: break-word;
+    padding: .1rem .3rem .2rem;
+    border-radius: .2rem;
+}
+/*
+pre {
+    font-family: monospace;
+    color: #fff;
+    background: #001628;
+    padding: 0;
+    border-radius: 8px;
+    position: relative;
+}
+
+
+pre code {
+    background: 0 0;
+    padding: 15px 20px 12px 22px;
+    white-space: pre;
+}
+*/
+
+
+
+
+/* CSS Export Document */
+/** from Typora **/
+/** markdown source **/
+/* the folder "night.css" imports :
+- "night/mermaid.dark.css";
+- "night/codeblock.dark.css";
+- "night/sourcemode.dark.css"; */
+
+#write {
+    margin: 0px auto;
+    height: auto;
+    width: inherit;
+    word-break: normal;
+    overflow-wrap: break-word;
+    position: relative;
+    white-space: normal;
+    overflow-x: visible;
+}
+
+#write pre {
+    white-space: pre-wrap;
+    border-radius: 8px;
+    margin: 0;
+    line-height: 1.7;
+}
+
+#write pre[rel]::before {
+    font-family: Ringside Regular A,Ringside Regular B,Rubik,Lato,Lucida Grande,Lucida Sans Unicode,Tahoma,Sans-Serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: .7rem;
+    content: attr(rel);
+    color: #fff;
+    position: absolute;
+    top: .2rem;
+    right: .4rem;
+    padding: 0;
+    color: #ff8a00 !important;
+}
+
+.md-fences {
+    font-size: 0.9rem;
+    display: block;
+    break-inside: avoid;
+    text-align: left;
+    overflow: visible;
+    white-space: pre;
+    background: inherit;
+    position: relative !important;
+}
+
+pre.md-fences {
+    padding: 10px 10px 10px 30px;
+    margin-bottom: 20px;
+    background: #333;
+}
+
+.CodeMirror {
+    position: relative;
+    overflow: hidden;
+    height: auto;
+    text-align: left;
+    color: white;
+    line-height: .625rem;
+    font-size: .8rem;
+    font-family: monospace;
+}
+
+.CodeMirror-scroll {
+    height: 100%;
+    outline: 0px;
+    position: relative;
+    box-sizing: content-box;
+    background: inherit;
+    overflow: auto hidden;
+    overflow-x: auto;
+    z-index: 3;
+}
+
+.CodeMirror-wrap .CodeMirror-scroll {
+    overflow-x: hidden;
+}
+
+.CodeMirror-sizer {
+    position: relative;
+}
+
+.CodeMirror-lines {
+    padding: 0px;
+    cursor: text;
+}
+
+.cm-s-inner .cm-variable,
+.cm-s-inner .cm-operator,
+.cm-s-inner .cm-property {
+    color: #b8bfc6;
+}
+
+.cm-s-inner .cm-keyword {
+    color: #C88FD0;
+}
+
+.cm-s-inner .cm-tag {
+    color: #7DF46A;
+}
+
+.cm-s-inner .cm-attribute {
+    color: #7575E4;
+}
+
+.CodeMirror div.CodeMirror-cursor {
+    border-left: 1px solid #b8bfc6;
+    z-index: 3;
+}
+
+.cm-s-inner .cm-string {
+    color: #D26B6B;
+}
+
+.cm-s-inner .cm-comment,
+.cm-s-inner.cm-comment {
+    color: #DA924A;
+}
+
+.cm-s-inner .cm-header,
+.cm-s-inner .cm-def,
+.cm-s-inner.cm-header,
+.cm-s-inner.cm-def {
+    color: #8d8df0;
+}
+
+.cm-s-inner .cm-quote,
+.cm-s-inner.cm-quote {
+    color: #57ac57;
+}
+
+.cm-s-inner .cm-hr {
+    color: #d8d5d5;
+}
+
+.cm-s-inner .cm-link {
+    color: #d3d3ef;
+}
+
+.cm-s-inner .cm-negative {
+    color: #d95050;
+}
+
+.cm-s-inner .cm-positive {
+    color: #50e650;
+}
+
+.cm-s-inner .cm-string-2 {
+    color: #f50;
+}
+
+.cm-s-inner .cm-meta,
+.cm-s-inner .cm-qualifier {
+    color: #b7b3b3;
+}
+
+.cm-s-inner .cm-builtin {
+    color: #f3b3f8;
+}
+
+.cm-s-inner .cm-bracket {
+    color: #997;
+}
+
+.cm-s-inner .cm-atom,
+.cm-s-inner.cm-atom {
+    color: #84B6CB;
+}
+
+.cm-s-inner .cm-number {
+    color: #64AB8F;
+}
+
+.cm-s-inner .cm-variable {
+    color: #b8bfc6;
+}
+
+.cm-s-inner .cm-variable-2 {
+    color: #9FBAD5;
+}
+
+.cm-s-inner .cm-variable-3 {
+    color: #1cc685;
+}
+
+.CodeMirror-selectedtext,
+.CodeMirror-selected {
+    background: #4a89dc;
+    color: #fff !important;
+    text-shadow: none;
+}
+
+.CodeMirror-gutters {
+    border-right: none;
+}

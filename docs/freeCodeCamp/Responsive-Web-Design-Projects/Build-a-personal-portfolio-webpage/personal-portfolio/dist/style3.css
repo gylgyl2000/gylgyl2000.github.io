@@ -1,0 +1,298 @@
+:root {
+    --blue: #007bff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --primary: #007bff;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --font-family-sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+}
+
+
+/* =============================================================================
+   HTML5 CSS Reset Minified - Eric Meyer
+   ========================================================================== */
+
+   @import url(https://fonts.googleapis.com/css?family=Teko:300,400,500,600);
+
+   html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+   body{line-height:1}
+   article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+   nav ul{list-style:none}
+   blockquote,q{quotes:none}
+   blockquote:before,blockquote:after,q:before,q:after{content:none}
+   a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent;text-decoration:none}
+   mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}
+   del{text-decoration:line-through}
+   abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}
+   table{border-collapse:collapse;border-spacing:0}
+   hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}
+   input,select{vertical-align:middle}
+   li{list-style:none}
+   
+   
+   /* =============================================================================
+      My CSS
+      ========================================================================== */
+   
+   html,body{ 
+       width:100%;
+       height:100%;
+       background:#000;
+   }
+   
+    body {
+   
+     background: url(https://i.imgur.com/2vOXiPV.jpg?1);
+     
+   }
+   
+   /* remove canvas default margin */
+   canvas{
+       display:block;
+       vertical-align:bottom;
+   }
+   
+   #particles-js{
+       width:100%;
+       height:100%;
+   }
+   
+   h1{
+   font-size: 7rem;
+   position: absolute;
+   top: 35%;
+   left: 35%;
+   color: #FFF;
+   font-family: teko;
+   font-weight: 400;
+   text-shadow: 5px 5px #5F6D72;
+   text-transform: uppercase;
+   }
+
+
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+}
+
+
+#navbar {
+    display: flex;
+    align-items: center;
+    padding: .5rem 1rem;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    transition: all 300ms ease 0s;
+    padding-bottom: 0.625rem;
+    min-height: 53px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    background-color: transparent !important;
+    box-shadow: none;
+    color: #FFFFFF;
+    padding-top: 20px;
+    animation: top-t-bottom 3s;
+    animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    will-change: transform;
+}
+
+#navbar .container {
+    display: flex;
+    flex-basis: auto;
+    justify-content: flex-end;
+    flex-grow: 1;
+    align-items: center;
+}
+
+.nav-list {
+    flex-direction: row;
+    margin-left: auto;
+    display: flex;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    margin-top: 0;
+}
+
+.nav-list li {
+    letter-spacing: 1px;
+    margin-right: 5px;
+}
+
+.wrapper {
+    overflow-y: hidden;
+}
+
+.page-header {
+    height: 100vh;
+    max-height: 1050px;
+    max-height: 100% !important;
+    padding: 0;
+    color: #FFFFFF;
+    position: relative;
+    background-position: center center;
+    background-size: cover;
+}
+
+.page-header::after, .page-header::before {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    left: 0;
+    top: 0;
+    content: "";
+}
+
+.page-header::before {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.page-header .page-header-image {
+    position: absolute;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.page-header .page-header-image {
+    will-change: transform;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    transition: filter 3.5s ease;
+} */
+
+.page-header-image {
+    background-image: url(https://i.imgur.com/2vOXiPV.jpg?1);
+    filter: grayscale(100%);
+    transform: translate3d(0px, 0px, 0px);
+}
+
+.container {
+    max-width: 960px;
+}
+
+.page-header .container {
+    height: 100%;
+    z-index: 1;
+    text-align: center;
+    position: relative;
+}
+
+.page-header .container {
+    z-index: 2;
+}
+
+
+.welcome-section {
+    background-color: transparent;
+    padding: 18px !important;
+    z-index: -1;
+    margin-top: 96px;
+}
+
+.welcome-section {
+    animation: bottom-t-top 2s;
+        animation-iteration-count: 1;
+    position: relative;
+    animation-iteration-count: 1;
+    will-change: transform;
+}
+
+.welcome-section {
+    max-width: 70% !important;
+    top: 44% !important;
+}
+
+.welcome-section {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 0 15px;
+    color: #FFFFFF;
+    width: 100%;
+    max-width: 880px;
+}
+
+.welcome-section {
+    -ms-transform: translate(-50.1%,-70.1%);
+    -webkit-transform: translate(-50.1%,-70.1%);
+    transform: translate(-50.1%,-70.1%);
+}
+
+.welcome-section h1 {
+    line-height: 1.15;
+    font-family: comfortaa,cursive;
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.welcome-section p {
+    line-height: 1.61em;
+    width: 100%;
+    position: relative;
+    max-width: 100%;
+    color: #fff;
+    text-align: justify;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    background: #0d5f4f;
+    background-color: rgb(13, 95, 79);
+    background-color: rgba(13,95,79,.8);
+    padding: 14px;
+}

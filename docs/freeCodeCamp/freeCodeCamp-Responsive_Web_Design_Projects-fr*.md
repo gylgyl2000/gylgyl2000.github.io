@@ -1,0 +1,310 @@
+---
+id: freeCodeCamp-Responsive_Web_Design_Projects-fr*
+title: Projets de conception Web adaptative*
+---
+
+
+
+
+
+## Introduction aux projets de conception Web adaptative
+
+[Responsive Web Design Projects | freeCodeCamp.org](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/)
+
+Il est temps  de mettre en pratique vos compétences nouvellement acquises ! En  travaillant sur des projets, vous aurez la possibilité d'appliquer  toutes les compétences, principes et concepts que vous avez appris  jusqu'à présent HTML, CSS, conception visuelle, accessibilité, etc.
+Dans cette section, vous avez la possibilité de :
+
+- Créer une page d'hommage
+- Créer un formulaire d'enquête
+- Créer une page de destination de produit
+- Créer une page de documentation technique
+- Créer une page Web de portefeuille personnel
+
+À la fin de cela, vous aurez 5 sites Web adaptatifs à votre actif que vous pourrez montrer à vos amis, votre famille, vos employeurs, etc.  Amusez-vous et n'oubliez pas d'utiliser la méthode [Read-Search-Ask](https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514) si vous êtes bloqué.
+**Remarque :** Si vous  travaillez localement sur les projets, vous devez utiliser un serveur pour obtenir des résultats précis du test.
+
+------
+
+
+
+## Modèle de suite de tests
+
+[FCC: Test Suite Template](https://codepen.io/freeCodeCamp/pen/MJjpwO)
+
+```html
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+<!--
+Bonjour campeur !
+Pour l'instant, la suite de tests ne fonctionne que sous Chrome ! Veuillez lire le README ci-dessous dans l'éditeur JS avant de commencer. N'hésitez pas à supprimer ce message une fois que vous l'avez lu. Bonne  chance et bon codage !
+- L'équipe freeCodeCamp
+-->
+```
+
+<iframe height="300" style="width: 100%;" scrolling="no" title="FCC: Test Suite Template" src="https://codepen.io/gylgyl2000/pen/eYZwBqW" >
+</iframe>
+
+
+```js
+// !! IMPORTANT LISEZ-MOI :
+// Vous pouvez ajouter des JS et CSS externes supplémentaires si nécessaire pour terminer le projet, mais la ressource externe actuelle DOIT rester en place pour que les tests fonctionnent. BABEL doit également être laissé en place.
+/***********
+INSTRUCTIONS :
+- Sélectionnez le projet que vous souhaitez terminer à partir du menu déroulant.
+- Cliquez sur le bouton 'EXÉCUTER LES TESTS' pour exécuter les tests contre le blanc stylo.
+- Cliquez sur le bouton 'TESTS' pour voir les cas de test individuels. (devraient tous échouer au début)
+- Commencez à coder ! Au fur et à mesure que vous remplissez chacun cas de test, vous les verrez partir du rouge au vert.
+- Lorsque vous commencez à développer votre projet, lorsque les tests échouent, vous devriez obtenir des erreurs utiles le long du chemin !
+************/
+// VEUILLEZ NOTER : L'ajout de règles de style globales à l'aide du sélecteur *, ou en ajoutant des règles à body {..} ou html {..}, ou à tous les éléments dans body ou html, c'est-à-dire h1 {..}, a le potentiel pour polluer le CSS de la suite de tests. Essayez d'ajouter : * {color: red}, pour un exemple rapide !
+// Une fois que vous avez lu les messages ci-dessus, vous pouvez supprimer tous les commentaires.
+```
+
+-----
+
+
+
+## 1. Créer une page d'hommage
+
+[Responsive Web Design Projects - Build a Tribute Page | Learn | freeCodeCamp.org](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-tribute-page)
+
+**Objectif :** créer une application [CodePen.io](https://codepen.io) fonctionnellement similaire à celle-ci : https://codepen.io/freeCodeCamp/full/zNqgVx.
+
+Répondez aux [récits utilisateur](https://fr.wikipedia.org/wiki/R%C3%A9cit_utilisateur), ou « user stories » ci-dessous et faites passer tous les tests. Donnez-lui votre propre style personnel.
+
+Vous pouvez utiliser HTML, JavaScript et CSS pour terminer ce projet. Le CSS simple est recommandé car c'est ce que les leçons ont couvert jusqu'à  présent et vous devriez vous entraîner avec du CSS brut. Vous pouvez  utiliser Bootstrap ou SASS si vous le souhaitez. Les technologies  supplémentaires (par exemple jQuery, React, Angular ou Vue) ne sont pas  recommandées pour ce projet et leur utilisation est à vos propres  risques. D'autres projets vous donneront la possibilité de travailler  avec différentes piles technologiques comme React. Nous accepterons et  essaierons de résoudre tous les rapports de problèmes qui utilisent la  pile technologique suggérée pour ce projet. Bon codage !
+
+**User  Story #1 :** Ma page d'hommage devrait avoir un élément avec un `id="main"` correspondant, qui contient tous les autres éléments.
+
+**User Story #2 :** Je devrais voir un élément avec un `id="title"` correspondant, qui contient une chaîne (c'est-à-dire du texte) qui  décrit le sujet de la page d'hommage (par exemple "Dr. Norman Borlaug")
+
+**User Story #3 :** Je devrais voir un élément `div` avec un `id="img-div"` correspondant.
+
+**User Story #4 :** Dans l'élément `img-div`, je devrais voir un élément `img` avec un `id="image"` correspondant.
+
+**User Story #5 :** Dans l'élément `img-div`, je devrais voir un élément avec un `id="img-caption"` correspondant qui contient un contenu textuel  décrivant l'image affichée dans `img-div`.
+
+**User Story #6 :** Je  devrais voir un élément avec un `id="tribute-info"` correspondant, qui  contient un contenu textuel décrivant le sujet de la page d'hommage.
+
+**User Story #7 :** Je devrais voir un élément `a` avec un `id="tribute-link"` correspondant, qui renvoie à un site extérieur contenant des  informations supplémentaires sur le sujet de la page d'hommage. CONSEIL : Vous devez donner à votre élément un attribut de `target` et le définir sur `_blank` pour que votre lien s'ouvre dans un nouvel onglet  (c'est-à-dire `target="_blank"`).
+
+**User Story #8 :** L'élément `img` doit être redimensionné de manière réactive, par rapport à la largeur de son élément parent, sans dépasser sa taille d'origine.
+
+**User Story #9 :** L'élément `img` doit être centré dans son élément parent.
+
+Vous pouvez créer votre projet en forkant [ce pen CodePen](https://codepen.io/freeCodeCamp/pen/MJjpwO). Ou vous pouvez  utiliser ce lien CDN pour exécuter les tests dans n'importe quel  environnement de votre choix :  https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js.
+
+Une fois que vous avez terminé, soumettez l'URL à votre projet de travail avec tous ses tests réussis.
+
+<iframe height="600px;" title="FCC: Tribute Page" src="https://codepen.io/freeCodeCamp/full/zNqgVx" >
+</iframe>
+
+<iframe height="600px;" title="FCC: Tribute Page" src="https://codepen.io/gylgyl2000/full/eYZwBqW" >
+</iframe>
+-----
+
+
+
+## 2. Créer un formulaire d'enquête
+
+[Responsive Web Design Projects - Build a Survey Form | Learn | freeCodeCamp.org](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-survey-form)
+
+**Objectif :** créer une application [CodePen.io](https://codepen.io) fonctionnellement similaire à celle-ci : https://codepen.io/freeCodeCamp/full/VPaoNP.
+
+Répondez aux [user stories](https://fr.wikipedia.org/wiki/R%C3%A9cit_utilisateur) ci-dessous et faites passer tous les tests. Donnez-lui votre propre style personnel.
+
+Vous pouvez utiliser HTML, JavaScript et CSS pour terminer ce projet. Le CSS simple est recommandé car c'est ce que les leçons ont couvert jusqu'à  présent et vous devriez vous entraîner avec du CSS simple. Vous pouvez  utiliser Bootstrap ou SASS si vous le souhaitez. Les technologies  supplémentaires (par exemple jQuery, React, Angular ou Vue) ne sont pas  recommandées pour ce projet et leur utilisation est à vos propres  risques. D'autres projets vous donneront la possibilité de travailler  avec différentes piles technologiques comme React. Nous accepterons et  essaierons de résoudre tous les rapports de problèmes qui utilisent la  pile technologique suggérée pour ce projet. Bon codage !
+
+**User Story #1 :** Je peux voir un titre avec `id="title"` dans un texte de taille H1.
+
+**User Story #2 :** Je peux voir une courte explication avec `id="description"` dans un texte de taille P.
+
+**User Story #3 :** Je peux voir un `form` avec `id="survey-form"`.
+
+**User Story #4 :** À l'intérieur de l'élément de formulaire, je dois entrer mon nom dans un champ avec `id="name"`.
+
+**User Story #5 :** Dans l'élément de formulaire, je suis obligé de saisir un e-mail dans un champ avec `id="email"`.
+
+**User Story #6 :** Si je saisis un e-mail qui n'est pas formaté correctement, je verrai une erreur de validation HTML5.
+
+**User Story #7 :** Dans le formulaire, je peux entrer un nombre dans un champ avec `id="number"`.
+
+**User Story #8 :** Si j'entre des non-nombres dans l'entrée de nombre, je verrai une erreur de validation HTML5.
+
+**User Story #9 :** Si j'entre des nombres en dehors de la plage de l'entrée  numérique, qui sont définis par les attributs `min` et `max`, je verrai une  erreur de validation HTML5.
+
+**User Story #10 :** Pour les champs de  saisie de nom, d'e-mail et de numéro dans le formulaire, je peux voir  les étiquettes correspondantes qui décrivent le but de chaque champ avec les identifiants suivants : `id="name-label"`, `id="email-label"`, et `id="number-label"`.
+
+**User Story #11 :** Pour les champs de saisie  du nom, de l'adresse e-mail et du numéro, je peux voir le texte d'espace réservé qui me donne une description ou des instructions pour chaque  champ.
+
+**User Story #12 :** Dans l'élément de formulaire, je peux  sélectionner une option dans une liste déroulante qui a un `id="dropdown"` correspondant.
+
+**User Story #13 :** À l'intérieur de  l'élément de formulaire, je peux sélectionner un champ dans un ou  plusieurs groupes de boutons radio. Chaque groupe doit être groupé à  l'aide de l'attribut `name`.
+
+**User Story #14 :** À l'intérieur de  l'élément de formulaire, je peux sélectionner plusieurs champs à partir  d'une série de cases à cocher, dont chacune doit avoir un attribut `value`.
+
+**User Story #15 :** À l'intérieur de l'élément de  formulaire, on me présente une `textarea` à la fin pour des  commentaires supplémentaires.
+
+**User Story #16 :** À l'intérieur de  l'élément de formulaire, on me présente un bouton avec `id="submit"` pour soumettre toutes mes entrées.
+
+Vous pouvez créer votre projet en forkant [ce pen CodePen](https://codepen.io/freeCodeCamp/pen/MJjpwO). Ou vous pouvez utiliser ce lien CDN pour  exécuter les tests dans n'importe quel environnement de votre choix:  https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js
+
+Une fois que vous avez terminé, soumettez l'URL à votre projet de travail avec tous ses tests réussis.
+
+<iframe height="600px;" title="FCC: Tribute Page" src="https://codepen.io/freeCodeCamp/full/VPaoNP" >
+</iframe>
+
+<iframe height="600px;" title="FCC: Tribute Page" src="https://codepen.io/gylgyl2000/full/ZEWgoyj" >
+</iframe>
+-----
+
+
+
+## 3. Créer une page de destination de produit
+
+[Responsive Web Design Projects - Build a Product Landing Page | Learn | freeCodeCamp.org](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-product-landing-page)
+
+**Objectif :** créer une application [CodePen.io](https://codepen.io) fonctionnellement similaire à celle-ci: https://codepen.io/freeCodeCamp/full/RKRbwL.
+
+Répondez aux [user stories](https://fr.wikipedia.org/wiki/R%C3%A9cit_utilisateur) ci-dessous et faites passer tous les tests. Donnez-lui votre propre style personnel.
+
+Vous pouvez utiliser HTML, JavaScript et CSS pour terminer ce projet. Le CSS simple est recommandé car c'est ce que les leçons ont couvert jusqu'à  présent et vous devriez vous entraîner avec du CSS brut. Vous pouvez  utiliser Bootstrap ou SASS si vous le souhaitez. Les technologies  supplémentaires (par exemple jQuery, React, Angular ou Vue) ne sont pas  recommandées pour ce projet et leur utilisation est à vos propres  risques. D'autres projets vous donneront la possibilité de travailler  avec différentes piles technologiques comme React. Nous accepterons et  essaierons de résoudre tous les rapports de problèmes qui utilisent la  pile technologique suggérée pour ce projet. Bon codage !
+
+**User Story #1 :** La page de destination de mon produit doit avoir un élément `header` avec un `id="header"` correspondant.
+
+**User Story #2 :** Je peux voir une image dans l'élément `header` avec un `id="header-img"` correspondant. Un logo d'entreprise ferait une bonne  image ici.
+
+**User Story #3 :** Dans l'élément `#header`, je peux voir un élément `nav` avec un `id="nav-bar"` correspondant.
+
+**User Story #4 :** Je peux voir au moins trois éléments cliquables à l'intérieur de l'élément `nav`, chacun avec la classe `nav-link`.
+
+**User Story #5 :** Lorsque je clique sur un bouton `.nav-link` dans l'élément `nav`, je suis redirigé vers la section correspondante de la page de  destination.
+
+**User Story #6 :** Je peux regarder une vidéo de produit intégrée avec `id="video"`.
+
+**User Story #7 :** Ma page de destination a un élément `id="video"` avec un `id="form"` correspondant.
+
+**User Story #8 :** Dans le formulaire, il y a un `input` avec `id="email"` où je peux entrer une adresse e-mail.
+
+**User Story #9 :** Le champ de saisie `#email` doit avoir un texte d'espace  réservé pour permettre à l'utilisateur de savoir à quoi sert le champ.
+
+**User Story #10 :** Le champ de saisie `#email` utilise la validation HTML5 pour confirmer que le texte saisi est une adresse e-mail.
+
+**User Story #11 :** Dans le formulaire, il y a une `input` de soumission avec un `id="submit"` correspondant.
+
+**User Story #12 :** Lorsque je clique sur l'élément `#submit`, l'e-mail est  soumis à une page statique (utilisez cette URL fictive:  https://www.freecodecamp.com/email-submit).
+
+**User Story #13 :** La barre de navigation doit toujours être en haut de la fenêtre.
+
+**User Story #14 :** La page de destination de mon produit doit comporter au moins une requête multimédia.
+
+**User Story #15 :** La page de destination de mon produit doit utiliser CSS flexbox au moins une fois.
+
+Vous pouvez créer votre projet en forkant [ce pen CodePen](https://codepen.io/freeCodeCamp/pen/MJjpwO). Ou vous pouvez  utiliser ce lien CDN pour exécuter les tests dans n'importe quel  environnement de votre choix:  https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js
+
+Une fois que vous avez terminé, soumettez l'URL à votre projet de travail avec tous ses tests réussis.
+
+<iframe height="600px;" title="FCC: Tribute Page" src="https://codepen.io/freeCodeCamp/full/RKRbwL" >
+</iframe>
+<iframe height="600px;" title="Product Landing Page" src="https://codepen.io/gylgyl2000/full/MWeWMqa" >
+</iframe>
+-----
+
+
+
+## 4. Créer une page de documentation technique
+
+[Responsive Web Design Projects - Build a Technical Documentation Page | Learn | freeCodeCamp.org](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-technical-documentation-page)
+
+**Objectif :** créer une application [CodePen.io](https://codepen.io) fonctionnellement similaire à celle-ci : https://codepen.io/freeCodeCamp/full/NdrKKL.
+
+Répondez aux [user stories](https://fr.wikipedia.org/wiki/R%C3%A9cit_utilisateur) ci-dessous et faites passer tous les tests. Donnez-lui votre propre style personnel.
+
+Vous pouvez utiliser HTML, JavaScript et CSS pour terminer ce projet. Le CSS simple est recommandé car c'est ce que les leçons ont couvert jusqu'à  présent et vous devriez vous entraîner avec du CSS brut. Vous pouvez  utiliser Bootstrap ou SASS si vous le souhaitez. Les technologies  supplémentaires (par exemple jQuery, React, Angular ou Vue) ne sont pas  recommandées pour ce projet et leur utilisation est à vos propres  risques. D'autres projets vous donneront la possibilité de travailler  avec différentes piles technologiques comme React. Nous accepterons et  essaierons de résoudre tous les rapports de problèmes qui utilisent la  pile technologique suggérée pour ce projet. Bon codage !
+
+**User  Story #1 :** Je peux voir un élément `main` avec un `id="main-doc"` correspondant, qui contient le contenu principal de la page  (documentation technique).
+
+**User Story #2 :** Dans l'élément `#main-doc`, je peux voir plusieurs éléments `section`, chacun avec une  classe de `main-section`. Il devrait y en avoir au moins 5.
+
+**User  Story #3 :** Le premier élément de chaque `.main-section` doit être un  élément `header` contenant un texte décrivant le sujet de cette  section.
+
+**User Story #4 :** Chaque élément `section` avec la classe `main-section` doit également avoir un identifiant qui correspond au  texte de chaque `header` qu'il contient. Tous les espaces doivent être remplacés par des traits de soulignement (par exemple, la `section` qui  contient l'en-tête "JavaScript et Java" doit avoir un `id="JavaScript_and_Java"` correspondant).
+
+**User Story #5 :** Les éléments  `.main-section` doivent contenir au moins 10 éléments `p` au total (pas chacun).
+
+**User Story #6 :** Les éléments `.main-section` doivent contenir au moins 5 éléments `code` au total (pas chacun).
+
+**User Story #7 :** Les éléments `.main-section` doivent contenir au moins 5 éléments `li` au total (pas chacun).
+
+**User Story #8 :** Je peux voir un élément `nav` avec un `id="navbar"` correspondant.
+
+**User Story #9 :** L'élément `navbar` doit contenir un élément `header` qui  contient du texte décrivant le sujet de la documentation technique.
+
+**User Story #10 :** De plus, la barre de navigation doit contenir des éléments link (`a`) avec la classe `nav-link`. Il devrait y en avoir un pour chaque  élément avec la classe `main-section`.
+
+**User Story #11 :** L'élément `header` dans la barre de navigation doit précéder tout  élément link (`a`) dans la barre de navigation.
+
+**User Story #12 :**  Chaque élément avec la classe `nav-link` doit contenir du texte qui  correspond au texte de `header`	dans chaque section (par exemple, si vous  avez une section/header "Hello world", votre barre de navigation doit avoir un élément qui contient le texte "Hello world").
+
+**User Story #13 :** Lorsque je clique sur un élément de la barre de navigation, la page doit accéder à la section correspondante de l'élément `main-doc` (par exemple, si je clique sur un élément `nav-link` contenant le texte "Hello world"', la page navigue à un élément `section` qui a cet identifiant et contient le `header` correspondant.
+
+**User Story #14 :** Sur les appareils de taille normale (ordinateurs portables, ordinateurs de bureau), l'élément `id="navbar"` doit être affiché  sur le côté gauche de l'écran et doit toujours être visible par  l'utilisateur.
+
+**User Story #15 :** Ma page de documentation technique doit utiliser au moins une requête multimédia.
+
+Vous pouvez créer votre projet en forkant [ce CodePen pen](https://codepen.io/freeCodeCamp/pen/MJjpwO). Ou vous pouvez  utiliser ce lien CDN pour exécuter les tests dans n'importe quel  environnement de votre choix:  https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js
+
+Une fois que vous avez terminé, soumettez l'URL à votre projet de travail avec tous ses tests réussis.
+
+<iframe height="600px;" title="FCC: Technical Documentation Page" src="https://codepen.io/freeCodeCamp/full/NdrKKL" >
+</iframe>
+
+
+
+<iframe height="600px;" title="Technical Documentation Page" src="https://codepen.io/gylgyl2000/full/VwjLoEG" >
+</iframe>
+------
+
+
+
+## 5. Créer une page Web de portefeuille personnel
+
+[Responsive Web Design Projects - Build a Personal Portfolio Webpage | Learn | freeCodeCamp.org](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-personal-portfolio-webpage)
+
+**Objectif :** créer une application [CodePen.io](https://codepen.io) fonctionnellement similaire à celle-ci: https://codepen.io/freeCodeCamp/full/zNBOYG.
+
+Répondez aux [user stories](https://fr.wikipedia.org/wiki/R%C3%A9cit_utilisateur) ci-dessous et faites passer tous les tests. Donnez-lui votre propre style.
+
+Vous pouvez utiliser HTML, JavaScript et CSS pour terminer ce projet. Le CSS simple est recommandé car c'est ce que les leçons ont couvert jusqu'à  présent et vous devriez vous entraîner avec du CSS simple. Vous pouvez  utiliser Bootstrap ou SASS si vous le souhaitez. Les technologies  supplémentaires (par exemple jQuery, React, Angular ou Vue) ne sont pas  recommandées pour ce projet et leur utilisation est à vos propres  risques. D'autres projets vous donneront la possibilité de travailler  avec différentes piles technologiques comme React. Nous accepterons et  essaierons de résoudre tous les rapports de problèmes qui utilisent la  pile technologique suggérée pour ce projet. Bon codage!
+
+**User Story #1 :** Mon portfolio devrait avoir une section de bienvenue avec un identifiant `welcome-section`.
+
+**User Story #2 :** La section de bienvenue doit avoir un élément `h1` contenant du texte.
+
+**User Story #3 :** Mon portfolio devrait avoir une section de projets avec un identifiant de `projects`.
+
+**User Story #4 :** La section des projets doit contenir au moins un élément  avec une classe de `project-tile` pour contenir un projet.
+
+**User Story #5 :** La section des projets doit contenir au moins un lien vers un projet.
+
+**User Story #6 :** Mon portfolio devrait avoir une barre de navigation avec un identifiant de `navbar`.
+
+**User Story #7 :** La barre de navigation doit contenir au moins un lien sur  lequel je peux cliquer pour accéder aux différentes sections de la page.
+
+**User Story #8 :** Mon portfolio doit avoir un lien avec un identifiant de `profile-link`, qui ouvre mon profil GitHub ou FCC dans un nouvel onglet.
+
+**User Story #9 :** Mon portfolio doit avoir au moins une requête média.
+
+**User Story #10 :** La hauteur de la section d'accueil doit être égale à la hauteur de la fenêtre.
+
+**User Story #11 :** La barre de navigation doit toujours être en haut de la fenêtre.
+
+Vous pouvez créer votre projet en forkant [ce CodePen pen](https://codepen.io/freeCodeCamp/pen/MJjpwO). Ou vous pouvez  utiliser ce lien CDN pour exécuter les tests dans n'importe quel  environnement de votre choix :  https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js
+
+Une fois que vous avez terminé, soumettez l'URL à votre projet de travail avec tous ses tests réussis.
+
+<iframe height="600px;" title="FCC: Personal Portfolio" src="https://codepen.io/freeCodeCamp/full/zNBOYG" >
+</iframe>
+<iframe height="600px;" title="gylgyl2000: Personal Portfolio" src="https://codepen.io/gylgyl2000/full/MWerxBo" >
+</iframe>
+
+
