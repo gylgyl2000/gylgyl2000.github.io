@@ -1,0 +1,1012 @@
+---
+id: freeCodeCamp-Sass-fr
+title: Sass
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+
+## Introduction aux défis Sass
+
+Sass, ou « Syntactically Awesome StyleSheets » (Feuilles de style syntaxiquement géniales), est une extension de langage de CSS. Il ajoute des fonctionnalités qui ne sont pas disponibles en utilisant la syntaxe CSS de base. Sass permet aux développeurs de simplifier et de gérer plus facilement les feuilles de style de leurs projets.<br />
+Sass peut étendre le langage CSS car il s'agit d'un préprocesseur. Il prend du code écrit en utilisant la syntaxe Sass et le convertit en CSS de base. Cela vous permet de créer des variables, d'imbriquer des règles CSS dans d'autres et d'importer d'autres fichiers Sass, entre autres. Le résultat est un code plus compact, plus facile à lire.<br />
+Il existe deux syntaxes disponibles pour Sass. Le premier, connu sous le nom de SCSS (Sassy CSS) et utilisé tout au long de ces défis, est une extension de la syntaxe de CSS. Cela signifie que chaque feuille de style CSS valide est un fichier SCSS valide avec la même signification. Les fichiers utilisant cette syntaxe ont l'extension .scss.<br />
+La deuxième syntaxe et plus ancienne, connue sous le nom de syntaxe indentée (ou parfois simplement « Sass »), utilise l'indentation plutôt que les crochets pour indiquer l'imbrication des sélecteurs et les retours à la ligne plutôt que les points-virgules pour séparer les propriétés. Les fichiers utilisant cette syntaxe ont l'extension .sass.<br />
+Cette section présente les fonctionnalités de base de Sass.
+
+-----
+
+
+
+## 1. Stocker des données avec des variables Sass
+
+[Learn Sass: Store Data with Sass Variables | freeCodeCamp.org](https://www.freecodecamp.org/learn/front-end-libraries/sass/store-data-with-sass-variables)
+
+Une caractéristique de Sass qui est différente de CSS est qu'il utilise des variables. Elles sont déclarées et configurées pour stocker des données, comme JavaScript.<br />
+En JavaScript, les variables sont définies à l'aide des mots-clés `let` et `const`. Dans Sass, les variables commencent par un `$` suivi du nom de la variable.<br />
+Voici quelques exemples :
+
+```html
+$main-fonts: Arial, sans-serif;
+$headings-color: green;
+
+// Pour utiliser les variables :
+h1 {
+  font-family: $main-fonts;
+  color: $headings-color;
+}
+```
+
+Un exemple où les variables sont utiles est lorsqu'un certain nombre d'éléments doivent être de la même couleur. Si cette couleur est modifiée, le seul endroit pour éditer le code est la valeur de la variable.
+
+:::info instructions
+Créez une variable `$text-color` et définissez-la sur rouge. Modifiez ensuite la valeur de la propriété `color` pour le `.blog-post` et `h2` en la variable `$text-color`.
+:::
+
+:::tip missions
+- Votre code doit avoir une variable Sass déclarée pour `$text-color` avec une valeur de rouge.
+- Votre code doit utiliser la variable `$text-color` pour changer la `color` des éléments `.blog-post` et `h2`.
+- Votre élément `.blog-post` doit avoir une `color` rouge.
+- Vos éléments `h2` doivent avoir une `color` rouge.
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<style type='text/scss'>
+  .header{
+    text-align: center;
+  }
+  .blog-post, h2 {
+    color: red;
+  }
+</style>
+
+<h1 class="header">Learn Sass</h1>
+<div class="blog-post">
+  <h2>Some random title</h2>
+  <p>This is a paragraph with some random text in it</p>
+</div>
+<div class="blog-post">
+  <h2>Header #2</h2>
+  <p>Here is some more random text.</p>
+</div>
+<div class="blog-post">
+  <h2>Here is another header</h2>
+  <p>Even more random text within a paragraph</p>
+</div>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-Sass-01a.html"></iframe>
+
+</div></nav>
+
+:::
+
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<style type='text/scss'>
+  $text-color: red;
+
+  .header{
+    text-align: center;
+  }
+  .blog-post, h2 {
+    color: $text-color;
+  }
+</style>
+
+<h1 class="header">Learn Sass</h1>
+<div class="blog-post">
+  <h2>Some random title</h2>
+  <p>This is a paragraph with some random text in it</p>
+</div>
+<div class="blog-post">
+  <h2>Header #2</h2>
+  <p>Here is some more random text.</p>
+</div>
+<div class="blog-post">
+  <h2>Here is another header</h2>
+  <p>Even more random text within a paragraph</p>
+</div>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-Sass-01b.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-store-data-with-sass-variables/301460)
+
+-----
+
+
+
+## 2. Imbriquer CSS avec Sass
+
+[Learn Sass: Nest CSS with Sass | freeCodeCamp.org](https://www.freecodecamp.org/learn/front-end-libraries/sass/nest-css-with-sass)
+
+Sass permet l'imbrication des règles CSS, ce qui est un moyen utile d'organiser une feuille de style.<br />
+Normalement, chaque élément est ciblé sur une ligne différente pour le styliser, comme ceci :
+
+```scss
+nav {
+  background-color: red;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  display: inline-block;
+}
+```
+
+Pour un grand projet, le fichier CSS aura de nombreuses lignes et règles. C'est là que l'imbrication peut vous aider à organiser votre code en plaçant des règles de style enfant dans les éléments parents respectifs :
+
+```scss
+nav {
+  background-color: red;
+
+  ul {
+    list-style: none;
+
+    li {
+      display: inline-block;
+    }
+  }
+}
+```
+
+:::info instructions
+Utilisez la technique d'imbrication présentée ci-dessus pour réorganiser les règles CSS pour les deux enfants de l'élément `.blog-post`. À des fins de test, `h1` doit venir avant l'élément `p`.
+:::
+
+:::tip missions
+Votre code doit réorganiser les règles CSS afin que `h1` et `p` soient imbriqués dans l'élément parent `.blog-post`.
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<style type='text/scss'>
+  .blog-post {
+
+  }
+  h1 {
+    text-align: center;
+    color: blue;
+  }
+  p {
+    font-size: 20px;
+  }
+</style>
+
+<div class="blog-post">
+  <h1>Blog Title</h1>
+  <p>This is a paragraph</p>
+</div>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe src="HTML-Demo_embed/freeCodeCamp-Sass-02a.html"></iframe>
+
+</div></nav>
+:::
+
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<style type='text/scss'>
+  .blog-post { 
+    h1 {
+     text-align: center;
+     color: blue;
+    }
+    p {
+        font-size: 20px;
+    } 
+  }  
+</style>
+
+<div class="blog-post">
+  <h1>Blog Title</h1>
+  <p>This is a paragraph</p>
+</div>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe src="HTML-Demo_embed/freeCodeCamp-Sass-02b.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-nest-css-with-sass/301457)
+
+:::note guide : 
+### Explication du problème
+
+- Dans Sass, l'imbrication des règles CSS permet de définir des sélecteurs de hiérarchie.
+- Vous pouvez organiser vos feuilles de style en imbriquant des règles CSS.
+
+Exemple :
+
+```scss
+.title{
+  strong{}
+  em{}
+}
+
+// Cela sera compilé dans :
+
+.title{}
+.title strong{}
+.title em{}
+```
+:::
+
+-----
+
+
+
+## 3. Créer du CSS réutilisable avec Mixins
+
+[Learn Sass: Create Reusable CSS with Mixins | freeCodeCamp.org](https://www.freecodecamp.org/learn/front-end-libraries/sass/create-reusable-css-with-mixins)
+
+Dans Sass, un *mixin* est un groupe de déclarations CSS qui peuvent être réutilisées dans toute la feuille de style.<br />
+Les nouvelles fonctionnalités CSS prennent du temps avant d'être pleinement adoptées et prêtes à être utilisées dans tous les navigateurs. Au fur et à mesure que des fonctionnalités sont ajoutées aux navigateurs, les règles CSS qui les utilisent peuvent nécessiter des préfixes de fournisseur. Considérez `"box-shadow"` :
+
+```scss
+div {
+  -webkit-box-shadow: 0px 0px 4px #fff;
+  -moz-box-shadow: 0px 0px 4px #fff;
+  -ms-box-shadow: 0px 0px 4px #fff;
+  box-shadow: 0px 0px 4px #fff;
+}
+```
+
+C'est beaucoup de taper pour réécrire cette règle pour tous les éléments qui ont `box-shadow`, ou pour changer chaque valeur pour tester différents effets. Les mixins sont comme des fonctions pour CSS. Voici comment en écrire un :
+
+```scss
+@mixin box-shadow($x, $y, $blur, $c){ 
+  -webkit-box-shadow: $x $y $blur $c;
+  -moz-box-shadow: $x $y $blur $c;
+  -ms-box-shadow: $x $y $blur $c;
+  box-shadow: $x $y $blur $c;
+}
+```
+
+La définition commence par `@mixin` suivi d'un nom personnalisé. Les paramètres (les `$x`, `$y`, `$blur` et `$c` dans l'exemple ci-dessus) sont facultatifs. Désormais, chaque fois qu'une règle `box-shadow` est nécessaire, une seule ligne appelant le mixin remplace le fait de taper tous les préfixes du fournisseur. Un mixin est appelé avec la directive `@include` :
+
+```scss
+div {
+  @include box-shadow(0px, 0px, 4px, #fff);
+}
+```
+
+:::info instructions
+Écrivez un mixin pour `border-radius` et donnez-lui un paramètre `$radius`. Il doit utiliser tous les préfixes de fournisseur de l'exemple. Utilisez ensuite le mixin `border-radius` pour donner à l'élément `#awesome` un rayon de bordure de 15px.
+:::
+
+:::tip missions
+- Votre code doit déclarer un mixin nommé `border-radius` qui a un paramètre nommé `$radius`.
+- Votre code doit inclure le préfixe de fournisseur `-webkit-border-radius` qui utilise le paramètre `$radius`.
+- Votre code doit inclure le préfixe de fournisseur `-moz-border-radius` qui utilise le paramètre `$radius`.
+- Votre code doit inclure le préfixe de fournisseur `-ms-border-radius` qui utilise le paramètre `$radius`.
+- Votre code doit inclure la règle générale `border-radius` qui utilise le paramètre `$radius`.
+- Votre code doit appeler le mixin `border-radius` en utilisant le mot clé `@include`, en le définissant sur 15px.
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<style type='text/scss'>
+  #awesome {
+    width: 150px;
+    height: 150px;
+    background-color: green;
+  }
+</style>
+
+<div id="awesome"></div>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-Sass-03a.html"></iframe>
+
+</div></nav>
+
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<style type='text/scss'>
+
+  @mixin border-radius($radius){
+    -webkit-border-radius:$radius;
+    -moz-border-radius:$radius;
+    -ms-border-radius:$radius;
+    border-radius:$radius;
+  }
+
+  #awesome {
+    width: 150px;
+    height: 150px;
+    background-color: green;
+    @include border-radius(15px);
+  }
+</style>
+
+<div id="awesome"></div>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-Sass-03b.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-create-reusable-css-with-mixins/301455)
+
+:::note guide : Créer du CSS réutilisable avec Mixins
+### Explication du problème
+`Mixin` est l'une des fonctionnalités intéressantes qui permettent aux développeurs d'utiliser `SASS` au lieu du `CSS` simple, car il vous permet d'avoir une `function` dans votre feuille de style !<br />
+Pour créer un mixin, vous devez suivre le schéma suivant :
+
+```scss
+@mixin custom-mixin-name($param1, $param2, ....) {
+    // Propriétés CSS ici...
+}
+```
+
+Et pour l'utiliser dans vos éléments, vous devez utiliser `@include` suivi de votre nom `mixin`, comme suit :
+
+```scss
+element {
+    @include custom-mixin-name(value1, value2, ...);
+}
+```
+
+:::
+
+-----
+
+
+
+## 4. Utilisez `@if` et `@else` pour ajouter une logique à vos styles
+
+[Learn Sass: Use @if and @else to Add Logic To Your Styles | freeCodeCamp.org](https://www.freecodecamp.org/learn/front-end-libraries/sass/use-if-and-else-to-add-logic-to-your-styles)
+
+La directive `@if` dans Sass est utile pour tester un cas spécifique - elle fonctionne exactement comme l'instruction `if` en JavaScript.
+
+```scss
+@mixin make-bold($bool) {
+  @if $bool == true {
+    font-weight: bold;
+  }
+}
+```
+
+Et tout comme en JavaScript, `@else if` et `@else` testent plus de conditions :
+
+```scss
+@mixin text-effect($val) {
+  @if $val == danger {
+    color: red;
+  }
+  @else if $val == alert {
+    color: yellow;
+  }
+  @else if $val == success {
+    color: green;
+  }
+  @else {
+    color: black;
+  }
+}
+```
+
+:::info instructions
+Créez un mixin appelé `border-stroke` qui prend un paramètre `$val`. Le mixin doit vérifier les conditions suivantes en utilisant `@if`, `@else if` et `@else` :
+
+```scss
+light - 1px solid black
+medium - 3px solid black
+heavy - 6px solid black
+```
+
+Si `$val` n'est pas `light`, `medium`, ou `heavy`, la bordure doit être définie sur `none`.
+:::
+
+:::tip missions
+- Votre code doit déclarer un mixin nommé `border-stroke` qui a un paramètre nommé `$val`.
+- Votre mixin doit avoir une instruction `@if` pour vérifier si `$val` est `light` et pour définir `border` sur `1px solid black`.
+- Votre mixin doit avoir une instruction `@else if` pour vérifier si `$val` est `medium` et pour définir `border` sur `3px solid black`.
+- Votre mixin doit avoir une instruction `@else if` pour vérifier si `$val` est `heavy` et pour définir `border` sur `6px solid black`.
+- Votre mixin doit avoir une instruction `@else` pour définir `border` sur `none`.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<style type='text/scss'>
+  @mixin border-stroke($val) {
+    @if $val == light {
+      border: 1px solid black;
+    }
+    @else if $val == medium {
+      border: 3px solid black;
+    }
+    @else if $val == heavy {
+      border: 6px solid black;
+    }
+    @else {
+      border: none;
+    }
+  }
+
+  #box {
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    @include border-stroke(medium);
+  }
+</style>
+
+<div id="box"></div>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-Sass-04b.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-use-if-and-else-to-add-logic-to-your-styles/301463)
+
+-----
+
+
+
+## 5. Utilisez `@for` pour créer une boucle Sass
+
+[Learn Sass: Use @for to Create a Sass Loop | freeCodeCamp.org](https://www.freecodecamp.org/learn/front-end-libraries/sass/use-for-to-create-a-sass-loop)
+
+La directive `@for` ajoute des styles dans une boucle, très similaire à une boucle `for` en JavaScript.<br />
+`@for` est utilisé de deux manières : "start through end" ou "start to end".  La principale différence est que le "start **to** end" *exclut* le numéro de fin dans le cadre du décompte et "start **through** end" *inclut* le numéro de fin dans le décompte.<br />
+Voici un exemple "start **through** end" :
+
+```scss
+@for $i from 1 through 12 {
+  .col-#{$i} { width: 100%/12 * $i; }
+}
+```
+
+La partie `#{$i}` est la syntaxe pour combiner une variable (`i`) avec du texte pour créer une chaîne. Lorsque le fichier Sass est converti en CSS, il ressemble à ceci :
+
+```css
+.col-1 {
+  width: 8.33333%;
+}
+
+.col-2 {
+  width: 16.66667%;
+}
+
+...
+
+.col-12 {
+  width: 100%;
+}
+```
+
+C'est un moyen puissant de créer une disposition de grille. Vous avez maintenant douze options pour les largeurs de colonne disponibles sous forme de classes CSS.
+
+:::info instructions
+Écrivez une directive `@for` qui prend une variable `$j` qui va de 1 **to** 6.<br />
+Il devrait créer 5 classes appelées `.text-1` à `.text-5` où chacune a une `font-size` définie à 15px multipliée par l'index.
+:::
+
+:::tip missions
+- Votre code doit utiliser la directive `@for`.
+- Votre classe `.text-1` doit avoir une `font-size` de 15px.
+- Votre classe `.text-2` doit avoir une `font-size` de 30px.
+- Votre classe `.text-3` doit avoir une `font-size` de 45px.
+- Votre classe `.text-4` doit avoir une `font-size` de 60px.
+- Votre classe `.text-5` doit avoir une `font-size` de 75px.
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<style type="text/scss">
+</style>
+
+<p class="text-1">Hello</p>
+<p class="text-2">Hello</p>
+<p class="text-3">Hello</p>
+<p class="text-4">Hello</p>
+<p class="text-5">Hello</p>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-Sass-05a.html"></iframe>
+
+</div></nav>
+
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<style type='text/scss'>
+  @for $j from 1 through 5 {
+    .text-#{$j} { font-size: 15px * $j; }
+  }
+</style>
+
+<p class="text-1">Hello</p>
+<p class="text-2">Hello</p>
+<p class="text-3">Hello</p>
+<p class="text-4">Hello</p>
+<p class="text-5">Hello</p>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-Sass-05b.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-use-for-to-create-a-sass-loop/301462)
+
+:::note guide : Utilisez `@for` pour créer une boucle Sass
+### Explication du problème
+1. La syntaxe de base de la boucle `@for` dans SASS :
+  - Boucle for - through :
+
+```scss
+@for $i from <start number> through <end number> {
+  // un peu de CSS
+}
+```
+
+  - Boucle for - yo :
+
+```scss
+@for $i from <start number> to <end number> {
+  // un peu de CSS
+}
+```
+
+Notez que la principale différence est que “start to end” **exclut** le numéro de fin, et “start through end” **inclut** le numéro de fin.
+
+2. Par exemple :
+
+  - Boucle for - through :
+
+```scss
+@for $i from 1 through 3 {
+  // un peu de CSS
+}
+
+// 1 2 3
+```
+
+  - Boucle for - to :
+
+```scss
+@for $i from 1 to 3 {
+  // un peu de CSS
+}
+
+// 1 2
+```
+
+3. Ligne directrice de [SASS Guideline](https://sass-guidelin.es/#loops)
+
+La boucle `@for` peut être utile lorsqu'elle est combinée avec des pseudo-classes CSS `:nth-*`. À l'exception de ces scénarios, préférez une boucle `@each` si vous devez itérer sur quelque chose.
+
+```scss
+@for $i from 1 through 10 {
+  .foo:nth-of-type(#{$i}) {
+    border-color: hsl($i * 36, 50%, 50%);
+  }
+}
+```
+
+Utilisez toujours `$i` comme nom de variable pour vous en tenir à la convention habituelle et à moins que vous n'ayez une très bonne raison de le faire, n'utilisez jamais le mot-clé `to` : toujours utiliser `through`. De nombreux développeurs ne savent même pas que Sass propose cette variante ; son utilisation pourrait prêter à confusion.<br />
+Veillez également à respecter ces consignes pour préserver la lisibilité :
+- Toujours une nouvelle ligne vide avant `@for`;
+- Toujours une nouvelle ligne vide après l'accolade fermante `(})` sauf si la ligne suivante est une accolade fermante `(})`.
+
+La solution ci-dessus générera le CSS suivant :
+
+```css
+.text-1 {
+  font-size: 15px;
+}
+
+.text-2 {
+  font-size: 30px;
+}
+
+.text-3 {
+  font-size: 45px;
+}
+
+.text-4 {
+  font-size: 60px;
+}
+
+.text-5 {
+  font-size: 75px;
+}
+```
+:::
+
+-----
+
+
+
+## 6. Utilisez `@each` pour mapper des éléments dans une liste
+
+[Learn Sass: Use @each to Map Over Items in a List | freeCodeCamp.org](https://www.freecodecamp.org/learn/front-end-libraries/sass/use-each-to-map-over-items-in-a-list)
+
+Le dernier défi a montré comment la directive `@for` utilise une valeur de début et de fin pour boucler un certain nombre de fois. Sass propose également la directive `@each` qui boucle sur chaque élément d'une liste ou d'une carte. À chaque itération, la variable est affectée à la valeur actuelle de la liste ou de la carte.
+
+```scss
+@each $color in blue, red, green {
+  .#{$color}-text {color: $color;}
+}
+```
+
+Une carte a une syntaxe légèrement différente. Voici un exemple :
+
+```scss
+$colors: (color1: blue, color2: red, color3: green);
+
+@each $key, $color in $colors {
+  .#{$color}-text {color: $color;}
+}
+```
+
+Notez que la variable `$key` est nécessaire pour référencer les clés dans la carte. Sinon, le CSS compilé contiendrait `color1`, `color2`.... Les deux exemples de code ci-dessus sont convertis dans le CSS suivant :
+
+```css
+.blue-text {
+  color: blue;
+}
+
+.red-text {
+  color: red;
+}
+
+.green-text {
+  color: green;
+}
+```
+
+:::info instructions
+Écrivez une directive `@each` qui parcourt une liste : `blue, black, red` et assigne chaque variable à une classe `.color-bg`, où la partie « color » change pour chaque élément. Chaque classe doit définir `background-color` de la couleur respective.
+:::
+
+:::tip missions
+- Votre code doit utiliser la directive `@each`.
+- Votre classe `.blue-bg` doit avoir une `background-color` bleue.
+- Votre classe `.black-bg` doit avoir une `background-color` noire.
+- Votre classe `.red-bg` doit avoir une `background-color` rouge.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<style type='text/scss'>
+
+  @each $color in blue, black, red {
+    .#{$color}-bg {background-color: $color;}
+  }
+  
+  div {
+    height: 200px;
+    width: 200px;
+  }
+
+</style>
+
+<div class="blue-bg"></div>
+<div class="black-bg"></div>
+<div class="red-bg"></div>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-Sass-06b.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-use-each-to-map-over-items-in-a-list/301461)
+
+-----
+
+
+
+## 7. Appliquer un style jusqu'à ce qu'une condition soit remplie avec `@while`
+
+[Learn Sass: Apply a Style Until a Condition is Met with @while | freeCodeCamp.org](https://www.freecodecamp.org/learn/front-end-libraries/sass/apply-a-style-until-a-condition-is-met-with-while)
+
+La directive `@while` est une option avec des fonctionnalités similaires à la boucle `while` JavaScript. Il crée des règles CSS jusqu'à ce qu'une condition soit remplie.<br />
+Le défi `@for` a donné un exemple pour créer un système de grille simple. Cela peut également fonctionner avec `@while`.
+
+```scss
+$x: 1;
+@while $x < 13 {
+  .col-#{$x} { width: 100%/12 * $x;}
+  $x: $x + 1;
+}
+```
+
+Tout d'abord, définissez une variable `$x` et définissez-la sur 1. Ensuite, utilisez la directive `@while` pour créer le système de grille *while* `$x` est inférieur à 13. Après avoir défini la règle CSS pour `width`, `$x` est incrémenté de 1 pour éviter un boucle infinie.
+
+:::info instructions
+Utilisez `@while` pour créer une série de classes avec différentes `font-size`.<br />
+Il devrait y avoir 5 classes différentes de `text-1` à `text-5`. Ensuite, définissez `font-size` sur `15px` multipliée par le numéro d'index actuel. Assurez-vous d'éviter une boucle infinie !
+:::
+
+:::tip missions
+- Votre code doit utiliser la directive `@while`.
+- Votre code doit utiliser une variable d'index qui commence à un index de 1.
+- Votre code doit incrémenter la variable de compteur.
+- Votre classe `.text-1` doit avoir une `font-size` de 15px.
+- Votre classe `.text-2` doit avoir une `font-size` de 30px.
+- Votre classe `.text-3` doit avoir une `font-size` de 45px.
+- Votre classe `.text-4` doit avoir une `font-size` de 60px.
+- Votre classe `.text-5` doit avoir une `font-size` de 75px.
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<style type='text/scss'>
+</style>
+
+<p class="text-1">Hello</p>
+<p class="text-2">Hello</p>
+<p class="text-3">Hello</p>
+<p class="text-4">Hello</p>
+<p class="text-5">Hello</p>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-Sass-07a.html"></iframe>
+
+</div></nav>
+
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<style type='text/scss'>
+    $x: 1;
+    @while $x < 6 {
+        .text-#{$x} {
+            font-size: 15px * $x
+        }
+        $x: $x + 1;
+    }
+</style>
+
+<p class="text-1">Hello</p>
+<p class="text-2">Hello</p>
+<p class="text-3">Hello</p>
+<p class="text-4">Hello</p>
+<p class="text-5">Hello</p>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-Sass-07b.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-apply-a-style-until-a-condition-is-met-with-while/301454)
+
+:::note guide : Appliquer un style jusqu'à ce qu'une condition soit remplie avec `@while`
+#### Liens pertinents
+
+- [Interpolation](https://sass-lang.com/documentation/interpolation)
+- [Variables](https://sass-lang.com/documentation/variables)
+- [while boucles](https://sass-lang.com/documentation/at-rules/control/while)
+:::
+
+-----
+
+
+
+## 8. Divisez vos styles en petits morceaux avec des partiels
+
+[Learn Sass: Split Your Styles into Smaller Chunks with Partials | freeCodeCamp.org](https://www.freecodecamp.org/learn/front-end-libraries/sass/split-your-styles-into-smaller-chunks-with-partials)
+
+Les *partiels* dans Sass sont des fichiers séparés qui contiennent des segments de code CSS. Ceux-ci sont importés et utilisés dans d'autres fichiers Sass. C'est un excellent moyen de regrouper du code similaire dans un module pour le garder organisé.<br />
+Les noms des partiels commencent par le caractère de soulignement (`_`), qui indique à Sass qu'il s'agit d'un petit segment de CSS et de ne pas le convertir en fichier CSS. En outre, les fichiers Sass se terminent par l'extension de fichier `.scss`. Pour importer le code du partiel dans un autre fichier Sass, utilisez la directive `@import`.<br />
+Par exemple, si tous vos mixins sont enregistrés dans un partiel nommé `_mixins.scss`, et qu'ils sont nécessaires dans le fichier `main.scss`, voici comment les utiliser dans le fichier principal :
+
+```scss
+// Dans le fichier main.scss
+
+@import 'mixins'
+```
+
+Notez que le trait de soulignement et l'extension de fichier ne sont pas nécessaires dans l'instruction `import` - Sass comprend qu'il s'agit d'un élément partiel. Une fois qu'un partiel est importé dans un fichier, toutes les variables, mixins et autres codes peuvent être utilisés.
+
+:::info instructions
+Écrivez une instruction `@import` pour importer une partie nommée `_variables.scss` dans le fichier `main.scss`.
+
+:::
+
+:::tip missions
+Votre code doit utiliser la directive `@import` et ne doit pas inclure le trait de soulignement dans le nom de fichier.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<!-- The main.scss file -->
+
+@import 'variables'
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-Sass-08a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-split-your-styles-into-smaller-chunks-with-partials/301459)
+
+-----
+
+
+
+## 9. Étendre un ensemble de styles CSS à un autre élément
+
+[Learn Sass: Extend One Set of CSS Styles to Another Element | freeCodeCamp.org](https://www.freecodecamp.org/learn/front-end-libraries/sass/extend-one-set-of-css-styles-to-another-element)
+
+Sass a une fonctionnalité appelée `extend` qui permet d'emprunter facilement les règles CSS d'un élément et de les construire dans un autre.<br />
+Par exemple, le bloc de règles CSS ci-dessous stylise une classe `.panel`. Il a `background-color`, `height` and `border`.
+
+```css
+.panel{
+  background-color: red;
+  height: 70px;
+  border: 2px solid green;
+}
+```
+
+Vous voulez maintenant un autre panneau appelé `.big-panel`. Il a les mêmes propriétés de base que `.panel`, mais a également besoin de `width` et de `font-size`. Il est possible de copier et coller les règles CSS initiales à partir de `.panel`, mais le code devient répétitif à mesure que vous ajoutez d'autres types de panneaux. La directive `extend` est un moyen simple de réutiliser les règles écrites pour un élément, puis d'en ajouter d'autres pour un autre :
+
+```scss
+.big-panel{
+  @extend .panel;
+  width: 150px;
+  font-size: 2em;
+}
+```
+
+Le `.big-panel` aura les mêmes propriétés que `.panel` en plus des nouveaux styles.
+
+:::info instructions
+Créez une classe `.info-important` qui étend `.info` et a également une `background-color` définie sur magenta.
+:::
+
+:::tip missions
+- Votre classe `info-important` doit avoir une `background-color` définie sur `magenta`.
+- Votre classe `info-important` doit utiliser `@extend` pour hériter du style de la classe `info`.
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<style type='text/scss'>
+  h3{
+    text-align: center;
+  }
+  .info{
+    width: 200px;
+    border: 1px solid black;
+    margin: 0 auto;
+  }
+</style>
+
+<h3>Posts</h3>
+<div class="info-important">
+  <p>This is an important post. It should extend the class ".info" and have its own CSS styles.</p>
+</div>
+
+<div class="info">
+  <p>This is a simple post. It has basic styling and can be extended for other uses.</p>
+</div>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-Sass-09a.html"></iframe>
+
+</div></nav>
+
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<style type='text/scss'>
+  h3{
+    text-align: center;
+  }
+  .info{
+    width: 200px;
+    border: 1px solid black;
+    margin: 0 auto;
+  }
+  .info-important {
+    @extend .info;
+    background-color: magenta;
+  }
+</style>
+
+<h3>Posts</h3>
+<div class="info-important">
+  <p>This is an important post. It should extend the class ".info" and have its own CSS styles.</p>
+</div>
+
+<div class="info">
+  <p>This is a simple post. It has basic styling and can be extended for other uses.</p>
+</div>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-Sass-09b.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-extend-one-set-of-css-styles-to-another-element/301456)
+
+-----

@@ -1,0 +1,165 @@
+---
+id: freeCodeCamp-React-and-Redux-fr
+title: React et Redux
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+
+## Présentation des défis React et Redux
+
+[React and Redux | freeCodeCamp.org](https://www.freecodecamp.org/learn/front-end-libraries/react-and-redux/)
+
+Cette série de défis présente comment utiliser Redux avec React.
+
+Dans une application React Redux, vous créez un magasin Redux unique qui gère l'état de l'ensemble
+de votre application. Vos composants React s'abonnent uniquement aux éléments de données du magasin
+qui correspondent à leur rôle. Ensuite, vous distribuez des actions directement à partir des composants
+React, qui déclenchent ensuite les mises à jour du magasin.
+
+-----
+
+
+
+## 1. Premiers pas avec React Redux
+
+[Learn React and Redux: Getting Started with React Redux | freeCodeCamp.org](https://www.freecodecamp.org/learn/front-end-libraries/react-and-redux/getting-started-with-react-redux)
+
+Cette série de défis présente comment utiliser Redux avec React. Tout d'abord, voici un aperçu de certains
+des principes clés de chaque technologie. React est une bibliothèque de vues que vous fournissez avec des
+données, puis elle restitue la vue de manière efficace et prévisible. Redux est un framework de gestion
+d'état que vous pouvez utiliser pour simplifier la gestion de l'état de votre application. En règle générale,
+dans une application React Redux, vous créez un seul magasin Redux qui gère l'état de l'ensemble de votre
+application. Vos composants React s'abonnent uniquement aux éléments de données du magasin qui correspondent
+à leur rôle. Ensuite, vous distribuez des actions directement à partir des composants React, qui déclenchent
+ensuite les mises à jour du magasin.<br />
+Bien que les composants React puissent gérer leur propre état localement, lorsque vous avez une application
+complexe, il est généralement préférable de conserver l'état de l'application dans un seul emplacement avec
+Redux. Il existe des exceptions lorsque des composants individuels peuvent avoir un état local qui leur est
+propre. Enfin, étant donné que Redux n'est pas conçu pour fonctionner avec React prêt à l'emploi, vous devez
+utiliser le package `react-redux`. Il vous permet de faire passer `state` et `dispatch` de Redux à vos composants
+React en tant que `props`.<br />
+Au cours des prochains défis, vous allez d'abord créer un composant React simple qui vous permet de saisir
+de nouveaux messages texte. Ceux-ci sont ajoutés à un tableau qui s'affiche dans la vue. Cela devrait être
+une belle revue de ce que vous avez appris dans les leçons React. Ensuite, vous allez créer un magasin Redux
+et des actions qui gèrent l'état du tableau de messages. Enfin, vous utiliserez `react-redux` pour connecter
+le magasin Redux à votre composant, extrayant ainsi l'état local dans le magasin Redux.
+
+:::info instructions
+Commencez avec un composant `DisplayMessages`. Ajoutez un constructeur à ce composant et initialisez-le avec
+un état qui a deux propriétés : `input`, qui est définie sur une chaîne vide, et `messages`, qui est définie
+sur un tableau vide.
+:::
+
+:::tip missions
+- Le composant `DisplayMessages` doit rendre un élément `div` vide.
+- Le constructeur `DisplayMessages` doit être appelé correctement avec `super`, en passant des `props`.
+- Le composant `DisplayMessages` doit avoir un état initial égal à `{input: "", messages: []}`.
+:::
+
+```jsx title="jsx"
+class DisplayMessages extends React.Component {
+  // Changer le code sous cette ligne
+  constructor(props) {
+    super(props);
+    this.state = {
+      input: "",
+      messages: []
+    };
+  }
+  // Changer le code au-dessus de cette ligne
+  render() {
+    return <div />
+  }
+};
+```
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-getting-started-with-react-redux/301430)
+
+-----
+
+
+
+## 2. Gérer l'état local d'abord
+
+[Learn React and Redux: Manage State Locally First | freeCodeCamp.org](https://www.freecodecamp.org/learn/front-end-libraries/react-and-redux/manage-state-locally-first)
+
+Ici, vous allez terminer la création du composant `DisplayMessages`.
+
+:::info instructions
+Tout d'abord, dans la méthode `render()`, demandez au composant de rendre un élément `input`, un élément `button`
+et un élément `ul`. Lorsque l'élément `input` change, il doit déclencher une méthode `handleChange()`.
+En outre, l'élément `input` doit rendre la valeur de `input` qui est dans l'état du composant. L'élément
+`button` doit déclencher une méthode `submitMessage()` quand on clique dessus.<br />
+Deuxièmement, écrivez ces deux méthodes. La méthode `handleChange()` doit mettre à jour l'`input` avec ce
+que l'utilisateur tape. La méthode `submitMessage()` doit concaténer le message actuel (stocké dans `input`)
+au tableau de `messages` dans l'état local et effacer la valeur de l'`input`.<br />
+Enfin, utilisez `ul` pour mapper le tableau de `messages` et le restituer à l'écran sous forme de liste d'éléments `li`.
+:::
+
+:::tip missions
+- Le composant `DisplayMessages` doit s'initialiser avec un état égal à `{input: "", messages: []}`.
+- Le composant `DisplayMessages` doit rendre un `div` contenant un élément `h2`, un élément `button`, un élément `ul`
+et des éléments `li` en tant qu'enfants.
+- `.map` doit être utilisé sur le tableau des `messages`.
+- L'élément `input` doit rendre la valeur de `input` dans l'état local.
+- L'appel de la méthode `handleChange` doit mettre à jour la valeur `input` dans `state` sur l'entrée actuelle.
+- Cliquez sur le bouton `Add message` pour appeler la méthode `submitMessage` qui doit ajouter l'`input` actuelle au tableau `messages` dans l'état.
+- La méthode `submitMessage` doit effacer l'entrée actuelle.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```jsx title="jsx"
+class DisplayMessages extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      input: '',
+      messages: []
+    }
+  }
+  // Ajoutez ici les méthodes handleChange() et submitMessage()
+  handleChange(event) {
+    this.setState({
+      input: event.target.value,
+      messages: this.state.messages
+    });
+  }
+  submitMessage() {
+    this.setState({
+      input: '',
+      messages: [...this.state.messages, this.state.input]
+    });
+  }
+  render() {
+    return (
+      <div>
+        <h2>Type in a new Message:</h2>
+        { /* Rendre input, button et ul en dessous de cette ligne */ }
+        <input onChange={this.handleChange.bind(this)} value={this.state.input} />
+        <button onClick={this.submitMessage.bind(this)}>Add message</button>
+        <ul>
+            {this.state.messages.map((item, i)=>{
+            return <li key={i}>{item}</li>
+          })}
+        </ul>
+        { /* Changer le code au-dessus de cette ligne */ }
+      </div>
+    );
+  }
+};
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-React-and-Redux-02a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-manage-state-locally-first/301431)
+
+-----
+

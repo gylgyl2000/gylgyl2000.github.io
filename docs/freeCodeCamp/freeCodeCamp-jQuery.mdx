@@ -1,0 +1,1306 @@
+---
+id: freeCodeCamp-jQuery-fr
+title: jQuery
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+
+## Introduction à jQuery
+
+jQuery est l'une des nombreuses bibliothèques pour JavaScript. Il est conçu pour simplifier les scripts effectués côté client. La caractéristique la plus reconnaissable de jQuery est sa syntaxe de signe dollar (`$`). Avec lui, vous pouvez facilement manipuler des éléments, créer des animations et gérer les événements d'entrée.
+
+-----
+
+
+
+
+
+## 1. Découvrez comment fonctionnent les balises `script` et `document ready`
+
+[Learn jQuery: Learn How Script Tags and Document Ready Work | freeCodeCamp.org](https://www.freecodecamp.org/learn/front-end-libraries/jquery/learn-how-script-tags-and-document-ready-work)
+
+Nous sommes maintenant prêts à apprendre jQuery, l'outil JavaScript le plus populaire de tous les temps.<br />
+Avant de pouvoir commencer à utiliser jQuery, nous devons ajouter des éléments à notre HTML.<br />
+Tout d'abord, ajoutez un élément `script` en haut de votre page. Assurez-vous de le fermer sur la ligne suivante.<br />
+Votre navigateur exécutera tout JavaScript à l'intérieur d'un élément `script`, y compris jQuery.
+
+:::info instructions
+Dans votre élément `script`, ajoutez ce code : `$(document).ready(function() {` à votre `script`. Puis fermez-le sur la ligne suivante (toujours à l'intérieur de votre élément `script`) avec : `});`.<br />
+Nous en apprendrons plus sur les `functions` plus tard. La chose importante à savoir est que le code que vous insérez dans cette `function` s'exécutera dès que votre navigateur aura chargé votre page.<br />
+Ceci est important car sans votre `document ready function`, votre code peut s'exécuter avant que votre HTML ne soit rendu, ce qui provoquerait des bogues.
+:::
+
+:::tip missions
+- Vous devez créer un élément `script` en vous assurant qu'il est valide et qu'il comporte une balise de fermeture.
+- Vous devez ajouter `$(document).ready(function() {` au début de votre élément `script`.
+- Vous devriez fermer votre fonction `$(document).ready(function(){` avec `});`.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<script>
+  $(document).ready(function() {
+  });
+</script>
+<!-- Only change code above this line -->
+
+<div class="container-fluid">
+  <h3 class="text-primary text-center">jQuery Playground</h3>
+  <div class="row">
+    <div class="col-xs-6">
+      <h4>#left-well</h4>
+      <div class="well" id="left-well">
+        <button class="btn btn-default target" id="target1">#target1</button>
+        <button class="btn btn-default target" id="target2">#target2</button>
+        <button class="btn btn-default target" id="target3">#target3</button>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <h4>#right-well</h4>
+      <div class="well" id="right-well">
+        <button class="btn btn-default target" id="target4">#target4</button>
+        <button class="btn btn-default target" id="target5">#target5</button>
+        <button class="btn btn-default target" id="target6">#target6</button>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-jQuery-01a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-learn-how-script-tags-and-document-ready-work/18224)
+
+-----
+
+
+
+
+
+
+## 2. Cibler des éléments HTML avec des sélecteurs à l'aide de jQuery
+
+[Learn jQuery: Target HTML Elements with Selectors Using jQuery | freeCodeCamp.org](https://www.freecodecamp.org/learn/front-end-libraries/jquery/target-html-elements-with-selectors-using-jquery)
+
+Nous avons maintenant un `document ready function`.<br />
+Écrivons maintenant notre première instruction jQuery. Toutes les fonctions jQuery commencent par un `$`, généralement appelé opérateur de signe dollar ou bling.<br />
+jQuery sélectionne souvent un élément HTML avec un sélecteur, puis fait quelque chose sur cet élément.
+
+:::info instructions
+Faisons rebondir tous vos éléments `button`. Ajoutez simplement ce code dans votre `document ready function` :
+
+`$("button").addClass("animated bounce");`
+
+Notez que nous avons déjà inclus la bibliothèque jQuery et la bibliothèque Animate.css en arrière-plan afin que vous puissiez les utiliser dans l'éditeur. Vous utilisez donc jQuery pour appliquer la classe `bounce` Animate.css à vos éléments `button`.
+:::
+
+:::tip missions
+- Vous devez utiliser la fonction jQuery `addClass()` pour donner des classes `animated` et `bounce` sur vos éléments `button`.
+- Vous ne devez utiliser jQuery que pour ajouter ces classes à l'élément.
+- Votre code jQuery doit être dans la fonction `$(document).ready();`.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<script>
+  $(document).ready(function() {
+    $("button").addClass("animated bounce");
+  });
+</script>
+
+<div class="container-fluid">
+  <h3 class="text-primary text-center">jQuery Playground</h3>
+  <div class="row">
+    <div class="col-xs-6">
+      <h4>#left-well</h4>
+      <div class="well" id="left-well">
+        <button class="btn btn-default target" id="target1">#target1</button>
+        <button class="btn btn-default target" id="target2">#target2</button>
+        <button class="btn btn-default target" id="target3">#target3</button>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <h4>#right-well</h4>
+      <div class="well" id="right-well">
+        <button class="btn btn-default target" id="target4">#target4</button>
+        <button class="btn btn-default target" id="target5">#target5</button>
+        <button class="btn btn-default target" id="target6">#target6</button>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-jQuery-02a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-target-html-elements-with-selectors-using-jquery/18319)
+
+:::note guide : Cibler des éléments HTML avec des sélecteurs à l'aide de jQuery
+
+### Explication du problème
+- Les sélecteurs jQuery vous permettent de sélectionner et de manipuler des éléments HTML.
+- Ces sélecteurs commencent par le signe dollar et les parenthèses : `$()`.
+- Vous pouvez « rechercher » (ou sélectionner) des éléments HTML en fonction de leur nom, identifiant, classes, types, attributs, valeurs d'attributs et bien plus encore.
+
+#### Exemple :
+```html
+// Vous pouvez sélectionner tous les éléments <p> sur une page comme celle-ci =  $("p")
+$(document).ready(function() {
+  $("button").click(function() {
+    $("p").hide();
+  });
+});
+```
+
+:::
+
+-----
+
+
+
+## 3. Éléments cibles par classe à l'aide de jQuery
+
+[Learn jQuery: Target Elements by Class Using jQuery | freeCodeCamp.org](https://www.freecodecamp.org/learn/front-end-libraries/jquery/target-elements-by-class-using-jquery)
+
+Vous voyez comment nous avons fait rebondir tous vos éléments `button` ? Nous les avons sélectionnés avec `$("button")`, puis nous leur avons ajouté quelques classes CSS avec `.addClass("animated bounce");`.<br />
+Vous venez d'utiliser la fonction `.addClass()` de jQuery, qui vous permet d'ajouter des classes aux éléments.<br />
+Tout d'abord, ciblons bien vos éléments `div` avec la classe en utilisant le sélecteur `$(".well")`.<br />
+Notez que, tout comme avec les déclarations CSS, vous tapez un `.` avant le nom de la classe.<br />
+Ensuite, utilisez la fonction `.addClass()` de jQuery pour ajouter les classes `animated` et `shake`.
+
+:::info instructions
+Faites trembler tous les éléments avec la classe `text-primary` en ajoutant ce qui suit à votre `document ready function` :
+
+`$(".text-primary").addClass("animated shake");`
+:::
+
+:::tip missions
+- Vous devez utiliser la fonction jQuery `addClass()` pour donner les classes `animated` et `shake` à tous vos éléments avec la classe `well`.
+- Vous ne devez utiliser jQuery que pour ajouter ces classes à l'élément.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<script>
+  $(document).ready(function() {
+    $(".well").addClass("animated bounce");
+    $(".well").addClass("shake");
+  });
+</script>
+
+<div class="container-fluid">
+  <h3 class="text-primary text-center">jQuery Playground</h3>
+  <div class="row">
+    <div class="col-xs-6">
+      <h4>#left-well</h4>
+      <div class="well" id="left-well">
+        <button class="btn btn-default target" id="target1">#target1</button>
+        <button class="btn btn-default target" id="target2">#target2</button>
+        <button class="btn btn-default target" id="target3">#target3</button>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <h4>#right-well</h4>
+      <div class="well" id="right-well">
+        <button class="btn btn-default target" id="target4">#target4</button>
+        <button class="btn btn-default target" id="target5">#target5</button>
+        <button class="btn btn-default target" id="target6">#target6</button>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-jQuery-03a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-target-elements-by-class-using-jquery/18316)
+
+-----
+
+
+
+## 4. Éléments cibles par identifiant à l'aide de jQuery
+
+[Learn jQuery: Target Elements by id Using jQuery | freeCodeCamp.org](https://www.freecodecamp.org/learn/front-end-libraries/jquery/target-elements-by-id-using-jquery)
+
+Vous pouvez également cibler des éléments par leurs attributs id.
+
+:::info instructions
+Commencez par cibler votre élément `button` avec l'id `target3` en utilisant le sélecteur `$("#target3")`.<br />
+Notez que, tout comme avec les déclarations CSS, vous tapez un `#` avant le nom de l'identifiant.<br />
+Utilisez ensuite la fonction `.addClass()` de jQuery pour ajouter les classes `animated` et `fadeOut`.<br />
+Voici comment faire disparaître l'élément `button` avec l'id `target6` :
+
+`$("#target6").addClass("animated fadeOut")`.
+
+:::
+
+:::tip missions
+- Vous devez sélectionner l'élément `button` avec l'`id` de `target3` et utiliser la fonction jQuery `addClass()` pour lui donner la classe `animated`.
+- Vous devez cibler l'élément avec l'`id` `target3` et utiliser la fonction jQuery `addClass()` pour lui donner la classe `fadeOut`.
+- Vous ne devez utiliser jQuery que pour ajouter ces classes à l'élément.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<script>
+  $(document).ready(function() {
+    $("button").addClass("animated bounce");
+    $(".well").addClass("animated shake");
+    $("#target3").addClass("fadeOut");
+  });
+</script>
+
+<div class="container-fluid">
+  <h3 class="text-primary text-center">jQuery Playground</h3>
+  <div class="row">
+    <div class="col-xs-6">
+      <h4>#left-well</h4>
+      <div class="well" id="left-well">
+        <button class="btn btn-default target" id="target1">#target1</button>
+        <button class="btn btn-default target" id="target2">#target2</button>
+        <button class="btn btn-default target" id="target3">#target3</button>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <h4>#right-well</h4>
+      <div class="well" id="right-well">
+        <button class="btn btn-default target" id="target4">#target4</button>
+        <button class="btn btn-default target" id="target5">#target5</button>
+        <button class="btn btn-default target" id="target6">#target6</button>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-jQuery-04a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-target-elements-by-id-using-jquery/18317)
+
+-----
+
+
+
+## 5. Supprimer vos fonctions jQuery
+
+[Learn jQuery: Delete Your jQuery Functions | freeCodeCamp.org](https://www.freecodecamp.org/learn/front-end-libraries/jquery/delete-your-jquery-functions)
+
+Ces animations étaient cool au début, mais maintenant elles deviennent un peu distrayantes.
+
+:::info instructions
+Supprimez ces trois fonctions jQuery de votre `document ready function`, mais laissez votre `document ready function` elle-même intacte.
+:::
+
+:::tip missions
+- Les trois fonctions jQuery doivent être supprimées de votre `document ready function`.
+- Vous devez laisser votre élément `script` intact.
+- Vous devriez laisser votre `$(document).ready(function() {` au début de votre élément de script.
+- Vous devez laisser la fermeture de votre "document ready function" `})` intacte.
+- Vous devez laisser votre balise de fermeture d'élément `script` intacte.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<script>
+  $(document).ready(function() {
+    
+  });
+</script>
+
+<div class="container-fluid">
+  <h3 class="text-primary text-center">jQuery Playground</h3>
+  <div class="row">
+    <div class="col-xs-6">
+      <h4>#left-well</h4>
+      <div class="well" id="left-well">
+        <button class="btn btn-default target" id="target1">#target1</button>
+        <button class="btn btn-default target" id="target2">#target2</button>
+        <button class="btn btn-default target" id="target3">#target3</button>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <h4>#right-well</h4>
+      <div class="well" id="right-well">
+        <button class="btn btn-default target" id="target4">#target4</button>
+        <button class="btn btn-default target" id="target5">#target5</button>
+        <button class="btn btn-default target" id="target6">#target6</button>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-jQuery-05a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-delete-your-jquery-functions/17561)
+
+-----
+
+
+
+## 6. Cibler le même élément avec plusieurs sélecteurs jQuery
+
+[Learn jQuery: Target the Same Element with Multiple jQuery Selectors | freeCodeCamp.org](https://www.freecodecamp.org/learn/front-end-libraries/jquery/target-the-same-element-with-multiple-jquery-selectors)
+
+Vous connaissez maintenant trois manières de cibler les éléments : par type : `$("button")`, par classe : `$(".btn")` et par id : `$("#target1")`.<br />
+Bien qu'il soit possible d'ajouter plusieurs classes en un seul appel `.addClass()`, ajoutons-les au même élément de trois manières différentes.
+
+
+:::info instructions
+En utilisant `.addClass()`, ajoutez une seule classe à la fois au même élément, de *trois manières différentes* :
+- Ajoutez la classe `animated` à tous les éléments avec le type `button`.
+- Ajoutez la classe `shake` à tous les boutons avec la classe `.btn`.
+- Ajoutez la classe `btn-primary` au bouton avec l'ID `#target1`.
+
+**Remarque :** Vous ne devez cibler qu'un seul élément et n'ajouter qu'une seule classe à la fois. Au total, vos trois sélecteurs individuels finiront par ajouter les trois classes `shake`, `animated` et `btn-primary` à `#target1`.
+:::
+
+:::tip missions
+- Votre code doit utiliser le sélecteur `$("button")`.
+- Votre code doit utiliser le sélecteur `$(".btn")`.
+- Votre code doit utiliser le sélecteur `$("#target1")`.
+- Vous ne devez ajouter qu'une seule classe avec chacun de vos trois sélecteurs.
+- Votre élément `#target1` doit avoir les classes `animated`‚ `shake` et `btn-primary`.
+- Vous ne devez utiliser jQuery que pour ajouter ces classes à l'élément.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<script>
+  $(document).ready(function() {
+    $("button").addClass("animated");
+    $(".btn").addClass("shake");
+    $("#target1").addClass("btn-primary");
+  });
+</script>
+
+<div class="container-fluid">
+  <h3 class="text-primary text-center">jQuery Playground</h3>
+  <div class="row">
+    <div class="col-xs-6">
+      <h4>#left-well</h4>
+      <div class="well" id="left-well">
+        <button class="btn btn-default target" id="target1">#target1</button>
+        <button class="btn btn-default target" id="target2">#target2</button>
+        <button class="btn btn-default target" id="target3">#target3</button>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <h4>#right-well</h4>
+      <div class="well" id="right-well">
+        <button class="btn btn-default target" id="target4">#target4</button>
+        <button class="btn btn-default target" id="target5">#target5</button>
+        <button class="btn btn-default target" id="target6">#target6</button>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-jQuery-06a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-target-the-same-element-with-multiple-jquery-selectors/18322)
+
+-----
+
+
+
+## 7. Supprimer des classes d'un élément avec jQuery
+
+[Learn jQuery: Remove Classes from an Element with jQuery | freeCodeCamp.org](https://www.freecodecamp.org/learn/front-end-libraries/jquery/remove-classes-from-an-element-with-jquery)
+
+De la même manière que vous pouvez ajouter des classes à un élément avec la fonction `addClass()` de jQuery, vous pouvez les supprimer avec la fonction `removeClass()` de jQuery.<br />
+Voici comment procéder pour un bouton spécifique :
+
+`$("#target2").removeClass("btn-default");`
+
+:::info instructions
+Supprimons la classe `btn-default` de tous nos éléments `button`.
+:::
+
+:::tip missions
+- La classe `btn-default` doit être supprimée de tous vos éléments button.
+- Vous ne devez utiliser jQuery que pour supprimer cette classe de l'élément.
+- Vous ne devez supprimer que la classe `btn-default`.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<script>
+  $(document).ready(function() {
+    $("button").addClass("animated bounce");
+    $(".well").addClass("animated shake");
+    $("#target3").addClass("animated fadeOut");
+    $("button").removeClass("btn-default"); // Cibler les éléments avec la balise 'button' et supprimez la classe btn-default.
+  });
+</script>
+
+<div class="container-fluid">
+  <h3 class="text-primary text-center">jQuery Playground</h3>
+  <div class="row">
+    <div class="col-xs-6">
+      <h4>#left-well</h4>
+      <div class="well" id="left-well">
+        <button class="btn btn-default target" id="target1">#target1</button>
+        <button class="btn btn-default target" id="target2">#target2</button>
+        <button class="btn btn-default target" id="target3">#target3</button>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <h4>#right-well</h4>
+      <div class="well" id="right-well">
+        <button class="btn btn-default target" id="target4">#target4</button>
+        <button class="btn btn-default target" id="target5">#target5</button>
+        <button class="btn btn-default target" id="target6">#target6</button>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-jQuery-07a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-remove-classes-from-an-element-with-jquery/18264)
+
+-----
+
+
+
+## 8. Changer le CSS d'un élément à l'aide de jQuery
+
+[Learn jQuery: Change the CSS of an Element Using jQuery | freeCodeCamp.org](https://www.freecodecamp.org/learn/front-end-libraries/jquery/change-the-css-of-an-element-using-jquery)
+
+Nous pouvons également changer le CSS d'un élément HTML directement avec jQuery.<br />
+jQuery a une fonction appelée `.css()` qui vous permet de changer le CSS d'un élément.<br />
+Voici comment changer sa couleur en bleu :
+
+`$("#target1").css("color", "blue");`
+
+Ceci est légèrement différent d'une déclaration CSS normale, car la propriété CSS et sa valeur sont entre guillemets et séparées par une virgule au lieu de deux-points.
+
+:::info instructions
+Supprimez vos sélecteurs jQuery, laissant `document ready function` vide.<br />
+Sélectionnez `target1` et changez sa couleur en rouge.
+:::
+
+:::tip missions
+- Votre élément `target1` doit avoir du texte rouge.
+- Vous ne devez utiliser jQuery que pour ajouter ces classes à l'élément.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<script>
+  $(document).ready(function() {
+    $("#target1").css("color", "red"); // Sélectionne l'élément avec un identifiant de #target1 et change sa couleur de texte en rouge
+  });
+</script>
+
+<div class="container-fluid">
+  <h3 class="text-primary text-center">jQuery Playground</h3>
+  <div class="row">
+    <div class="col-xs-6">
+      <h4>#left-well</h4>
+      <div class="well" id="left-well">
+        <button class="btn btn-default target" id="target1">#target1</button>
+        <button class="btn btn-default target" id="target2">#target2</button>
+        <button class="btn btn-default target" id="target3">#target3</button>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <h4>#right-well</h4>
+      <div class="well" id="right-well">
+        <button class="btn btn-default target" id="target4">#target4</button>
+        <button class="btn btn-default target" id="target5">#target5</button>
+        <button class="btn btn-default target" id="target6">#target6</button>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-jQuery-08a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-change-the-css-of-an-element-using-jquery/16776)
+
+-----
+
+
+
+## 9. Désactiver un élément à l'aide de jQuery
+
+[Learn jQuery: Disable an Element Using jQuery | freeCodeCamp.org](https://www.freecodecamp.org/learn/front-end-libraries/jquery/disable-an-element-using-jquery)
+
+Vous pouvez également modifier les propriétés non-CSS des éléments HTML avec jQuery. Par exemple, vous pouvez désactiver les boutons.<br />
+Lorsque vous désactivez un bouton, il devient grisé et ne peut plus être cliqué.<br />
+jQuery a une fonction appelée `.prop()` qui vous permet d'ajuster les propriétés des éléments.<br />
+Voici comment désactiver tous les boutons :
+
+`$("button").prop("disabled", true);`
+
+:::info instructions
+Désactivez uniquement le bouton `target1`.
+:::
+
+:::tip missions
+- Votre bouton `target1` doit être désactivé.
+- Aucun autre bouton ne doit être désactivé.
+- Vous ne devez utiliser jQuery que pour ajouter ces classes à l'élément.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<script>
+  $(document).ready(function() {
+    $("#target1").css("color", "red");
+    $("#target1").prop("disabled", true);
+  });
+</script>
+
+<div class="container-fluid">
+  <h3 class="text-primary text-center">jQuery Playground</h3>
+  <div class="row">
+    <div class="col-xs-6">
+      <h4>#left-well</h4>
+      <div class="well" id="left-well">
+        <button class="btn btn-default target" id="target1">#target1</button>
+        <button class="btn btn-default target" id="target2">#target2</button>
+        <button class="btn btn-default target" id="target3">#target3</button>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <h4>#right-well</h4>
+      <div class="well" id="right-well">
+        <button class="btn btn-default target" id="target4">#target4</button>
+        <button class="btn btn-default target" id="target5">#target5</button>
+        <button class="btn btn-default target" id="target6">#target6</button>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-jQuery-09a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-disable-an-element-using-jquery/17563)
+
+-----
+
+
+
+## 10. Modifier le texte à l'intérieur d'un élément à l'aide de jQuery
+
+[Learn jQuery: Change Text Inside an Element Using jQuery | freeCodeCamp.org](https://www.freecodecamp.org/learn/front-end-libraries/jquery/change-text-inside-an-element-using-jquery)
+
+En utilisant jQuery, vous pouvez modifier le texte entre les balises de début et de fin d'un élément. Vous pouvez même modifier le balisage HTML.<br />
+jQuery a une fonction appelée `.html()` qui vous permet d'ajouter des balises HTML et du texte dans un élément. Tout contenu précédemment dans l'élément sera complètement remplacé par le contenu que vous fournissez à l'aide de cette fonction.<br />
+Voici comment réécrire et souligner le texte de notre titre :
+
+`$("h3").html("<em>jQuery Playground</em>");`
+
+jQuery a également une fonction similaire appelée `.text()` qui ne modifie que le texte sans ajouter de balises. En d'autres termes, cette fonction n'évaluera aucune balise HTML qui lui est transmise, mais la traitera à la place comme le texte par lequel vous souhaitez remplacer le contenu existant.<br />
+:::info instructions
+Changez le bouton avec l'id `target4` en mettant en valeur son texte.
+[Consultez notre article d'actualité pour `<em>`](https://www.freecodecamp.org/news/html-elements-explained-what-are-html-tags/#em-element) pour découvrir la différence entre `<i>` et `<em>` et leurs utilisations.<br />
+Notez que si la balise `<i>` a traditionnellement été utilisée pour mettre en valeur le texte, elle a depuis été adoptée pour être utilisée comme balise pour les icônes. La balise `<em>` est maintenant largement acceptée comme balise pour l'emphase. L'un ou l'autre fonctionnera pour ce défi.
+:::
+
+:::tip missions
+- Vous devez mettre en valeur le texte de votre bouton `target4` en ajoutant des balises HTML.
+- Sinon, le texte devrait rester inchangé.
+- Vous ne devez modifier aucun autre texte.
+- Vous devriez utiliser `.html()` et non `.text()`.
+- Vous devez sélectionner le `button id="target4"` avec jQuery.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<script>
+  $(document).ready(function() {
+    $("#target1").css("color", "red");
+    $("#target4").html("<em>#target4</em>");
+  });
+</script>
+
+<div class="container-fluid">
+  <h3 class="text-primary text-center">jQuery Playground</h3>
+  <div class="row">
+    <div class="col-xs-6">
+      <h4>#left-well</h4>
+      <div class="well" id="left-well">
+        <button class="btn btn-default target" id="target1">#target1</button>
+        <button class="btn btn-default target" id="target2">#target2</button>
+        <button class="btn btn-default target" id="target3">#target3</button>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <h4>#right-well</h4>
+      <div class="well" id="right-well">
+        <button class="btn btn-default target" id="target4">#target4</button>
+        <button class="btn btn-default target" id="target5">#target5</button>
+        <button class="btn btn-default target" id="target6">#target6</button>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-jQuery-10a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-change-text-inside-an-element-using-jquery/16773)
+
+-----
+
+
+
+## 11. Supprimer un élément à l'aide de jQuery
+
+[Learn jQuery: Remove an Element Using jQuery | freeCodeCamp.org](https://www.freecodecamp.org/learn/front-end-libraries/jquery/remove-an-element-using-jquery)
+
+Supprimons maintenant un élément HTML de votre page en utilisant jQuery.<br />
+jQuery a une fonction appelée `.remove()` qui supprimera complètement un élément HTML.
+
+:::info instructions
+Supprimez l'élément `target4` de la page à l'aide de la fonction `.remove()`.
+:::
+
+:::tip missions
+- Vous devez utiliser jQuery pour supprimer votre élément `target4` de votre page.
+- Vous ne devez utiliser que jQuery pour supprimer cet élément.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<script>
+  $(document).ready(function() {
+    $("#target1").css("color", "red");
+    $("#target1").prop("disabled", true);
+    $("#target4").remove();
+  });
+</script>
+
+<div class="container-fluid">
+  <h3 class="text-primary text-center">jQuery Playground</h3>
+  <div class="row">
+    <div class="col-xs-6">
+      <h4>#left-well</h4>
+      <div class="well" id="left-well">
+        <button class="btn btn-default target" id="target1">#target1</button>
+        <button class="btn btn-default target" id="target2">#target2</button>
+        <button class="btn btn-default target" id="target3">#target3</button>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <h4>#right-well</h4>
+      <div class="well" id="right-well">
+        <button class="btn btn-default target" id="target4">#target4</button>
+        <button class="btn btn-default target" id="target5">#target5</button>
+        <button class="btn btn-default target" id="target6">#target6</button>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-jQuery-11a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-remove-an-element-using-jquery/18262)
+
+-----
+
+
+
+## 12. Utilisez `appendTo` pour déplacer des éléments avec jQuery
+
+[Learn jQuery: Use appendTo to Move Elements with jQuery | freeCodeCamp.org](https://www.freecodecamp.org/learn/front-end-libraries/jquery/use-appendto-to-move-elements-with-jquery)
+
+Essayons maintenant de déplacer des éléments d'une division à une autre.<br />
+jQuery a une fonction appelée `appendTo()` qui vous permet de sélectionner des éléments HTML et de les ajouter à un autre élément.<br />
+Par exemple, si nous voulions déplacer `target4` de notre puits droit vers notre puits gauche, nous utiliserions :
+
+`$("#target4").appendTo("#left-well");`
+
+:::info instructions
+Déplacez votre élément `target2` de votre puits gauche vers votre puits droit.
+:::
+
+:::tip missions
+- Votre élément `target2` ne doit pas être à l'intérieur de votre puits gauche.
+- Votre élément `target2` doit être à l'intérieur de votre puits droit.
+- Vous ne devez utiliser que jQuery pour déplacer ces éléments.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<script>
+  $(document).ready(function() {
+    $("#target1").css("color", "red");
+    $("#target1").prop("disabled", true);
+    $("#target4").remove();
+    $("#target2").appendTo("#right-well");
+  });
+</script>
+
+<div class="container-fluid">
+  <h3 class="text-primary text-center">jQuery Playground</h3>
+  <div class="row">
+    <div class="col-xs-6">
+      <h4>#left-well</h4>
+      <div class="well" id="left-well">
+        <button class="btn btn-default target" id="target1">#target1</button>
+        <button class="btn btn-default target" id="target2">#target2</button>
+        <button class="btn btn-default target" id="target3">#target3</button>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <h4>#right-well</h4>
+      <div class="well" id="right-well">
+        <button class="btn btn-default target" id="target4">#target4</button>
+        <button class="btn btn-default target" id="target5">#target5</button>
+        <button class="btn btn-default target" id="target6">#target6</button>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-jQuery-12a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-use-appendto-to-move-elements-with-jquery/18340)
+
+-----
+
+
+
+## 13. Cloner un élément à l'aide de jQuery
+
+[Learn jQuery: Clone an Element Using jQuery | freeCodeCamp.org](https://www.freecodecamp.org/learn/front-end-libraries/jquery/clone-an-element-using-jquery)
+
+En plus de déplacer des éléments, vous pouvez également les copier d'un endroit à un autre.<br />
+jQuery a une fonction appelée `clone()` qui fait une copie d'un élément.<br />
+Par exemple, si nous voulions copier `target2` de notre puits gauche vers notre puits droit, nous utiliserions :
+
+`$("#target2").clone().appendTo("#right-well");`
+
+Avez-vous remarqué que cela implique de coller deux fonctions jQuery ensemble ? C'est ce qu'on appelle *le chaînage de fonctions* et c'est un moyen pratique de faire les choses avec jQuery.
+:::info instructions
+Clonez votre élément `target5` et ajoutez-le à votre `leff-well`.
+:::
+
+:::tip missions
+- Votre élément `target5` doit être à l'intérieur de votre `right-well`.
+- Une copie de votre élément `target5` doit également être à l'intérieur de votre `left-well`.
+- Vous ne devez utiliser jQuery que pour déplacer ces éléments.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<script>
+  $(document).ready(function() {
+    $("#target1").css("color", "red");
+    $("#target1").prop("disabled", true);
+    $("#target4").remove();
+    $("#target2").appendTo("#right-well");
+    $("#target5").clone().appendTo("#left-well");
+
+  });
+</script>
+
+<div class="container-fluid">
+  <h3 class="text-primary text-center">jQuery Playground</h3>
+  <div class="row">
+    <div class="col-xs-6">
+      <h4>#left-well</h4>
+      <div class="well" id="left-well">
+        <button class="btn btn-default target" id="target1">#target1</button>
+        <button class="btn btn-default target" id="target2">#target2</button>
+        <button class="btn btn-default target" id="target3">#target3</button>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <h4>#right-well</h4>
+      <div class="well" id="right-well">
+        <button class="btn btn-default target" id="target4">#target4</button>
+        <button class="btn btn-default target" id="target5">#target5</button>
+        <button class="btn btn-default target" id="target6">#target6</button>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-jQuery-13a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-clone-an-element-using-jquery/16780)
+
+-----
+
+
+
+## 14. Cibler le parent d'un élément à l'aide de jQuery
+
+[Learn jQuery: Target the Parent of an Element Using jQuery | freeCodeCamp.org](https://www.freecodecamp.org/learn/front-end-libraries/jquery/target-the-parent-of-an-element-using-jquery)
+
+Chaque élément HTML a un élément `parent` dont il `inherit` des propriétés.<br />
+Par exemple, votre élément `jQuery Playground` `h3` a l'élément parent de `<div class="container-fluid">`, qui lui-même a le parent `body`.<br />
+jQuery a une fonction appelée `parent()` qui vous permet d'accéder au parent de l'élément que vous avez sélectionné.<br />
+Voici un exemple de la façon dont vous utiliseriez la fonction `parent()` si vous vouliez donner à l'élément parent de l'élément `left-well` une couleur d'arrière-plan bleu :
+
+`$("#left-well").parent().css("background-color", "blue")`
+
+:::info instructions
+Donnez au parent de l'élément `#target1` une couleur d'arrière-plan rouge.
+:::
+
+:::tip missions
+- Votre élément `left-well` doit avoir un fond rouge.
+- Vous devez utiliser la fonction `.parent()` pour modifier cet élément.
+- La méthode `.parent()` doit être appelée sur l'élément `#target1`.
+- Vous ne devez utiliser que jQuery pour ajouter ces classes à l'élément.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<script>
+  $(document).ready(function() {
+    $("#target1").css("color", "red");
+    $("#target1").prop("disabled", true);
+    $("#target4").remove();
+    $("#target2").appendTo("#right-well");
+    $("#target5").clone().appendTo("#left-well");
+    $("#target1").parent().css("background-color", "red")
+  });
+</script>
+
+<body>
+  <div class="container-fluid">
+    <h3 class="text-primary text-center">jQuery Playground</h3>
+    <div class="row">
+      <div class="col-xs-6">
+        <h4>#left-well</h4>
+        <div class="well" id="left-well">
+          <button class="btn btn-default target" id="target1">#target1</button>
+          <button class="btn btn-default target" id="target2">#target2</button>
+          <button class="btn btn-default target" id="target3">#target3</button>
+        </div>
+      </div>
+      <div class="col-xs-6">
+        <h4>#right-well</h4>
+        <div class="well" id="right-well">
+          <button class="btn btn-default target" id="target4">#target4</button>
+          <button class="btn btn-default target" id="target5">#target5</button>
+          <button class="btn btn-default target" id="target6">#target6</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-jQuery-14a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-target-the-parent-of-an-element-using-jquery/18321)
+
+-----
+
+
+
+## 15. Cibler les enfants d'un élément à l'aide de jQuery
+
+[Learn jQuery: Target the Children of an Element Using jQuery | freeCodeCamp.org](https://www.freecodecamp.org/learn/front-end-libraries/jquery/target-the-children-of-an-element-using-jquery)
+
+Lorsque les éléments HTML sont placés un niveau sous un autre, ils sont appelés enfants de cet élément. Par exemple, les éléments de bouton dans ce défi avec le texte  "#target1", "#target2", et "#target3" sont tous des enfants de l'élément `<div class="well" id="left-well">`.<br />
+jQuery a une fonction appelée `children()` qui vous permet d'accéder aux enfants de l'élément que vous avez sélectionné.<br />
+Voici un exemple de la façon dont vous utiliseriez la fonction `children()` pour donner aux enfants de votre élément `left-well` la couleur bleue :
+
+`$("#left-well").children().css("color", "blue")`
+
+:::info instructions
+Donnez à tous les enfants de votre élément `right-well` la couleur orange.
+:::
+
+:::tip missions
+- Tous les enfants de `#right-well` doivent avoir un texte orange.
+- Vous devez utiliser la fonction `children()` pour modifier ces éléments.
+- Vous ne devez utiliser que jQuery pour ajouter ces classes à l'élément.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<script>
+  $(document).ready(function() {
+    $("#target1").css("color", "red");
+    $("#target1").prop("disabled", true);
+    $("#target4").remove();
+    $("#target2").appendTo("#right-well");
+    $("#target5").clone().appendTo("#left-well");
+    $("#target1").parent().css("background-color", "red");
+    $("#right-well").children().css("color", "orange")
+  });
+</script>
+
+<div class="container-fluid">
+  <h3 class="text-primary text-center">jQuery Playground</h3>
+  <div class="row">
+    <div class="col-xs-6">
+      <h4>#left-well</h4>
+      <div class="well" id="left-well">
+        <button class="btn btn-default target" id="target1">#target1</button>
+        <button class="btn btn-default target" id="target2">#target2</button>
+        <button class="btn btn-default target" id="target3">#target3</button>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <h4>#right-well</h4>
+      <div class="well" id="right-well">
+        <button class="btn btn-default target" id="target4">#target4</button>
+        <button class="btn btn-default target" id="target5">#target5</button>
+        <button class="btn btn-default target" id="target6">#target6</button>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-jQuery-15a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-target-the-children-of-an-element-using-jquery/18320)
+
+-----
+
+
+
+## 16. Cibler un enfant spécifique d'un élément à l'aide de jQuery
+
+[Learn jQuery: Target a Specific Child of an Element Using jQuery | freeCodeCamp.org](https://www.freecodecamp.org/learn/front-end-libraries/jquery/target-a-specific-child-of-an-element-using-jquery)
+
+Vous avez vu pourquoi les attributs id sont si pratiques pour le ciblage avec les sélecteurs jQuery. Mais vous n'aurez pas toujours de tels identifiants avec lesquels travailler.<br />
+Heureusement, jQuery propose d'autres astuces pour cibler les bons éléments.<br />
+jQuery utilise des sélecteurs CSS pour cibler les éléments. Le sélecteur CSS `target:nth-child(n)` vous permet de sélectionner tous les nièmes éléments avec la classe cible ou le type d'élément.<br />
+Voici comment donner au troisième élément de chaque puits la classe de rebond :
+
+`$(".target:nth-child(3)").addClass("animated bounce");`
+
+:::info instructions
+Faites rebondir le deuxième enfant de chacun de vos éléments de puits. Vous devez sélectionner les enfants des éléments avec la classe `target`.
+:::
+
+:::tip missions
+- Le deuxième élément de vos éléments `target` devrait rebondir.
+- Seuls deux éléments devraient rebondir.
+- Vous devez utiliser le sélecteur `:nth-child()` pour modifier ces éléments.
+- Vous ne devez utiliser que jQuery pour ajouter ces classes à l'élément.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<script>
+  $(document).ready(function() {
+    $("#target1").css("color", "red");
+    $("#target1").prop("disabled", true);
+    $("#target4").remove();
+    $("#target2").appendTo("#right-well");
+    $("#target5").clone().appendTo("#left-well");
+    $("#target1").parent().css("background-color", "red");
+    $("#right-well").children().css("color", "orange");
+    $(".target:nth-child(2)").addClass("animated bounce");
+  });
+</script>
+
+<div class="container-fluid">
+  <h3 class="text-primary text-center">jQuery Playground</h3>
+  <div class="row">
+    <div class="col-xs-6">
+      <h4>#left-well</h4>
+      <div class="well" id="left-well">
+        <button class="btn btn-default target" id="target1">#target1</button>
+        <button class="btn btn-default target" id="target2">#target2</button>
+        <button class="btn btn-default target" id="target3">#target3</button>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <h4>#right-well</h4>
+      <div class="well" id="right-well">
+        <button class="btn btn-default target" id="target4">#target4</button>
+        <button class="btn btn-default target" id="target5">#target5</button>
+        <button class="btn btn-default target" id="target6">#target6</button>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-jQuery-16a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-target-a-specific-child-of-an-element-using-jquery/18315)
+
+-----
+
+
+
+## 17. Cibler des éléments pairs à l'aide de jQuery
+
+[Learn jQuery: Target Even Elements Using jQuery | freeCodeCamp.org](https://www.freecodecamp.org/learn/front-end-libraries/jquery/target-even-elements-using-jquery)
+
+Vous pouvez également cibler des éléments en fonction de leur position à l'aide des sélecteurs `:odd` ou `:even`.<br />
+Notez que jQuery est indexé à zéro, ce qui signifie que le premier élément d'une sélection a la position 0. Cela peut être un peu déroutant car, de manière contre-intuitive, `;odd` sélectionne le deuxième élément (position 1), quatrième élément (position 3), etc.<br />
+Voici comment cibler tous les éléments impairs avec la classe `target` et leur donner des classes :
+
+`$(".target:odd").addClass("animated shake");`
+
+:::info instructions
+Essayez de sélectionner tous les éléments `target` pairs et de leur donner les classes `animated` et `shake`. N'oubliez pas que `even` se réfère à la position des éléments avec un système basé sur zéro à l'esprit.
+:::
+
+:::tip missions
+- Tous les éléments `target` que jQuery considère comme pairs doivent trembler.
+- Vous devez utiliser le sélecteur `:even` pour modifier ces éléments.
+- Vous ne devez utiliser que jQuery pour ajouter ces classes à l'élément.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<script>
+  $(document).ready(function() {
+    $("#target1").css("color", "red");
+    $("#target1").prop("disabled", true);
+    $("#target4").remove();
+    $("#target2").appendTo("#right-well");
+    $("#target5").clone().appendTo("#left-well");
+    $("#target1").parent().css("background-color", "red");
+    $("#right-well").children().css("color", "orange");
+    $("#left-well").children().css("color", "green");
+    $(".target:nth-child(2)").addClass("animated bounce");
+    $(".target:even").addClass("animated shake");
+  });
+</script>
+
+<div class="container-fluid">
+  <h3 class="text-primary text-center">jQuery Playground</h3>
+  <div class="row">
+    <div class="col-xs-6">
+      <h4>#left-well</h4>
+      <div class="well" id="left-well">
+        <button class="btn btn-default target" id="target1">#target1</button>
+        <button class="btn btn-default target" id="target2">#target2</button>
+        <button class="btn btn-default target" id="target3">#target3</button>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <h4>#right-well</h4>
+      <div class="well" id="right-well">
+        <button class="btn btn-default target" id="target4">#target4</button>
+        <button class="btn btn-default target" id="target5">#target5</button>
+        <button class="btn btn-default target" id="target6">#target6</button>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-jQuery-17a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-target-even-elements-using-jquery/18318)
+
+-----
+
+
+
+## 18. Utilisez jQuery pour modifier la page entière
+
+[Learn jQuery: Use jQuery to Modify the Entire Page | freeCodeCamp.org](https://www.freecodecamp.org/learn/front-end-libraries/jquery/use-jquery-to-modify-the-entire-page)
+
+Nous avons fini de jouer avec notre terrain de jeu jQuery. Détruisons-le !<br />
+jQuery peut également cibler l'élément `body`.<br />
+Voici comment nous ferions disparaître tout le corps :
+
+`$("body").addClass("animated fadeOut");`
+
+:::info instructions
+Mais faisons quelque chose de plus dramatique. Ajoutez les classes `animated` et `hinge` à votre élément `body`.
+:::
+
+:::tip missions
+- Vous devez ajouter les classes `animated` et `hinge` à votre élément `body`.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<script>
+  $(document).ready(function() {
+    $("#target1").css("color", "red");
+    $("#target1").prop("disabled", true);
+    $("#target4").remove();
+    $("#target2").appendTo("#right-well");
+    $("#target5").clone().appendTo("#left-well");
+    $("#target1").parent().css("background-color", "red");
+    $("#right-well").children().css("color", "orange");
+    $("#left-well").children().css("color", "green");
+    $(".target:nth-child(2)").addClass("animated bounce");
+    $(".target:even").addClass("animated shake");
+    $("body").addClass("animated hinge");
+  });
+</script>
+
+<div class="container-fluid">
+  <h3 class="text-primary text-center">jQuery Playground</h3>
+  <div class="row">
+    <div class="col-xs-6">
+      <h4>#left-well</h4>
+      <div class="well" id="left-well">
+        <button class="btn btn-default target" id="target1">#target1</button>
+        <button class="btn btn-default target" id="target2">#target2</button>
+        <button class="btn btn-default target" id="target3">#target3</button>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <h4>#right-well</h4>
+      <div class="well" id="right-well">
+        <button class="btn btn-default target" id="target4">#target4</button>
+        <button class="btn btn-default target" id="target5">#target5</button>
+        <button class="btn btn-default target" id="target6">#target6</button>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-jQuery-18a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-use-jquery-to-modify-the-entire-page/18361)
+
+:::note guide : Utilisez jQuery pour modifier la page entière
+
+#### Liens pertinents
+
+- [.addClass()](https://api.jquery.com/addClass/)
+:::
+-----

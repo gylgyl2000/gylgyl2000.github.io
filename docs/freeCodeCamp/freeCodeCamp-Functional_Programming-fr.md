@@ -1,5 +1,5 @@
 ---
-id: freeCodeCamp-Functional_Programming-fr
+id: freeCodeCamp-Functional_Programming-fr*
 title: Programmation fonctionnelle
 ---
 

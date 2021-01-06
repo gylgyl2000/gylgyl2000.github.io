@@ -1,0 +1,939 @@
+---
+id: codewars-kata-fr.mdx
+title: Kata Codewars
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+
+## Multiplier
+
+[Training on Multiply | Codewars](https://www.codewars.com/kata/50654ddff44f800200000004/train/javascript)
+
+:::info Instructions
+Ce code ne s'exécute pas correctement. Essayez de comprendre pourquoi.
+
+```javascript
+function multiply(a, b){
+  a * b
+}
+```
+:::
+
+<nav class="code-col">
+<div class="code-col__item">
+
+```js title="javascript"
+function multiply(a, b) {
+  return a * b;
+}
+
+console.log(multiply(1,1));
+console.log(multiply(2,1));
+console.log(multiply(2,2));
+console.log(multiply(3,5));
+```
+
+</div>
+<div class="code-col__item">
+
+```sh title="console"
+
+
+
+
+1
+2
+4
+15
+```
+
+</div></nav>
+
+[solutions](https://www.codewars.com/kata/50654ddff44f800200000004/solutions/javascript)
+
+
+```js
+multiply = (a, b) => a * b;
+```
+
+------
+
+
+
+## Pair ou impair
+
+[Training on Even or Odd | Codewars](https://www.codewars.com/kata/53da3dbb4a5168369a0000fe/train/javascript)
+
+:::info Instructions
+Créez une fonction (ou écrivez un script dans Shell) qui prend un entier comme argument et renvoie "Even" pour les nombres pairs ou "Odd" pour les nombres impairs.
+
+```javascript
+function even_or_odd(number) {
+  // ...
+}
+```
+:::
+
+<nav class="code-col">
+<div class="code-col__item">
+
+```js title="javascript"
+function even_or_odd(number) {
+  number = parseInt(number);
+  return ((number & 1) == '0')?"Even":"Odd";
+}
+
+console.log(even_or_odd(2))
+console.log(even_or_odd(0))
+console.log(even_or_odd(7))
+console.log(even_or_odd(1))
+```
+
+</div>
+<div class="code-col__item">
+
+```sh title="console"
+
+
+
+
+
+Even
+Even
+Odd
+Odd
+```
+
+</div></nav>
+
+[solutions](https://www.codewars.com/kata/53da3dbb4a5168369a0000fe/solutions)
+
+```javascript
+function even_or_odd(number) {
+  return number % 2 ? "Odd" : "Even"
+}
+```
+
+------
+
+
+
+## Nombre opposé
+
+[Opposite number | Codewars](https://www.codewars.com/kata/56dec885c54a926dcd001095)
+
+:::info Instructions
+Très simple, étant donné un nombre, trouver son opposé.
+
+**Exemples :**
+```markdown
+1: -1
+14: -14
+-34: 34
+```
+
+```javascript
+function opposite(number) {
+  //your code here
+}
+```
+:::
+
+<nav class="code-col">
+<div class="code-col__item">
+
+```js title="javascript"
+function opposite(number) {
+  return -number
+}
+
+console.log(opposite(1));
+console.log(opposite(0));
+console.log(opposite(4.25));
+console.log(opposite(3.3333333));
+console.log(opposite(-12525220.3325));
+console.log(opposite(-5));
+```
+
+</div>
+<div class="code-col__item">
+
+```sh title="console"
+
+
+
+
+-1
+0
+-4.25
+-3.3333333
+12525220.3325
+5
+```
+
+</div></nav>
+
+[solutions](https://www.codewars.com/kata/56dec885c54a926dcd001095/solutions)
+
+------
+
+
+
+## Répétition de chaîne
+
+[Training on String repeat | Codewars](https://www.codewars.com/kata/57a0e5c372292dd76d000d7e/train/javascript)
+
+:::info Instructions
+Écrivez une fonction appelée `repeatStr` qui répète exactement la chaîne `s` donnée `n` fois.
+
+```javascript
+repeatStr(6, "I") // "IIIIII"
+repeatStr(5, "Hello") // "HelloHelloHelloHelloHello"
+```
+```javascript
+function repeatStr (n, s) {
+  return '';
+}
+```
+:::
+
+<nav class="code-col">
+<div class="code-col__item">
+
+```js title="javascript"
+function repeatStr (n, s) {
+  return s.repeat(n);
+}
+
+console.log(repeatStr(3, "*"));
+console.log(repeatStr(5, "#"));
+console.log(repeatStr(2, "ha "));
+```
+
+</div>
+<div class="code-col__item">
+
+```sh title="console"
+
+
+
+
+***
+#####
+ha ha 
+```
+
+</div></nav>
+
+[solution](https://www.codewars.com/kata/57a0e5c372292dd76d000d7e/solutions)
+
+------
+
+
+
+## Le message secret de Jenny
+
+[Jenny's secret message | Codewars](https://www.codewars.com/kata/55225023e1be1ec8bc000390)
+
+:::info Instructions
+Jenny a écrit une fonction qui renvoie un message d'accueil pour un utilisateur. Cependant, elle est amoureuse de Johnny et aimerait le saluer légèrement différemment. Elle a ajouté un cas particulier à sa fonction, mais elle a fait une erreur.<br />
+Peux-tu l'aider ?
+
+```javascript
+function greet(name){
+  return "Hello, " + name + "!";
+  if(name === "Johnny")
+    return "Hello, my love!";
+}
+```
+:::
+
+<nav class="code-col">
+<div class="code-col__item">
+
+```js title="javascript"
+function greet(name){
+  if(name === "Johnny")
+    return "Hello, my love!";
+  else
+    return "Hello, " + name + "!";
+}
+
+console.log(greet("Jim"));
+console.log(greet("Jane"));
+console.log(greet("Simon"));
+console.log(greet("Johnny"));
+```
+
+</div>
+<div class="code-col__item">
+
+```sh title="console"
+
+
+
+
+
+
+
+Hello, Jim!
+Hello, Jane!
+Hello, Simon!
+Hello, my love!
+```
+
+</div></nav>
+
+[solutions](https://www.codewars.com/kata/55225023e1be1ec8bc000390/solutions)
+
+```js
+function greet(name){
+  return "Hello, " + (name == "Johnny" ? "my love" : name) + "!";
+}
+```
+
+------
+
+
+
+## Convertissez les valeurs booléennes en chaînes 'Yes' ou 'No'
+
+[Training on Convert boolean values to strings 'Yes' or 'No'. | Codewars](https://www.codewars.com/kata/53369039d7ab3ac506000467/train/javascript)
+
+:::info Instructions
+Complétez la méthode qui prend une valeur booléenne et retournez une chaîne `"Yes"` pour `true` ou une chaîne "No"` pour `false`.
+
+```javascript
+function boolToWord( bool ){
+  //...
+}
+```
+
+:::
+
+<nav class="code-col">
+<div class="code-col__item">
+
+```js title="javascript"
+function boolToWord( bool ){
+  if(bool == true)
+    return 'Yes';
+  if(bool == false)
+    return 'No';
+}
+
+console.log(boolToWord(true));
+console.log(boolToWord(false));
+```
+
+</div>
+<div class="code-col__item">
+
+```sh title="console"
+
+
+
+
+
+
+
+Yes
+No
+```
+
+</div></nav>
+
+[solutions](https://www.codewars.com/kata/53369039d7ab3ac506000467/solutions)
+
+```js
+function boolToWord( bool ){
+  if (bool) {
+    return 'Yes';
+  } else {
+    return 'No';
+  }
+}
+```
+
+```js
+function boolToWord( bool ){
+  if( bool ){
+    return "Yes";
+  }
+  return "No";
+}
+```
+
+```js
+function boolToWord( bool ){
+  return bool ? 'Yes':'No';
+}
+```
+
+```js
+const boolToWord = bool => bool ? 'Yes' : 'No';
+```
+
+------
+
+
+
+## Supprimer le premier et le dernier caractère
+
+[Remove First and Last Character | Codewars](https://www.codewars.com/kata/56bc28ad5bdaeb48760009b0)
+
+:::info instructions
+C'est assez simple. Votre objectif est de créer une fonction qui  supprime les premier et dernier caractères d'une chaîne. Vous obtenez un paramètre, la chaîne d'origine. Vous n'avez pas à vous soucier des  chaînes de moins de deux caractères.
+
+```javascript
+function removeChar(str){
+ //You got this!
+
+};
+```
+
+:::
+
+<nav class="code-col">
+<div class="code-col__item">
+
+```js title="javascript"
+function removeChar(str){
+  return str.substring(1, str.length-1);
+};
+
+console.log(removeChar('eloquent'));
+console.log(removeChar('country'));
+console.log(removeChar('person'));
+console.log(removeChar('place'));
+```
+
+</div>
+<div class="code-col__item">
+
+```sh title="console"
+
+
+
+
+loquen
+ountr
+erso
+lac
+```
+
+</div></nav>
+
+[solutions](https://www.codewars.com/kata/56bc28ad5bdaeb48760009b0/solutions)
+
+
+```js
+function removeChar(str) {
+  return str.slice(1, -1);
+}
+```
+```js
+
+const removeChar = str => str.slice(1,-1);
+```
+
+------
+
+
+
+## Compteur de voyelles
+
+[Vowel Count | Codewars](https://www.codewars.com/kata/54ff3102c1bad923760001f3)
+
+:::info instructions
+Renvoie le nombre (count) de voyelles dans la chaîne donnée.<br />
+Nous considérerons `a, e, i, o, u` comme voyelles pour ce Kata (mais pas `y`).<br />
+La chaîne d'entrée sera uniquement composée de lettres minuscules et / ou d'espaces.
+
+```javascript
+function getCount(str) {
+  var vowelsCount = 0;
+  // enter your majic here
+  return vowelsCount;
+}
+```
+:::
+
+<nav class="code-col">
+<div class="code-col__item">
+
+```js title="javascript"
+function getCount(str) {
+  var vowelsCount = 0;
+  for(let i = 0; i < str.length; i++) {
+    if(str.charAt(i)==='a' || str.charAt(i)==='e' || str.charAt(i)==='i' || str.charAt(i)==='o' || str.charAt(i)==='u'){
+      vowelsCount +=1;
+    }
+  }
+  return vowelsCount;
+}
+
+console.log((getCount("abracadabra"));
+```
+
+</div>
+<div class="code-col__item">
+
+```sh title="console"
+
+
+
+
+
+
+
+
+
+
+5
+```
+
+</div></nav>
+
+[solutions](https://www.codewars.com/kata/54ff3102c1bad923760001f3/solutions)
+
+```javascript
+function getCount(str) {
+  return (str.match(/[aeiou]/ig)||[]).length;
+}
+```
+```js
+function getCount(str) {
+  return (str.match(/[aeiou]/g) || []).length
+}
+```
+```js
+function getCount(str) {
+  return str.replace(/[^aeiou]/gi, '').length;
+}
+```
+```js
+function getCount(str) {
+ return str.split('').filter(c => "aeiouAEIOU".includes(c)).length;
+}
+```
+
+------
+
+
+
+## Obtenez le caractère du milieu
+
+[Training on Get the Middle Character | Codewars](https://www.codewars.com/kata/56747fd5cb988479af000028/train/javascript)
+
+:::info instructions
+Vous allez recevoir un mot. Votre travail consiste à renvoyer le caractère  central du mot. Si la longueur du mot est impaire, renvoyez le caractère du milieu. Si la longueur du mot est paire, renvoyez les 2 caractères  du milieu.
+
+### Examples
+
+```shell
+ Kata.getMiddle("test") should return "es"
+ Kata.getMiddle("testing") should return "t"
+ Kata.getMiddle("middle") should return "dd"
+ Kata.getMiddle("A") should return "A"
+```
+
+### Entrée
+Un mot (chaîne) de longueur `0 < str < 1000` (En javascript, vous pouvez obtenir un peu plus de 1000 dans certains cas de test en raison d'une erreur dans les cas de test). Vous n'avez pas besoin de tester cela. Ceci est  uniquement là pour vous dire que vous n'avez pas à vous soucier de  l'expiration de votre solution.
+
+### Sortie
+Le ou les caractères du milieu du mot représentés sous forme de chaîne.
+
+```javascript
+function getMiddle(s)
+{
+  //Code goes here!
+}
+```
+:::
+
+<nav class="code-col">
+<div class="code-col__item">
+
+```js title="javascript"
+function getMiddle(s)
+{
+  if(s.length % 2 === 0){
+    return s.charAt((s.length / 2) - 1) + s.charAt(s.length / 2);
+  } else {
+    return s.charAt(s.length / 2);
+  }
+}
+
+console.log(getMiddle("test"));
+console.log(getMiddle("testing"));
+console.log(getMiddle("middle"));
+console.log(getMiddle("A"));
+```
+
+</div>
+<div class="code-col__item">
+
+```sh title="console"
+
+
+
+
+
+
+
+
+
+es
+t
+dd
+A
+```
+
+</div></nav>
+
+[solutions](https://www.codewars.com/kata/56747fd5cb988479af000028/solutions)
+
+```js
+function getMiddle(s)
+{
+  return s.substr(Math.ceil(s.length / 2 - 1), s.length % 2 === 0 ? 2 : 1);
+}
+```
+```js
+function getMiddle(s) {
+  var middle = s.length / 2;
+  return (s.length % 2) 
+    ? s.charAt(Math.floor(middle))
+    : s.slice(middle - 1, middle + 1);
+}
+```
+```js
+function getMiddle(s)
+{
+  return s.slice((s.length-1)/2, s.length/2+1);
+}
+```
+
+------
+
+
+
+## La casse des chaînes de caractères de Jaden
+
+[Training on Jaden Casing Strings | Codewars](https://www.codewars.com/kata/5390bac347d09b7da40006f6/train/javascript)
+
+:::info instructions
+Jaden Smith, le fils de Will Smith, est la star de films tels que The  Karate Kid (2010) et After Earth (2013). Jaden est également connu pour [une partie de sa philosophie qu'il livre via Twitter](https://twitter.com/jaden). Lorsqu'il écrit  sur Twitter, il est connu pour capitaliser presque toujours chaque mot.  Pour plus de simplicité, vous devrez mettre en majuscule chaque mot,  vérifiez comment les contractions devraient être dans l'exemple  ci-dessous.<br />
+Votre tâche consiste à convertir les chaînes comme  elles seraient écrites par Jaden Smith. Les chaînes sont des citations  réelles de Jaden Smith, mais elles ne sont pas capitalisées de la même  manière qu'il les a tapées à l'origine.
+
+### Example
+
+```shell
+ Not Jaden-Cased: "How can mirrors be real if our eyes aren't real"
+ Jaden-Cased:     "How Can Mirrors Be Real If Our Eyes Aren't Real"
+```
+
+[Lien vers l'ancien compte Twitter de Jaden @officialjaden via archive.org](https://web.archive.org/web/20190624190255/https://twitter.com/officialjaden)
+
+```javascript
+String.prototype.toJadenCase = function () {
+  //...
+};
+```
+:::
+
+<nav class="code-col">
+<div class="code-col__item">
+
+```js title="javascript"
+String.prototype.toJadenCase = function () {
+  let strArr = this.split(" ");
+  let newArr = [];
+    for(let i = 0 ; i < strArr.length ; i++ ){
+      let FirstLetter = strArr[i].charAt(0).toUpperCase();
+      let restOfWord = strArr[i].slice(1);
+      newArr[i] = FirstLetter + restOfWord;
+    };
+  return newArr.join(' ');
+};
+
+let str = "How can mirrors be real if our eyes aren't real";
+console.log(str.toJadenCase());
+```
+
+</div>
+<div class="code-col__item">
+
+```sh title="console"
+
+
+
+
+
+
+
+
+
+
+
+
+How Can Mirrors Be Real If Our Eyes Aren't Real
+```
+
+</div></nav>
+
+[solutions](https://www.codewars.com/kata/5390bac347d09b7da40006f6/solutions)
+
+```js
+String.prototype.toJadenCase = function () { 
+  return this.split(" ").map(function(word){
+    return word.charAt(0).toUpperCase() + word.slice(1);
+  }).join(" ");
+}
+```
+```js
+  function capitalizeFirstLetter(string) {
+      return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+  return this.split(' ').map(capitalizeFirstLetter).join(' ');
+};
+```
+```js
+String.prototype.toJadenCase = function() {
+  return this.split(' ').map(item => item[0].toUpperCase() + item.slice(1)).join(' ')
+};
+```
+
+------
+
+
+
+## Marmonnage
+
+[Training on Mumbling | Codewars](https://www.codewars.com/kata/5667e8f4e3f572a8f2000039/train/javascript)
+
+:::info instructions
+Cette fois, pas d'histoire, pas de théorie. Les exemples ci-dessous vous montrent comment écrire la fonction `accum` :
+
+### Examples
+
+```shell
+ accum("abcd") -> "A-Bb-Ccc-Dddd"
+ accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+ accum("cwAt") -> "C-Ww-Aaa-Tttt"
+```
+Le paramètre de `accum` est une chaîne qui ne comprend que des lettres de `a..z` et `A..Z`.
+
+```javascript
+function accum(s) {
+	// your code
+}
+```
+:::
+
+<nav class="code-col">
+<div class="code-col__item">
+
+```js title="javascript"
+function accum(s) {
+	let strArr = s.split('');
+    let newArr = [];
+    	for(let i = 0 ; i < strArr.length ; i++) {
+		let upperLetter = strArr[i].toUpperCase();
+		let lowerLetter = strArr[i].toLowerCase();
+		newArr[i] = upperLetter + lowerLetter.repeat(i);
+		};
+	return newArr.join('-');
+};
+   
+console.log(accum("ZpglnRxqenU"));
+console.log(accum("NyffsGeyylB"));
+console.log(accum("MjtkuBovqrU"));
+console.log(accum("EvidjUnokmM"));
+console.log(accum("HbideVbxncC"));
+```
+
+</div>
+<div class="code-col__item">
+
+```sh title="console"
+ 
+ 
+
+
+
+
+
+
+
+
+
+ Z-Pp-Ggg-Llll-Nnnnn-Rrrrrr-Xxxxxxx-Qqqqqqqq-Eeeeeeeee-Nnnnnnnnnn-Uuuuuuuuuuu
+ N-Yy-Fff-Ffff-Sssss-Gggggg-Eeeeeee-Yyyyyyyy-Yyyyyyyyy-Llllllllll-Bbbbbbbbbbb
+ M-Jj-Ttt-Kkkk-Uuuuu-Bbbbbb-Ooooooo-Vvvvvvvv-Qqqqqqqqq-Rrrrrrrrrr-Uuuuuuuuuuu
+ E-Vv-Iii-Dddd-Jjjjj-Uuuuuu-Nnnnnnn-Oooooooo-Kkkkkkkkk-Mmmmmmmmmm-Mmmmmmmmmmm
+ H-Bb-Iii-Dddd-Eeeee-Vvvvvv-Bbbbbbb-Xxxxxxxx-Nnnnnnnnn-Cccccccccc-Ccccccccccc
+```
+
+</div></nav>
+
+[solutions](https://www.codewars.com/kata/5667e8f4e3f572a8f2000039/solutions)
+
+```javascript
+function accum(s) {
+  return s.split('').map((c, i) => (c.toUpperCase() + c.toLowerCase().repeat(i))).join('-');
+}
+```
+```js
+function accum(s) {
+  return s.split('').map((x,index) => x.toUpperCase()+Array(index+1).join(x.toLowerCase())).join('-');
+}
+```
+```js
+function accum (s) {
+  return [...s].map((element, index) => {
+    return element.toUpperCase() + element.toLowerCase().repeat(index);
+  }).join('-');
+}
+```
+
+-----
+
+
+
+## Implémenter `Array.prototype.filter()`
+
+[Implement Array.prototype.filter() | Codewars](https://www.codewars.com/kata/56dd9b84fe5754786f0014f7)
+
+:::info instructions
+Ce que nous voulons implémenter est la fonction `Array.prototype.filter()`, tout comme la fonction `Array.prototype.filter()` existante. Une autre fonction similaire est `_.filter()` dans `underscore.js` et `lodash.js`.<br />
+L'utilisation sera assez simple, comme :
+
+```js
+[1, 2, 3, 4, 5].filter(num => num > 3) == [4, 5]
+```
+Bien sûr, la fonction `Array.prototype.filter()` existante n'a pas été définie pour les besoins de ce Kata.
+
+Plus d'informations peuvent être trouvées ici : [Array.prototype.filter()](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/filter)
+
+```js
+Array.prototype.filter = function (func) {
+  //nothing here, you will feel pretty awesome to write down by yourself
+  //have fun :)
+}
+```
+:::
+
+<nav class="code-col">
+<div class="code-col__item">
+
+```js title="javascript"
+Array.prototype.filter = function(fn) {
+  const newArray = []
+  for (let i = 0; i < this.length; i++) {
+    if (fn(this[i])) newArray.push(this[i])
+  }
+  return newArray
+}
+
+console.log([1,2,3,4].filter((num)=>{ return num > 3}))
+```
+
+</div>
+<div class="code-col__item">
+
+```sh title="console"
+
+
+
+
+
+
+
+
+[4]
+```
+
+</div></nav>
+
+[solutions](https://www.codewars.com/kata/56dd9b84fe5754786f0014f7/solutions)
+
+-----
+
+
+
+## N est-il divisible par x et y ?
+
+[Is n divisible by x and y? | Codewars](https://www.codewars.com/kata/5545f109004975ea66000086)
+
+:::info instructions
+Créez une fonction qui vérifie si un nombre `n` est divisible par deux nombres `x` ET `y`. Toutes les entrées sont des chiffres positifs non nuls.
+
+### Examples
+
+```sh
+1) n =   3, x = 1, y = 3 =>  true because   3 is divisible by 1 and 3
+2) n =  12, x = 2, y = 6 =>  true because  12 is divisible by 2 and 6
+3) n = 100, x = 5, y = 3 => false because 100 is not divisible by 3
+4) n =  12, x = 7, y = 5 => false because  12 is neither divisible by 7 nor 5
+```
+
+```js
+function isDivisible(n, x, y) {
+}
+```
+:::
+
+<nav class="code-col">
+<div class="code-col__item">
+
+```js title="javascript"
+function isDivisible(n, x, y) {
+  if (n % x === 0 && n % y === 0) {
+    return true;
+  } else {
+    return false;
+  };
+}
+
+console.log(isDivisible(3,3,4));
+console.log(isDivisible(12,3,4));
+console.log(isDivisible(8,3,4));
+console.log(isDivisible(48,3,4));
+```
+
+</div>
+<div class="code-col__item">
+
+```sh title="console"
+
+
+
+
+
+
+
+
+false
+true
+false
+true
+```
+
+</div></nav>
+
+[solutions](https://www.codewars.com/kata/5545f109004975ea66000086/solutions)
+
+```js
+return n % x === 0 && n % y === 0;
+```
+```js
+return (n % x === 0 && n % y === 0) ? true : false;
+```
+
+-----
+
+
+

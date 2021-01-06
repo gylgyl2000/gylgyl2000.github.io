@@ -1,0 +1,453 @@
+---
+id: Codewars-javascript_basic-fr
+title: Formation JavaScript
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+
+## 1. Créez votre première fonction JS `helloWorld`
+
+[Training on Training JS #1: create your first JS function and print "Helloworld!" | Codewars](https://www.codewars.com/kata/571ec274b1c8d4a61c0000c8/train/javascript)
+
+:::info instructions
+En JavaScript, votre code s'exécute dans une fonction, complétons pas à pas votre première fonction JS.
+
+Regardez cet exemple :
+
+```js
+  --------mot-clé "function"
+  |       ----le nom de votre fonction  
+  |       |    ---si nécessaire, certains arguments apparaîtront entre parenthèses
+  |       |    |
+function myfunc(){  ---------votre code de fonction commencera par "{"
+  // vous devez taper votre code ici
+}----------------------------se terminant par "}"
+```
+
+Si nous voulons en afficher à l'écran, nous pouvons peut-être utiliser `Document.write()` sur le Web, ou utiliser `alert()` pop votre message, mais Codewars ne prend pas en charge ces méthodes, nous devrions  utiliser `console.log()` dans votre fonction. Voir cet exemple :
+
+```js
+function printWordToScreen(){
+  var somewords="This is an example."
+  console.log(somewords)
+}
+```
+
+Si nous exécutons cette fonction, `This is an example.` sera visible à  l'écran. Comme vous le voyez, `console.log()` est une méthode utile pour aider votre travail, vous deviendrez de plus en plus comme elle.
+
+:::
+
+:::tip missions
+Veuillez vous référer aux deux exemples ci-dessus et écrivez votre première fonction JS.
+- utilisez le mot-clé `function` pour définir votre fonction, le nom de la fonction doit être `helloWorld` (n'oubliez pas les () et {}).
+- utilisez le mot-clé `var` pour définir une variable `str`, la valeur de `str` doit  être une chaîne : "Hello World!"  (n'oubliez pas le =).
+- tapez le `console.log()` dans la ligne suivante (n'oubliez pas de mettre la chaîne entre crochets).
+
+```js
+//refer to the example and write your first JS function
+```
+:::
+
+<nav class="code-col">
+<div class="code-col__item">
+
+```js title="javascript"
+function helloWorld() {
+   let str = "Hello World!";
+   console.log(str);
+};
+```
+
+</div>
+<div class="code-col__item">
+
+```sh title="console"
+
+
+Hello World!
+
+```
+
+</div></nav>
+
+[solutions](https://www.codewars.com/kata/571ec274b1c8d4a61c0000c8/solutions)
+
+------
+
+
+
+
+## 2. Types de données de base - Nombre
+
+[Training on Training JS #2: Basic data types--Number | Codewars](https://www.codewars.com/kata/571edd157e8954bab500032d/train/javascript)
+
+:::info instructions
+En javascript, Number est l'un des types de données de base. Il peut être positif : `1, 2, 3`, négatif : `-1, -100`, entier : `123 456`, décimal : `3,1415926, -8,88` etc.<br />
+Les nombres peuvent utiliser des opérateurs tels que `+ - * / %`
+:::
+
+:::tip missions
+J'ai écrit cinq fonctions `equal1 equal2 equal3 equal4 equal5`, définit six variables globales `v1 v2 v3 v4 v5 v6`, chaque fonction a deux variables locales `a b`, veuillez définir la valeur appropriée pour les deux variables (sélectionnez dans v1--v6), ce qui rend la valeur de retour de ces fonctions égale à 100. La fonction `equal1` est complétée, veuillez vous référer à cet exemple pour compléter les fonctions suivantes.
+
+```js
+var v1 = 50, v2 = 100, v3 = 150, v4 = 200, v5 = 2, v6 = 250
+function equal1(){
+  var a = v1   
+  var b = v1   
+  return a + b;
+}
+//Please refer to the example above to complete the following functions
+function equal2(){
+  var a=   //set number value to a
+  var b=   //set number value to b
+  return a - b;
+}
+function equal3(){
+  var a=   //set number value to a
+  var b=   //set number value to b
+  return a * b;
+}
+function equal4(){
+  var a=   //set number value to a
+  var b=   //set number value to b
+  return a / b;
+}
+function equal5(){
+  var a=   //set number value to a
+  var b=   //set number value to b
+  return a % b;
+}
+```
+:::
+
+<nav class="code-col">
+<div class="code-col__item">
+
+```js title="javascript"
+let v1 = 50; v2 = 100, v3 = 150, v4 = 200, v5 = 2, v6 = 250
+function equal1(){
+  let a = v1;
+  let b = v1;
+  return a + b;
+}
+function equal2(){
+  let a = v3;
+  let b = v1;
+  return a - b;
+}
+function equal3(){
+  let a = v1;
+  let b = v5;
+  return a * b;
+}
+function equal4(){
+  let a = v4;
+  let b = v5;
+  return a / b;
+}
+function equal5(){
+  let a = v6;
+  let b = v3;
+  return a % b;
+}
+
+console.log(equal1());
+console.log(equal2());
+console.log(equal3());
+console.log(equal4());
+console.log(equal5());
+```
+
+</div>
+<div class="code-col__item">
+
+```sh title="console"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100
+100
+100
+100
+100
+```
+
+</div></nav>
+
+[solutions](https://www.codewars.com/kata/571edd157e8954bab500032d/solutions)
+
+------
+
+
+
+## 3. Types de données de base - Chaîne de caractères
+
+[Training on Training JS #3: Basic data types--String | Codewars](https://www.codewars.com/kata/571edea4b625edcb51000d8e/train/javascript)
+
+:::info instructions
+En javascript, String est l'un des types de données de base. Utilisez `""` ou `''` pour déclarer une variable chaîne. Il peut s'agir de lettres : `a, b, c, A, B, C`, nombres : `123...`, symboles divers : `@ # $ % ^ & *`, symbole de contrôle : `\n, \t` etc.<br />
+La chaîne peut utiliser les opérateurs `+`, pour connectez deux chaînes ou plus ensemble.
+:::
+
+:::tip missions
+- J'ai créé trois fonctions, et défini quelques variables globales, veuillez sélectionner quelques variables qui peuvent constituer le nom de la fonction, et les renvoyer (veuillez noter que les lettres majuscules et minuscules sont différentes).
+
+```js
+var a1 = "A", a2 = "a", b1 = "B", b2 = "b", c1 = "C", c2 = "c", d1 = "D", d2 = "d", e1 = "E", e2 = "e", n1 = "N", n2 = "n"
+function Dad(){
+  // sélectionnez des variable pour combiner "Dad"
+  return ? + ? + ?;
+}
+function Bee(){
+  // sélectionnez des variable pour combiner "Bee"
+  return ? + ? + ?;
+}
+function banana(){
+  // sélectionnez des variable pour combiner "banana"
+  return ? + ? + ?;
+}
+// répondez à quelques questions si vous avez terminé les travaux ci-dessus
+function answer1(){
+  // la réponse devrait être "yes" ou "no"
+  return "";
+}
+function answer2(){
+  // la réponse devrait être "yes" ou "no"
+  return "";
+}
+function answer3(){
+  // la réponse devrait être "yes" ou "no"
+  return "";
+}
+```
+:::
+
+<nav class="code-col">
+<div class="code-col__item">
+
+```js title="javascript"
+let a1 = "A", a2 = "a", b1 = "B", b2 = "b", c1 = "C", c2 = "c", d1 = "D", d2 = "d", e1 = "E", e2 = "e", n1 = "N", n2 = "n"
+function Dad(){
+  return d1 + a2 + d2;
+}
+function Bee(){
+  return b1 + e2 + e2;
+}
+function banana(){
+  return b2 + a2 + n2 + a2 + n2 + a2;
+}
+function answer1(){
+  return "no";
+}
+function answer2(){
+  return "no";
+}
+function answer3(){
+  return "yes";
+}
+
+console.log(Dad());
+console.log(Bee());
+console.log(banana());
+console.log(answer1());
+console.log(answer2());
+console.log(answer3());
+```
+
+</div>
+<div class="code-col__item">
+
+```sh title="console"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Dad
+Bee
+banana
+no
+no
+yes
+```
+
+</div></nav>
+
+[solutions](https://www.codewars.com/kata/571edea4b625edcb51000d8e/solutions)
+
+```js
+const Dad = () => d1 + a2 + d2
+const Bee = () => b1 + e2 + e2
+const banana = () => b2 + a2 + n2 + a2 + n2 + a2
+const answer1 = () => "no"
+const answer2 = () => "no"
+const answer3 = () => "yes"
+```
+
+-----
+
+
+
+## 18. Les méthodes de l’objet String : `concat()`, `split()` et leur bon ami `join()`
+
+[Train: Training JS #18: Methods of String object--concat() split() and its good friend join() | Codewars](https://www.codewars.com/kata/57280481e8118511f7000ffa/train/javascript)
+
+Cette fois, nous apprenons deux méthodes pour diviser ou fusionner une chaîne de caractères : `split()` et `concat()`. Étudions également un bon ami de la méthode `split()` : `join()`. C'est une [méthode Array](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array). Leur utilisation :
+
+```javascript
+StringObject.indexOf(searchvalue,fromindex)
+StringObject.lastIndexOf(searchvalue,fromindex)
+StringObject.search(searchvalue/regexp)
+```
+
+`split()` peut diviser une chaîne en plusieurs parties par un séparateur spécifié. Le résultat est un tableau de chaîne de caractères. La chaîne fractionnée n'inclut pas le séparateur lui-même. L'une de ses utilisations  classiques est de diviser une phrase en un tableau de mots :
+
+```js
+var str="My name is John";
+var words=str.split(" ");
+console.log(words);
+//output:
+[ 'My', 'name', 'is', 'John' ]
+```
+
+Dans l'exemple ci-dessus, nous utilisons l'espace comme séparateur, divisant une phrase en 4 mots. Si nous spécifions les seconds paramètres, ce sera comme ceci :
+
+```js
+var str="My name is John";
+var words1=str.split(" ",3);
+console.log("words1:",words1);
+var words2=str.split(" ",5);
+console.log("words2:",words2);
+
+//output:
+words1:[ 'My', 'name', 'is' ]
+words2:[ 'My', 'name', 'is', 'John' ]
+```
+
+Lorsque nous spécifions un nombre inférieur à 4, le résultat sera un nombre spécifié de chaînes ; si le numéro de la partition est trop grand, les résultats seront seulement les mêmes que les résultats par défaut.
+
+Si nous utilisons la chaîne vide comme séparateur, nous obtiendrons un tableau de chaînes contenant chaque caractère :
+
+```js
+var str="My name is John";
+var words=str.split("");
+console.log(words);
+
+//output:
+[ 'M', 'y', ' ', 'n', 'a', 'm', 'e', ' ', 'i', 's', ' ', 'J', 'o', 'h', 'n' ]
+```
+
+Split peut utiliser des expressions régulières pour fractionner la chaîne. Mais parce que nous n'avons pas appris l'utilisation des expressions régulières, nous n'avons donc pas à apprendre cet usage.
+
+`concat()` peut fusionner plusieurs chaînes en une chaîne comme celle-ci :
+
+```js
+var str="My".concat("name","is","John");
+console.log(str);
+
+//output:
+MynameisJohn
+```
+
+En fait, nous voyons rarement l'utilisation réelle de `concat()`, car nous avons un moyen plus simple qui utilise l'opérateur + :
+
+```js
+var str="My"+"name"+"is"+"John";
+console.log(str);
+
+//output:
+MynameisJohn
+```
+
+Mais même en utilisant l'opérateur +, les quatre mots ne sont pas la combinaison parfaite d'une phrase, car il n'y a pas de séparateur d'espace. Que devrions-nous faire ? Utiliser `join()` est le meilleur  choix.
+
+`join()` est l'opération inverse de la méthode `split()`. Nous pouvons voir beaucoup de code dans l'utilisation réelle :
+
+```js
+var str="My name is John";
+var words=str.split(" ");
+console.log("use split():",words);
+var s=words.join(" ");
+console.log("use join():",s);
+console.log("use split() and join():",str.split(" ").join(" "))
+//output:
+use split():[ 'My', 'name', 'is', 'John' ]
+use join():My name is John
+use split() and join():My name is John
+```
+
+Ok, la leçon est terminée, faisons une tâche.
+
+**Tâche**
+Implémentez une fonction qui accepte 2 arguments : `string` et `separator`.
+
+L'algorithme attendu : divisez la chaîne en mots par des espaces, divisez chaque mot  en caractères séparés et rejoignez-les avec le `separator` spécifié,  joignez tous les 'mots' résultants en une phrase avec des espaces.
+
+Par exemple :
+
+```js
+splitAndMerge("My name is John", " ")  ==  "M y n a m e i s J o h n"
+splitAndMerge("My name is John", "-")  ==  "M-y n-a-m-e i-s J-o-h-n"
+splitAndMerge("Hello World!", ".")     ==  "H.e.l.l.o W.o.r.l.d.!"
+splitAndMerge("Hello World!", ",")     ==  "H,e,l,l,o W,o,r,l,d,!"
+```
+
+```js
+function splitAndMerge(str, sp) {
+  return str.split(" ").map(word => word.split("").join(sp)).join(" ");
+}
+///////////
+function splitAndMerge(str,sp){
+  var words = str.split(" ");
+  var arr =[];
+  var res = []
+  for(i=0;i<words.length;i++){
+   arr.push(words[i].split("").join(sp));
+  }
+  res = arr.join(" ");
+  return res;
+}
+```
+
+-----
+

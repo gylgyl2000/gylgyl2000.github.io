@@ -31,7 +31,21 @@ module.exports = {
             'freeCodeCamp/freeCodeCamp-Basic_Algorithm_Scripting-fr',
             'freeCodeCamp/freeCodeCamp-Object_Oriented_Programming-fr',
             'freeCodeCamp/freeCodeCamp-Functional_Programming-fr',
-            'freeCodeCamp/freeCodeCamp-Intermediate-Algorithm-Scripting-fr'
+            'freeCodeCamp/freeCodeCamp-Intermediate-Algorithm-Scripting-fr',
+            'freeCodeCamp/freeCodeCamp-JavaScript-Algorithms-and-Data-Structures-Projects-fr',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Bibliothèques front-end',
+          collapsed: true,
+          items: [
+            'freeCodeCamp/freeCodeCamp-Bootstrap-fr',
+            'freeCodeCamp/freeCodeCamp-jQuery-fr',
+            'freeCodeCamp/freeCodeCamp-Sass-fr',
+            'freeCodeCamp/freeCodeCamp-React-fr',
+            'freeCodeCamp/freeCodeCamp-Redux-fr',
+            'freeCodeCamp/freeCodeCamp-React-and-Redux-fr',
           ],
         },
       ],
@@ -42,13 +56,50 @@ module.exports = {
       ],
       Codecademy: [
         {
-          Docs: ['mdx'],
+          type: 'category',
+          label: 'Aide-mémoire JavaScript',
+          collapsed: true,
+          items: [
+            'Codecademy/Codecademy-Cheatsheets-Learn_JavaScript-01-Introduction-_-Variables-fr',
+            'Codecademy/Codecademy-Cheatsheets-Learn_JavaScript-02-Conditionals-fr',
+            'Codecademy/Codecademy-Cheatsheets-Learn_JavaScript-03-Functions-fr',
+            'Codecademy/Codecademy-Cheatsheets-Learn_JavaScript-04-Scope-fr',
+            'Codecademy/Codecademy-Cheatsheets-Learn_JavaScript-05-Arrays-fr',
+            'Codecademy/Codecademy-Cheatsheets-Learn_JavaScript-06-Loops-fr',
+          ],
         }
       ],
       'MDN web docs': [
         {
+          type: 'category',
+          label: 'Guide JavaScript',
+          collapsed: true,
+          items: [
+            'MDN-web-docs/guide_JS-01',
+            'MDN-web-docs/guide_JS-02',
+            'MDN-web-docs/guide_JS-03',
+            'MDN-web-docs/guide_JS-04',
+            'MDN-web-docs/guide_JS-05',
+            'MDN-web-docs/guide_JS-06',
+          ],
+        },
+      ],
+      Codewars: [
+        'Codewars/codewars-kata-fr.mdx',
+        'Codewars/Codewars-javascript_basic-fr',
+      ],
+      'CSS-Tricks': [
+          'CSS-Tricks/css-tricks-A_Complete_Guide_to_Grid',
+      ],
+      Exercism: [
+        {
           Docs: ['doc1'],
         }
+      ],
+      'France-IOI': [
+        'France-IOI/Python_1-1',
+        'France-IOI/Python_1-2',
+        'France-IOI/Python_1-3',
       ],
     },
   ],

@@ -1,36 +1,50 @@
 module.exports = {
-  title: 'Mon wiki développement web',
-  tagline: 'HTML - CSS - JS',
-  url: 'https://your-docusaurus-test-site.com',
+  title: 'Wiki développement web',
+  tagline: 'HTML - CSS - JavaScript - Python',
+  url: 'https://github.com/gylgyl2000/laloutre.github.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  favicon: 'img/otter-solid.svg',
+  organizationName: 'LaLoutre', // Usually your GitHub org/user name.
+  projectName: 'laloutre.github.io', // Usually your repo name.
+  themes: ['@docusaurus/theme-live-codeblock'],
   themeConfig: {
     hideableSidebar: true,
     sidebarCollapsible: true,
     navbar: {
-      title: 'My Site',
+      title: 'WIKI DEV WEB par LaLoutre',
       logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        alt: 'Otter',
+        src: 'img/otter-solid.svg',
       },
       items: [
         {
           to: 'docs/',
           activeBasePath: 'docs',
-          label: 'Docs',
-          position: 'left',
-        },
-        {to: 'blog', label: 'Blog', position: 'left'},
-        {
-          href: 'https://github.com/facebook/docusaurus',
-          label: 'GitHub',
+          label: 'Documentation',
           position: 'right',
         },
+        /* {to: 'blog', label: 'Blog', position: 'left'}, */
+        {
+          href: 'https://github.com/gylgyl2000/laloutre.github.io',
+          className:'github',
+          position: 'right',          
+        },
       ],
+    
+    },
+    algolia: {
+      apiKey: 'c0161980dcadfcb44af00f8712eb928c',
+      indexName: 'YK65IDS378',
+
+      // Optional: see doc section bellow
+      // contextualSearch: true,
+
+      // Optional: Algolia search parameters
+      // searchParameters: {},
+
+      //... other Algolia params
     },
     footer: {
       style: 'dark',
@@ -74,7 +88,7 @@ module.exports = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/gylgyl2000/laloutre.github.io',
             },
           ],
         },
@@ -90,7 +104,7 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
+            'https://github.com/gylgyl2000/laloutre.github.io/edit/main/',
         },
         blog: {
           showReadingTime: true,
@@ -104,5 +118,10 @@ module.exports = {
       },
     ],
   ],
-  plugins: ['@docusaurus/plugin-ideal-image'],
+  plugins: [
+    
+      '@docusaurus/plugin-ideal-image',
+      'docusaurus-plugin-sass',
+    
+  ],
 };

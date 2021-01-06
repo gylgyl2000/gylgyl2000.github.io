@@ -1,5 +1,5 @@
 ---
-id: freeCodeCamp-CSS_Grid-fr
+id: freeCodeCamp-CSS_Grid-fr*
 title: CSS Grid
 ---
 

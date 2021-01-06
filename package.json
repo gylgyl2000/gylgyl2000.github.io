@@ -9,18 +9,31 @@
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "serve": "docusaurus serve",
-    "clear": "docusaurus clear"
+    "clear": "docusaurus clear",
+    "build-css": "node-sass-chokidar docs/freeCodeCamp/HTML-Demo_embed/ -o docs/freeCodeCamp/HTML-Demo_embed/"
   },
   "dependencies": {
     "@docusaurus/core": "2.0.0-alpha.69",
     "@docusaurus/plugin-ideal-image": "^2.0.0-alpha.69",
     "@docusaurus/preset-classic": "2.0.0-alpha.69",
+    "@docusaurus/theme-live-codeblock": "^2.0.0-alpha.69",
+    "@fortawesome/fontawesome-free": "^5.15.1",
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/react-fontawesome": "^0.1.14",
     "@mdx-js/loader": "^1.6.21",
+    "@mdx-js/mdx": "^1.6.21",
     "@mdx-js/react": "^1.6.21",
     "@next/mdx": "^10.0.3",
+    "animate.css": "^4.1.1",
+    "bootstrap": "^5.0.0-beta1",
     "clsx": "^1.1.1",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+    "docusaurus-plugin-sass": "^0.1.11",
+    "mdx-embed": "0.0.15",
+    "node-sass-chokidar": "^1.5.0",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-live": "^2.2.3"
   },
   "browserslist": {
     "production": [
@@ -33,5 +46,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint-plugin-mdx": "^1.8.2"
   }
 }
