@@ -258,7 +258,12 @@ function Home() {
               </a>
               <span class="topic-name">babel</span>
             </div>
-            
+            <div class="topic-wrapper">
+              <a class="topic" href="https://d3js.org/" target="_blank">
+                <img src="/img/logos/D3.svg" />
+              </a>
+              <span class="topic-name">D3</span>
+            </div>
           </div>
         </div>
       </header>

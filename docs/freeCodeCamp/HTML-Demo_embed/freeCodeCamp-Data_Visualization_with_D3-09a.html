@@ -1,0 +1,24 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js" type="text/javascript"></script>
+
+<style>
+    .bar {
+      width: 25px;
+      height: 100px;
+      margin: 2px;    
+      display: inline-block;
+      background-color: blue;
+    }
+  </style>
+<body style="margin:8px;">
+    <script>
+        const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
+        d3.select("body").selectAll("div")
+          .data(dataset)
+          .enter()
+          .append("div")
+          .attr("class", "bar")
+          .style("height", (d) => (d*10 + "px"))
+      </script>
+    </body>

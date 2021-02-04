@@ -1,0 +1,461 @@
+---
+id: freeCodeCamp-JSON_APIs_and_AJAX-fr
+title: API JSON et AJAX
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+
+## Introduction aux défis API JSON et AJAX
+
+[JSON APIs and Ajax | freeCodeCamp.org](https://www.freecodecamp.org/learn/data-visualization/json-apis-and-ajax/)
+
+De la même manière que les interfaces utilisateur aident les gens à utiliser les programmes, les
+interfaces de programmation d'application (Application Programming Interfaces, API) aident les
+programmes à interagir avec d'autres programmes. Les API sont des outils que les ordinateurs
+utilisent pour communiquer entre eux, en partie pour envoyer et recevoir des données. Vous pouvez
+utiliser la fonctionnalité API dans votre page une fois que vous avez compris comment effectuer
+des demandes et traiter les données à partir de celle-ci. Les programmeurs utilisent souvent les
+technologies AJAX lorsqu'ils travaillent avec des API.<br />
+Le terme AJAX est originaire d'un acronyme pour Asynchronous JavaScript And XML. Il fait référence
+à un groupe de technologies qui adressent des requêtes asynchrones à un serveur pour transférer des
+données, puis chargent toutes les données renvoyées dans la page. Un processus asynchrone a quelques
+propriétés clés. Le navigateur n'arrête pas de charger une page pour attendre la réponse du serveur.
+En outre, le navigateur insère des données mises à jour dans une partie de la page sans avoir à
+actualiser la page entière.<br />
+L'expérience utilisateur bénéficie des processus asynchrones de plusieurs manières. Les pages se
+chargent plus rapidement car le navigateur n'attend pas que le serveur réponde au milieu d'un rendu
+de page. Les demandes et les transferts se produisent en arrière-plan, sans interrompre ce que fait
+l'utilisateur. Lorsque le navigateur reçoit de nouvelles données, seule la zone nécessaire de la page
+est actualisée. Ces qualités améliorent particulièrement l'expérience utilisateur pour les applications
+d'une seule page.<br />
+Les données transférées entre le navigateur et le serveur sont souvent dans un format appelé JavaScript
+Object Notation (JSON). JSON ressemble à la syntaxe littérale d'objet JavaScript, sauf qu'il est transféré
+sous forme de chaîne. Une fois reçu, il peut être converti en objet et utilisé dans un script.<br />
+Cette section explique comment transférer et utiliser des données à l'aide des technologies AJAX avec
+une API freeCodeCamp.
+
+-----
+
+
+
+## 1. Gérer les événements de clic avec JavaScript à l'aide de la propriété onclick
+
+[Learn JSON APIs and Ajax: Handle Click Events with JavaScript using the onclick property | freeCodeCamp.org](https://www.freecodecamp.org/learn/data-visualization/json-apis-and-ajax/handle-click-events-with-javascript-using-the-onclick-property)
+
+Vous souhaitez que votre code ne s'exécute qu'une fois le chargement de votre page terminé. Pour
+cela, vous pouvez attacher un événement JavaScript au document appelé `DOMContentLoaded`. Voici
+le code qui fait cela :
+
+```js
+document.addEventListener('DOMContentLoaded', function() {
+
+});
+```
+
+Vous pouvez implémenter des gestionnaires d'événements qui vont à l'intérieur de la fonction
+`DOMContentLoaded`. Vous pouvez implémenter un gestionnaire d'événements `onclick` qui se
+déclenche lorsque l'utilisateur clique sur l'élément avec l'id `getMessage`, en ajoutant le
+code suivant :
+
+```js
+document.getElementById('getMessage').onclick = function(){};
+```
+
+:::info instructions
+Ajoutez un gestionnaire d'événements de clic à l'intérieur de la fonction `DOMContentLoaded`
+pour l'élément avec l'id `getMessage`.
+:::
+
+:::tip missions
+- Votre code doit utiliser la méthode `document.getElementById` pour sélectionner l'élément `getMessage`.
+- Votre code doit ajouter un gestionnaire d'événements `onclick`.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    // Ajoutez votre code sous cette ligne
+    document.getElementById('getMessage').onclick = function(){};
+    // Ajoutez votre code au-dessus de cette ligne
+  });
+</script>
+
+<style>
+  body {
+    text-align: center;
+    font-family: "Helvetica", sans-serif;
+  }
+  h1 {
+    font-size: 2em;
+    font-weight: bold;
+  }
+  .box {
+    border-radius: 5px;
+    background-color: #eee;
+    padding: 20px 5px;
+  }
+  button {
+    color: white;
+    background-color: #4791d0;
+    border-radius: 5px;
+    border: 1px solid #4791d0;
+    padding: 5px 10px 8px 10px;
+  }
+  button:hover {
+    background-color: #0F5897;
+    border: 1px solid #0F5897;
+  }
+</style>
+<h1>Cat Photo Finder</h1>
+<p class="message box">
+  The message will go here
+</p>
+<p>
+  <button id="getMessage">
+    Get Message
+  </button>
+</p>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-JSON_APIs_and_AJAX-01a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-handle-click-events-with-javascript-using-the-onclick-property/301503)
+
+-----
+
+
+
+## 2. Modifier le texte avec les événements de clic
+
+[Learn JSON APIs and Ajax: Change Text with click Events | freeCodeCamp.org](https://www.freecodecamp.org/learn/data-visualization/json-apis-and-ajax/change-text-with-click-events)
+
+Lorsque l'événement de clic se produit, vous pouvez utiliser JavaScript pour mettre à jour
+un élément HTML.<br />
+Par exemple, lorsqu'un utilisateur clique sur le bouton "Get Message", il change le texte
+de l'élément avec la classe `message` pour dire "Here is the message".<br />
+Cela fonctionne en ajoutant le code suivant dans l'événement click :
+
+```js
+document.getElementsByClassName('message')[0].textContent = "Here is the message";
+```
+
+:::info instructions
+Ajoutez du code dans le gestionnaire d'événement `onclick` pour changer le texte à l'intérieur
+de l'élément `message` pour dire "Here is the message".
+:::
+
+:::tip missions
+- Votre code doit utiliser la méthode `document.getElementsByClassName` pour sélectionner
+l'élément avec la classe `message` et définir son `textContent` sur la chaîne donnée.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    document.getElementById('getMessage').onclick = function(){
+      // Add your code below this line
+      document.getElementsByClassName('message')[0].textContent="Here is the message";
+      // Add your code above this line
+    }
+  });
+</script>
+
+<style>
+  body {
+    text-align: center;
+    font-family: "Helvetica", sans-serif;
+  }
+  h1 {
+    font-size: 2em;
+    font-weight: bold;
+  }
+  .box {
+    border-radius: 5px;
+    background-color: #eee;
+    padding: 20px 5px;
+  }
+  button {
+    color: white;
+    background-color: #4791d0;
+    border-radius: 5px;
+    border: 1px solid #4791d0;
+    padding: 5px 10px 8px 10px;
+  }
+  button:hover {
+    background-color: #0F5897;
+    border: 1px solid #0F5897;
+  }
+</style>
+
+<h1>Cat Photo Finder</h1>
+<p class="message box">
+  The message will go here
+</p>
+<p>
+  <button id="getMessage">
+    Get Message
+  </button>
+</p>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-JSON_APIs_and_AJAX-02a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-change-text-with-click-events/301500)
+
+-----
+
+
+
+## 3. Obtenez JSON avec la méthode JavaScript XMLHttpRequest
+
+[Learn JSON APIs and Ajax: Get JSON with the JavaScript XMLHttpRequest Method | freeCodeCamp.org](https://www.freecodecamp.org/learn/data-visualization/json-apis-and-ajax/get-json-with-the-javascript-xmlhttprequest-method)
+
+Vous pouvez également demander des données à une source externe. C'est là que les API entrent en jeu.<br />
+N'oubliez pas que les API - ou interfaces de programmation d'application - sont des outils que
+les ordinateurs utilisent pour communiquer entre eux. Vous apprendrez à mettre à jour le HTML
+avec les données que nous obtenons des API à l'aide d'une technologie appelée AJAX.<br />
+La plupart des API Web transfèrent des données dans un format appelé JSON. JSON signifie JavaScript
+Object Notation.<br />
+La syntaxe JSON ressemble beaucoup à la notation littérale d'objet JavaScript. JSON a des
+propriétés d'objet et leurs valeurs actuelles, prises en sandwich entre un `{` et un `}`.<br />
+Ces propriétés et leurs valeurs sont souvent appelées « paires clé-valeur ».<br />
+Cependant, les JSON transmis par les API sont envoyés sous forme de `bytes` et votre application
+le reçoit sous forme de `string`. Ceux-ci peuvent être convertis en objets JavaScript, mais ce
+ne sont pas des objets JavaScript par défaut. La méthode `JSON.parse` analyse la chaîne et
+construit l'objet JavaScript décrit par elle.<br />
+Vous pouvez demander le JSON à l'API Cat Photo de freeCodeCamp. Voici le code que vous pouvez
+insérer dans votre événement de clic pour ce faire :
+
+```js
+const req = new XMLHttpRequest();
+req.open("GET",'/json/cats.json',true);
+req.send();
+req.onload = function(){
+  const json = JSON.parse(req.responseText);
+  document.getElementsByClassName('message')[0].innerHTML = JSON.stringify(json);
+};
+
+```
+
+Voici un aperçu de ce que fait chaque pièce. L'objet JavaScript `XMLHttpRequest` possède
+un certain nombre de propriétés et de méthodes utilisées pour transférer des données. Tout
+d'abord, une instance de l'objet `XMLHttpRequest` est créée et enregistrée dans la variable
+`req`. Ensuite, la méthode `open` initialise une requête - cet exemple demande des données
+à une API, il s'agit donc d'une requête "GET". Le deuxième argument pour `open` est l'URL
+de l'API à laquelle vous demandez des données. Le troisième argument est une valeur booléenne
+où `true` en fait une requête asynchrone. La méthode `send` envoie la demande. Enfin, le
+gestionnaire d'événements `onload` analyse les données renvoyées et applique la méthode
+`JSON.stringify` pour convertir l'objet JavaScript en une chaîne. Cette chaîne est ensuite
+insérée comme texte du message.
+
+:::info instructions
+Mettez à jour le code pour créer et envoyer une requête "GET" à l'API freeCodeCamp Cat Photo.
+Cliquez ensuite sur le bouton "Get Message". Votre fonction AJAX remplacera le texte "The
+message will go there" par la sortie JSON brute de l'API.
+:::
+
+:::tip missions
+- Votre code doit créer un nouveau `XMLHttpRequest`.
+- Votre code doit utiliser la méthode `open` pour initialiser une requête "GET" à l'API
+freeCodeCamp Cat Photo.
+- Votre code doit utiliser la méthode `send` pour envoyer la demande.
+- Votre code doit avoir un gestionnaire d'événements `onload` défini sur une fonction.
+- Votre code doit utiliser la méthode `JSON.parse` pour analyser le `responseText`.
+- Votre code doit obtenir l'élément avec la classe `message` et remplacer son code HTML
+interne par la chaîne de données JSON.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('getMessage').onclick = function() {
+      // Ajoutez votre code sous cette ligne
+      const req = new XMLHttpRequest();
+      req.open('GET', '/json/cats.json', true);
+      req.send();
+      req.onload = function() {
+        const json = JSON.parse(req.responseText);
+        document.getElementsByClassName('message')[0].innerHTML = JSON.stringify(json);
+      };
+      // Ajoutez votre code au-dessus de cette ligne
+    };
+  });
+</script>
+
+<style>
+  body {
+    text-align: center;
+    font-family: "Helvetica", sans-serif;
+  }
+  h1 {
+    font-size: 2em;
+    font-weight: bold;
+  }
+  .box {
+    border-radius: 5px;
+    background-color: #eee;
+    padding: 20px 5px;
+  }
+  button {
+    color: white;
+    background-color: #4791d0;
+    border-radius: 5px;
+    border: 1px solid #4791d0;
+    padding: 5px 10px 8px 10px;
+  }
+  button:hover {
+    background-color: #0F5897;
+    border: 1px solid #0F5897;
+  }
+</style>
+
+<h1>Cat Photo Finder</h1>
+<p class="message box">
+  The message will go here
+</p>
+<p>
+  <button id="getMessage">
+    Get Message
+  </button>
+</p>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-JSON_APIs_and_AJAX-03a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-get-json-with-the-javascript-xmlhttprequest-method/301502)
+
+-----
+
+
+
+## 4. Obtenez JSON avec la méthode JavaScript fetch
+
+[Learn JSON APIs and Ajax: Get JSON with the JavaScript fetch method | freeCodeCamp.org](https://www.freecodecamp.org/learn/data-visualization/json-apis-and-ajax/get-json-with-the-javascript-fetch-method)
+
+Une autre façon de demander des données externes consiste à utiliser la méthode JavaScript `fetch()`.
+Il est équivalent à XMLHttpRequest, mais la syntaxe est considérée comme plus facile à comprendre.<br />
+Voici le code pour faire une requête GET à `/json/cats.json` :
+
+```js
+fetch('/json/cats.json')
+	.then(response => response.json())
+	.then(data => {
+		document.getElementById('message').innerHTML = JSON.stringify(data);
+	})
+```
+
+Jetez un œil à chaque élément de ce code.<br />
+La première ligne est celle qui fait la demande. Ainsi, `fetch(URL)` envoie une requête
+GET à l'URL spécifiée. La méthode renvoie une promesse (Promise).<br />
+Une fois qu'une promesse est retournée, si la demande a réussi, la méthode `then` est exécutée,
+qui prend la réponse et la convertit au format JSON.<br />
+La méthode `then` renvoie également une promesse, qui est gérée par la méthode `then` suivante.
+L'argument dans le second `then` est l'objet JSON que vous recherchez !<br />
+Maintenant, il sélectionne l'élément qui recevra les données à l'aide de `document.getElementById()`.
+Ensuite, il modifie le code HTML de l'élément en insérant une chaîne créée à partir de l'objet JSON
+renvoyé par la requête.
+
+:::info instructions
+Mettez à jour le code pour créer et envoyer une requête "GET" à l'API freeCodeCamp Cat Photo.
+Mais cette fois, en utilisant la méthode `fetch` au lieu de `XMLHttpRequest`.
+:::
+
+:::tip missions
+- Votre code doit faire une requête GET avec `fetch`.
+- Votre code doit utiliser `then` pour convertir la réponse en JSON.
+- Votre code doit utiliser `then` pour gérer les données converties en JSON par l'autre `then`.
+- Votre code doit obtenir l'élément avec le message d'identification et remplacer son code HTML
+interne par la chaîne de données JSON.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('getMessage').onclick = () => {
+      // Ajoutez votre code sous cette ligne
+      fetch('/json/cats.json')
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById('message').innerHTML = JSON.stringify(data);
+        })
+      // Ajoutez votre code au-dessus de cette ligne
+    };
+  });
+</script>
+<style>
+  body {
+    text-align: center;
+    font-family: "Helvetica", sans-serif;
+  }
+  h1 {
+    font-size: 2em;
+    font-weight: bold;
+  }
+  .box {
+    border-radius: 5px;
+    background-color: #eee;
+    padding: 20px 5px;
+  }
+  button {
+    color: white;
+    background-color: #4791d0;
+    border-radius: 5px;
+    border: 1px solid #4791d0;
+    padding: 5px 10px 8px 10px;
+  }
+  button:hover {
+    background-color: #0F5897;
+    border: 1px solid #0F5897;
+  }
+</style>
+<h1>Cat Photo Finder</h1>
+<p id="message" class="box">
+  The message will go here
+</p>
+<p>
+  <button id="getMessage">
+    Get Message
+  </button>
+</p>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-JSON_APIs_and_AJAX-04a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-get-json-with-the-javascript-fetch-method/301501)
+
+-----
+
+

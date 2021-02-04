@@ -1,0 +1,129 @@
+const drumData = [
+  {
+    name: "Drummer-Chunk",
+    key: "Q",
+    src: "https://github.com/gylgyl2000/Drum-machine/raw/main/Dirty%20Drummer-Chunk.wav"
+  },
+
+  {
+    name: "Drummer-Clean",
+    key: "W",
+    src: "https://github.com/gylgyl2000/Drum-machine/raw/main/Dirty%20Drummer-Clean.wav"
+  },
+
+  {
+    name: "Drummer-Heavy",
+    key: "E",
+    src: "https://github.com/gylgyl2000/Drum-machine/raw/main/Dirty%20Drummer-Heavy.wav"
+  },
+
+  {
+    name: "Drummer-Jazz",
+    key: "A",
+    src: "https://github.com/gylgyl2000/Drum-machine/raw/main/Dirty%20Drummer-Jazz.wav"
+  },
+
+  {
+    name: "Drummer-Tough",
+    key: "S",
+    src: "https://github.com/gylgyl2000/Drum-machine/raw/main/Dirty%20Drummer-Tough.wav"
+  },
+
+  {
+    name: "Drummer-Trip",
+    key: "D",
+    src: "https://github.com/gylgyl2000/Drum-machine/raw/main/Dirty%20Drummer-Trip.wav"
+  },
+
+  {
+    name: "Wolfman-Chunk",
+    key: "Z",
+    src: "https://github.com/gylgyl2000/Drum-machine/raw/main/The%20Wolfman-Chunk.wav"
+  },
+
+  {
+    name: "Wolfman-Clean",
+    key: "X",
+    src: "https://github.com/gylgyl2000/Drum-machine/raw/main/The%20Wolfman-Clean.wav"
+  },
+
+  {
+    name: "Wolfman-Tough",
+    key: "C",
+    src: "https://github.com/gylgyl2000/Drum-machine/raw/main/The%20Wolfman-Tough.wav"
+  }
+];
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      display: "Cliquez sur une tuile !"
+    };
+  }
+
+  changeDisplay = name => {
+    this.setState({ display: name });
+  };
+
+  render() {
+    return (
+      <div id="drum-machine">
+        <h3 id="display">{this.state.display}</h3>
+        <div className="drum-buttons">
+          {drumData.map(button => (
+            <DrumPad
+              changeDisplay={this.changeDisplay}
+              name={button.name}
+              key={button.key}
+              id={button.key}
+              src={button.src}
+            />
+          ))}
+        </div>
+      </div>
+    );
+  }
+}
+
+
+class DrumPad extends React.Component {
+  componentDidMount() {
+    document.addEventListener("keydown", this.handleKeydown);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("keydown", this.handleKeydown);
+  }
+
+  handleClick = () => {
+    this.audio.play();
+    this.props.changeDisplay(this.props.name);
+  };
+
+  handleKeydown = e => {
+    if (e.keyCode === this.props.id.charCodeAt()) {
+      this.audio.play();
+      this.props.changeDisplay(this.props.name);
+    }
+  };
+
+  render() {
+
+    const { id, src } = this.props;
+
+    return (
+      <div onClick={this.handleClick} className='drum-pad' id={id}>
+        {id}
+        <audio
+          ref={ref => (this.audio = ref)}
+          className="clip"
+          id={id}
+          src={src}
+        />
+      </div>
+    );
+  }
+}
+
+
+ReactDOM.render(<App />, document.getElementById('root'));

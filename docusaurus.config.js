@@ -25,14 +25,19 @@ module.exports = {
           label: 'Documentation',
           position: 'right',
         },
+        {
+          to: 'outils',
+          label: 'Outils',
+          position: 'right',
+        },
         /* {to: 'blog', label: 'Blog', position: 'left'}, */
         {
           href: 'https://github.com/gylgyl2000/laloutre.github.io',
           className:'github',
-          position: 'right',          
+          position: 'right',
         },
       ],
-    
+
     },
     algolia: {
       apiKey: 'c0161980dcadfcb44af00f8712eb928c',
@@ -119,9 +124,7 @@ module.exports = {
     ],
   ],
   plugins: [
-    
       '@docusaurus/plugin-ideal-image',
       'docusaurus-plugin-sass',
-    
   ],
 };

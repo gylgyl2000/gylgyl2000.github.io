@@ -1,0 +1,150 @@
+body {
+  background-color:#2a2a2a;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea,
+.drum-pad {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
+button,
+input,
+.drum-pad { /* 1 */
+  overflow: visible;
+  width: 150px;
+  height: 150px;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+button,
+select,
+.drum-pad { /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"],
+.drum-pad {
+  -webkit-appearance: button;
+}
+
+h3 {
+  text-align: center;
+  padding: 1em;
+}
+
+p {
+  color: white;
+}
+
+#display {
+  background-color: white;
+  border-radius: 30px;
+  border: solid 5px black;
+  font-size: 2em;
+  padding: 0.2em;
+}
+
+#drum-machine {
+
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.drum-pad  {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.drum-buttons {
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding-bottom: 5em;
+}
+
+#Q, #W, #E, #A, #S, #D, #Z, #X, #C {
+  color: white;
+  font-size: 3em;
+  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: 5px 5px 10px 3px black;
+  cursor: pointer;
+  text-shadow: 2px 2px #2a2a2a;
+}
+#Q:active, #W:active, #E:active, #A:active, #S:active, #D:active, #Z:active, #X:active, #C:active {
+  transform: translateY(4px) translateX(4px);
+  box-shadow: 0 0 black;
+}
+
+#Q, #D {
+  background-image: radial-gradient(circle, #c85b6f, #ca3965);
+  border: double 1px #dc729b;
+}
+
+#Q:hover, #D:hover {
+  background-image: radial-gradient(circle, #ca3965, #c85b6f);
+}
+
+#W, #Z {
+  background-image: radial-gradient(circle, #b0b25f, #ac7b27);
+  border: double 1px #b0783b;
+}
+
+#W:hover, #Z:hover {
+  background-image: radial-gradient(circle, #ac7b27, #b0b25f);
+}
+
+#E, #X {
+  background-image: radial-gradient(circle,#81a244,#167234);
+  border: double 1px #59af6a;
+}
+
+#E:hover, #X:hover {
+  background-image: radial-gradient(circle,#167234,#81a244);
+}
+
+#A, #C {
+  background-image: radial-gradient(circle,#a74090,#6e38be);
+  border: double 1px #9c68ca;
+}
+
+#A:hover, #C:hover {
+  background-image: radial-gradient(circle,#6e38be,#a74090);
+}
+
+#S {
+  background-image: radial-gradient(circle,#28a8ba,#2279e4);
+  border: double 1px#5996f4;
+}
+
+#S:hover {
+  background-image: radial-gradient(circle,#2279e4,#28a8ba);
+}
+
+
+

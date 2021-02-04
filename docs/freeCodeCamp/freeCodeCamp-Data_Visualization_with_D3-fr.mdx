@@ -1,0 +1,2470 @@
+---
+id: freeCodeCamp-Data_Visualization_with_D3-fr
+title: Visualisation des données avec D3
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+
+## Introduction aux défis de la visualisation des données avec D3
+
+D3.js, ou D3, signifie Data Driven Documents. D3 est une bibliothèque JavaScript
+permettant de créer des visualisations de données dynamiques et interactives dans
+le navigateur. Il est conçu pour fonctionner avec les normes Web courantes, à
+savoir HTML, CSS et Scalable Vector Graphics (SVG).<br />
+D3 prend les données d'entrée et les mappe en une représentation visuelle de ces
+données. Il prend en charge de nombreux formats de données différents. D3 vous
+permet de lier (ou de joindre) les données au modèle d'objet de document (DOM).
+Vous utilisez des éléments HTML ou SVG avec les méthodes intégrées de D3 pour
+transformer les données en une visualisation.<br />
+D3 vous donne beaucoup de contrôle sur la présentation des données. Cette section
+couvre les fonctionnalités de base et comment créer des visualisations avec la
+bibliothèque D3.
+
+-----
+
+
+## 1. Ajouter des éléments de document avec D3
+
+[Learn Data Visualization with D3: Add Document Elements with D3 | freeCodeCamp.org](https://www.freecodecamp.org/learn/data-visualization/data-visualization-with-d3/add-document-elements-with-d3)
+
+D3 a plusieurs méthodes qui vous permettent d'ajouter et de modifier des éléments dans votre document.<br />
+La méthode `select()` sélectionne un élément du document. Il prend un argument pour le nom de l'élément
+souhaité et renvoie un nœud HTML pour le premier élément du document qui correspond au nom. Voici un exemple :
+
+```js
+const anchor = d3.select("a");
+```
+
+L'exemple ci-dessus trouve la première balise d'ancrage sur la page et enregistre un nœud HTML
+pour celle-ci dans l'ancre de variable. Vous pouvez utiliser la sélection avec d'autres méthodes.
+La partie "d3" de l'exemple est une référence à l'objet D3, qui vous permet d'accéder aux méthodes D3.<br />
+Deux autres méthodes utiles sont `append()` et `text()`.<br />
+La méthode `append()` prend un argument pour l'élément que vous souhaitez ajouter au document.
+Il ajoute un nœud HTML à un élément sélectionné et renvoie un handle vers ce nœud.<br />
+La méthode `text()` définit le texte du nœud sélectionné ou obtient le texte actuel. Pour
+définir la valeur, vous passez une chaîne en tant qu'argument entre les parenthèses de la méthode.<br />
+Voici un exemple qui sélectionne une liste non ordonnée, ajoute un élément de liste et ajoute du texte :
+
+```js
+d3.select("ul")
+  .append("li")
+  .text("Very important item");
+```
+
+D3 vous permet d'enchaîner plusieurs méthodes avec des périodes pour effectuer un certain nombre
+d'actions à la suite.
+
+:::info instructions
+Utilisez la méthode `select` pour sélectionner la balise `body` dans le document. Ensuite `append`
+une balise `h1` et ajoutez le texte "Learning D3" dans l'élément `h1`.
+:::
+
+:::tip missions
+- `body` doit avoir un élément `h1`.
+- L'élément `h1` doit contenir le texte "Learning D3".
+- Votre code doit accéder à l'objet `d3`.
+- Votre code doit utiliser la méthode `select`.
+- Votre code doit utiliser la méthode `append`.
+- Votre code doit utiliser la méthode `text`.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<body>
+  <script>
+    // Ajoutez votre code sous cette ligne
+    d3.select("body")
+      .append("h1")
+      .text("Learning D3");
+    // Ajoutez votre code au-dessus de cette ligne
+  </script>
+</body>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-Data_Visualization_with_D3-01a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-add-document-elements-with-d3/301474)
+
+:::note guide : Ajouter des éléments de document avec D3
+### Explication du problème
+Ce défi peut être complété en se référant à l'exemple dans la description et en modifiant les
+paramètres à ceux qui sont dans les instructions.
+
+#### Liens pertinents
+De la documentation officielle D3 :
+
+- [Select](https://github.com/d3/d3-selection/blob/master/README.md#select)
+- [Append](https://github.com/d3/d3-selection/blob/master/README.md#selection_append)
+- [Text](https://github.com/d3/d3-selection/blob/master/README.md#selection_text)
+:::
+
+-----
+
+
+
+## 2. Sélectionner un groupe d'éléments avec D3
+
+[Learn Data Visualization with D3: Select a Group of Elements with D3 | freeCodeCamp.org](https://www.freecodecamp.org/learn/data-visualization/data-visualization-with-d3/select-a-group-of-elements-with-d3)
+
+D3 a également la méthode `selectAll()` pour sélectionner un groupe d'éléments.
+Il renvoie un tableau de nœuds HTML pour tous les éléments du document qui correspondent
+à la chaîne d'entrée. Voici un exemple pour sélectionner toutes les balises d'ancrage
+dans un document :
+
+```js
+const anchors = d3.selectAll("a");
+```
+
+Comme la méthode `select()`, `selectAll()` prend en charge le chaînage de méthodes,
+et vous pouvez l'utiliser avec d'autres méthodes.
+
+:::info instructions
+Sélectionnez toutes les balises `li` dans le document et changez leur texte en
+"list item" en chaînant la méthode `.text()`.
+:::
+
+:::tip missions
+- Il devrait y avoir 3 éléments `li` sur la page, et le texte de chacun devrait
+dire "list item". La capitalisation et l'espacement doivent correspondre exactement.
+- Votre code doit accéder à l'objet `d3`.
+- Votre code doit utiliser la méthode `selectAll`.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<body>
+  <ul>
+    <li>Example</li>
+    <li>Example</li>
+    <li>Example</li>
+  </ul>
+  <script>
+    // Ajoutez votre code sous cette ligne
+    d3.selectAll("li")
+      .text("list item");
+    // Ajoutez votre code au-dessus de cette ligne
+  </script>
+</body>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-Data_Visualization_with_D3-02a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-select-a-group-of-elements-with-d3/301490)
+
+-----
+
+
+
+## 3. Travailler avec des données dans D3
+
+[Learn Data Visualization with D3: Work with Data in D3 | freeCodeCamp.org](https://www.freecodecamp.org/learn/data-visualization/data-visualization-with-d3/work-with-data-in-d3)
+
+La bibliothèque D3 se concentre sur une approche basée sur les données. Lorsque vous
+disposez d'un ensemble de données, vous pouvez appliquer les méthodes D3 pour l'afficher
+sur la page. Les données sont disponibles dans de nombreux formats, mais ce défi utilise
+un simple tableau de nombres.<br />
+La première étape consiste à informer D3 des données. La méthode `data()` est utilisée
+sur une sélection d'éléments DOM pour attacher les données à ces éléments. L'ensemble
+de données est passé en tant qu'argument à la méthode.<br />
+Un modèle de flux de travail courant consiste à créer un nouvel élément dans le document
+pour chaque élément de données de l'ensemble. D3 a la méthode `enter()` à cet effet.<br />
+Lorsque `enter()` est combiné avec la méthode `data()`, il examine les éléments sélectionnés
+de la page et les compare au nombre d'éléments de données dans l'ensemble. S'il y a moins
+d'éléments que d'éléments de données, il crée les éléments manquants.<br />
+Voici un exemple qui sélectionne un élément `ul` et crée un nouvel élément de liste en
+fonction du nombre d'entrées dans le tableau :
+
+```html
+<body>
+  <ul></ul>
+  <script>
+    const dataset = ["a", "b", "c"];
+    d3.select("ul").selectAll("li")
+      .data(dataset)
+      .enter()
+      .append("li")
+      .text("New item");
+  </script>
+</body>
+```
+
+Il peut sembler déroutant de sélectionner des éléments qui n'existent pas encore.
+Ce code indique à D3 de sélectionner d'abord `ul` sur la page. Ensuite, sélectionnez
+tous les éléments de la liste, ce qui renvoie une sélection vide. Ensuite, la méthode
+`data()` examine l'ensemble de données et exécute le code suivant trois fois, une fois
+pour chaque élément du tableau. La méthode `enter()` voit qu'il n'y a pas d'éléments
+`li` sur la page, mais il en faut 3 (un pour chaque élément de données dans l'ensemble
+de données). Les nouveaux éléments `li` sont ajoutés à `ul` et ont le texte "New item".
+
+:::info instructions
+Sélectionnez le nœud `body`, puis sélectionnez tous les éléments `h2`. Demandez à D3 de
+créer et d'ajouter une balise `h2` pour chaque élément du tableau d'ensemble de données.
+Le texte dans `h2` devrait dire "New Title". Votre code doit utiliser les méthodes `data()`
+et `enter()`.
+:::
+
+:::tip missions
+- Votre document doit contenir 9 éléments `h2`.
+- Le texte dans les éléments `h2` doit indiquer "New Title". La capitalisation et
+l'espacement doivent correspondre exactement.
+- Votre code doit utiliser la méthode `data()`.
+- Votre code doit utiliser la méthode `enter()`.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<body>
+  <script>
+    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
+    // Ajoutez votre code sous cette ligne
+    d3.select("body").select("h2")
+      .data(dataset)
+      .enter()
+      .append("h2")
+      .text("New Title");
+    // Ajoutez votre code au-dessus de cette ligne
+  </script>
+</body>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-Data_Visualization_with_D3-03a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-work-with-data-in-d3/301497)
+
+:::note guide : Travailler avec des données dans D3
+### Explication du problème
+Ce défi utilise les méthodes `select`, `selectAll`, `append` et `text` vues dans les défis précédents.
+Il ajoute 2 nouvelles méthodes D3 : `data` et `enter` pour cibler les données données et afficher un
+élément sur la page pour chaque donnée.
+
+#### Liens pertinents
+De la documentation officielle D3 :
+
+- [data](https://github.com/d3/d3-selection/blob/master/README.md#selection_data)
+- [enter](https://github.com/d3/d3-selection/blob/master/README.md#selection_enter)
+:::
+
+-----
+
+
+
+## 4. Travailler avec des données dynamiques dans D3
+
+[Learn Data Visualization with D3: Work with Dynamic Data in D3 | freeCodeCamp.org](https://www.freecodecamp.org/learn/data-visualization/data-visualization-with-d3/work-with-dynamic-data-in-d3)
+
+Les deux derniers défis couvrent les bases de l'affichage dynamique des données avec D3
+en utilisant les méthodes `data()` et `enter()`. Ces méthodes prennent un ensemble de
+données et, avec la méthode `append()`, créent un nouvel élément DOM pour chaque entrée
+de l'ensemble de données.<br />
+Dans le défi précédent, vous avez créé un nouvel élément `h2` pour chaque élément du
+tableau de l'ensemble de données, mais ils contenaient tous le même texte, "New Title".
+C'est parce que vous n'avez pas utilisé les données liées à chacun des éléments `h2`.<br />
+La méthode D3 `text()` peut prendre une chaîne ou une fonction de rappel comme argument :
+
+```js
+selection.text((d) => d)
+```
+
+Dans l'exemple ci-dessus, le paramètre `d` fait référence à une seule entrée de l'ensemble
+de données à laquelle une sélection est liée.<br />
+En utilisant l'exemple actuel comme contexte, le premier élément `h2` est lié à 12, le
+deuxième élément `h2` est lié à 31, le troisième élément `h2` est lié à 22, et ainsi de suite.
+
+:::info instructions
+Modifiez la méthode `text()` afin que chaque élément `h2` affiche la valeur correspondante
+du tableau de l'ensemble de données avec un seul espace et "USD". Par exemple, la première
+rubrique doit être "12 USD".
+:::
+
+:::tip missions
+- Le premier `h2` devrait avoir le texte "12 USD".
+- Le deuxième `h2` devrait avoir le texte "31 USD".
+- Le troisième `h2` devrait avoir le texte "22 USD".
+- Le quatrième `h2` devrait avoir le texte "17 USD".
+- Le cinquième `h2` devrait avoir le texte "25 USD".
+- Le sixième `h2` devrait avoir le texte "18 USD".
+- Le septième `h2` devrait avoir le texte "29 USD".
+- Le huitième `h2` devrait avoir le texte "14 USD".
+- Le neuvième `h2` devrait avoir le texte "9 USD".
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<body>
+  <script>
+    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
+    d3.select("body").selectAll("h2")
+      .data(dataset)
+      .enter()
+      .append("h2")
+      // Ajoutez votre code sous cette ligne
+      // Avant : .text("New Title");
+      .text((d) => d + " USD");
+      // Ajoutez votre code au-dessus de cette ligne
+  </script>
+</body>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-Data_Visualization_with_D3-04a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-work-with-dynamic-data-in-d3/301498)
+
+:::note guide : Travailler avec des données dynamiques dans D3
+### Explication du problème
+Ce défi introduit l'utilisation des fonctions de rappel JavaScript comme arguments des
+méthodes D3. Puisque D3 est un objet JavaScript, il n'a aucun problème à suivre les
+mêmes règles de syntaxe.
+
+#### Liens pertinents
+- [Fonction de rappel (callback)](https://developer.mozilla.org/fr/docs/Glossaire/Fonction_de_rappel)
+- [Fonctions fléchées](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Fonctions/Fonctions_fl%C3%A9ch%C3%A9es)
+- [Littéraux de gabarits](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Litt%C3%A9raux_gabarits)
+
+-----
+
+#### Autre solution
+
+```js
+.text((d) => `${d} USD`);
+```
+
+Il utilise la fonctionnalité de rappel JavaScripts pour insérer chaque donnée, d, comme
+texte pour chaque nœud 'h2' créé précédemment. Il utilise également des littéraux de
+modèle JavaScript pour éviter la concaténation de chaînes.
+:::
+
+-----
+
+
+
+## 5. Ajouter un style en ligne aux éléments
+
+[Learn Data Visualization with D3: Add Inline Styling to Elements | freeCodeCamp.org](https://www.freecodecamp.org/learn/data-visualization/data-visualization-with-d3/add-inline-styling-to-elements)
+
+D3 vous permet d'ajouter des styles CSS en ligne sur des éléments dynamiques avec la méthode `style()`.<br />
+La méthode `style()` prend une paire clé-valeur séparée par des virgules comme argument.
+Voici un exemple pour définir la couleur du texte de la sélection sur bleu :
+
+```js
+selection.style("color","blue");
+```
+
+:::info instructions
+Ajoutez la méthode `style()` au code dans l'éditeur pour que tout le texte affiché ait
+une `font-family` de `verdana`.
+:::
+
+:::tip missions
+- Vos éléments `h2` doivent avoir une `font-family` verdana.
+- Votre code doit utiliser la méthode `style()`.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<body>
+  <script>
+    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
+    d3.select("body").selectAll("h2")
+      .data(dataset)
+      .enter()
+      .append("h2")
+      .text((d) => (d + " USD"))
+      // Ajoutez votre code sous cette ligne
+      .style("font-family","verdana");
+      // Ajoutez votre code au-dessus de cette ligne
+  </script>
+</body>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-Data_Visualization_with_D3-05a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-add-inline-styling-to-elements/301475)
+
+:::note guide : Ajouter un style en ligne aux éléments
+
+### Explication du problème
+Ce défi introduit la méthode de `style` D3, qui prend 2 arguments : (clé,valeur).
+
+Puisque nous sommes en JavaScript et que `style` est une méthode que nous appelons,
+des guillemets doivent être utilisés pour les arguments. Sinon, la fonction essaierait
+d'utiliser la valeur des variables `font-family` et `verdana`, qui n'existent pas et
+lanceraient chacune une ReferenceError.
+
+#### Liens pertinents
+- [style](https://github.com/d3/d3-selection/blob/master/README.md#selection_style)
+- [ReferenceError: "x" is not defined](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Erreurs/Not_defined)
+:::
+
+-----
+
+
+
+## 6. Modifier les styles en fonction des données
+
+[Learn Data Visualization with D3: Change Styles Based on Data | freeCodeCamp.org](https://www.freecodecamp.org/learn/data-visualization/data-visualization-with-d3/change-styles-based-on-data)
+
+D3 concerne la visualisation et la présentation des données. Il est probable que vous souhaitiez
+modifier le style des éléments en fonction des données. Vous pouvez utiliser une fonction de
+rappel dans la méthode `style()` pour modifier le style des différents éléments.<br />
+Par exemple, vous souhaiterez peut-être colorer un point de données en bleu s'il a une valeur
+inférieure à 20 et en rouge dans le cas contraire. Vous pouvez utiliser une fonction de rappel
+dans la méthode `style()` et inclure la logique conditionnelle. La fonction de rappel utilise
+le paramètre `d` pour représenter le point de données :
+
+```js
+selection.style("color", (d) => {
+  /* Logique qui renvoie la couleur basée sur une condition */
+});
+```
+
+La méthode `style()` ne se limite pas à définir la `color` - elle peut également être utilisée
+avec d'autres propriétés CSS.
+
+:::info instructions
+Ajoutez la méthode `style()` au code dans l'éditeur pour définir `color` des éléments `h2` de
+manière conditionnelle. Écrivez la fonction de rappel afin que si la valeur des données est
+inférieure à 20, elle renvoie "red", sinon elle renvoie "green".<br />
+**Remarque :** Vous pouvez utiliser la logique if-else ou l'opérateur ternaire.
+:::
+
+:::tip missions
+- Le premier `h2` doit avoir `color` rouge.
+- Le deuxième `h2` doit avoir `color` verte.
+- Le troisième `h2` doit avoir `color` verte.
+- Le quatrième `h2` doit avoir `color` rouge.
+- Le cinquième `h2` doit avoir `color` verte.
+- Le sixième `h2` devrait avoir `color` rouge.
+- Le septième `h2` doit avoir `color` verte.
+- Le huitième `h2` devrait avoir `color` rouge.
+- Le neuvième `h2` doit avoir `color` rouge.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<body>
+  <script>
+    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
+    d3.select("body").selectAll("h2")
+      .data(dataset)
+      .enter()
+      .append("h2")
+      .text((d) => (d + " USD"))
+      // Ajoutez votre code sous cette ligne
+      .style("color", (d) => {
+        if (d < 20) {
+          return "red"
+        } else {
+          return "green"
+        }
+      });
+      // Ajoutez votre code au-dessus de cette ligne
+  </script>
+</body>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-Data_Visualization_with_D3-06a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-change-styles-based-on-data/301479)
+
+:::note guide : Modifier les styles en fonction des données
+
+### Explication du problème
+Rappelez-vous une fois de plus quelle est la fonction de rappel avec [cet article](https://codeburst.io/javascript-what-the-heck-is-a-callback-aba4da2deced)<br />
+Il y a deux façons de compléter cette partie, soit avec la logique if-else, soit avec l'opérateur ternaire.
+
+#### logique if-else
+Un exemple de [w3school](https://www.w3schools.com/js/js_if_else.asp)
+
+#### Opérateur ternaire
+Une explication plus détaillée [ici](https://codeburst.io/javascript-the-conditional-ternary-operator-explained-cac7218beeff).
+L'opérateur ternaire est beaucoup plus concis et plus rapide à retenir pour une simple déclaration
+vraie ou fausse. [Lire ceci](https://www.thoughtco.com/javascript-by-example-use-of-the-ternary-operator-2037394).
+
+```js
+.style("color", (d) => {
+  return d < 20 ? 'red' : 'green'
+});
+```
+:::
+
+-----
+
+
+
+## 7. Ajouter des classes avec D3
+
+[Learn Data Visualization with D3: Add Classes with D3 | freeCodeCamp.org](https://www.freecodecamp.org/learn/data-visualization/data-visualization-with-d3/add-classes-with-d3)
+
+L'utilisation de nombreux styles en ligne sur des éléments HTML devient difficile à gérer,
+même pour les petites applications. Il est plus facile d'ajouter une classe aux éléments et
+de styliser cette classe une seule fois à l'aide de règles CSS. D3 a la méthode `attr()`
+pour ajouter n'importe quel attribut HTML à un élément, y compris un nom de classe.<br />
+La méthode `attr()` fonctionne de la même manière que `style()`. Il prend des valeurs
+séparées par des virgules et peut utiliser une fonction de rappel. Voici un exemple
+pour ajouter une classe `container` à une sélection :
+
+```js
+selection.attr("class", "container");
+```
+
+Notez que le paramètre "class" restera le même chaque fois que vous aurez besoin d'ajouter
+une classe et que seul le paramètre "container" changera.
+
+:::info instructions
+Ajoutez la méthode `attr()` au code dans l'éditeur et mettez une classe `bar` sur les éléments `div`.
+:::
+
+:::tip missions
+- Vos éléments `div` doivent avoir une classe `bar`.
+- Votre code doit utiliser la méthode `attr()`.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<style>
+  .bar {
+    width: 25px;
+    height: 100px;
+    display: inline-block;
+    background-color: blue;
+  }
+</style>
+<body>
+  <script>
+    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
+    d3.select("body").selectAll("div")
+      .data(dataset)
+      .enter()
+      .append("div")
+      // Ajoutez votre code sous cette ligne
+      .attr("class", "bar");
+      // Ajoutez votre code au-dessus de cette ligne
+  </script>
+</body>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-Data_Visualization_with_D3-07a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-add-classes-with-d3/301473)
+
+-----
+
+
+
+## 8. Mettre à jour dynamiquement la hauteur d'un élément
+
+[Learn Data Visualization with D3: Update the Height of an Element Dynamically | freeCodeCamp.org](https://www.freecodecamp.org/learn/data-visualization/data-visualization-with-d3/update-the-height-of-an-element-dynamically)
+
+Les défis précédents couvraient comment afficher des données à partir d'un tableau et comment
+ajouter des classes CSS. Vous pouvez combiner ces leçons pour créer un graphique à barres
+simple. Il y a deux étapes pour cela :
+- Créez un `div` pour chaque point de données du tableau
+- Donnez à chaque `div` une hauteur dynamique, en utilisant une fonction de rappel dans la
+méthode `style()` qui définit la hauteur égale à la valeur des données
+
+Rappelez le format pour définir un style à l'aide d'une fonction de rappel :
+
+```js
+selection.style("cssProperty", (d) => d)
+```
+
+:::info instructions
+Ajoutez la méthode `style()` au code dans l'éditeur pour définir la propriété `height` pour
+chaque élément. Utilisez une fonction de rappel pour renvoyer la valeur du point de données
+avec la chaîne "px" ajoutée.
+:::
+
+:::tip missions
+- Le premier `div` doit avoir une `height` de 12 pixels.
+- Le deuxième `div` doit avoir une `height` de 31 pixels.
+- Le troisième `div` doit avoir une `height` de 22 pixels.
+- Le quatrième `div` doit avoir une `height` de 17 pixels.
+- Le cinquième `div` doit avoir une `height` de 25 pixels.
+- Le sixième `div` doit avoir une `height` de 18 pixels.
+- Le neuvième `div` doit avoir une `height` de 9 pixels.
+- Le septième `div` doit avoir une `height` de 29 pixels.
+- La huitième `div` doit avoir une `height` de 14 pixels.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<style>
+  .bar {
+    width: 25px;
+    height: 100px;
+    display: inline-block;
+    background-color: blue;
+  }
+</style>
+<body>
+  <script>
+    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
+    d3.select("body").selectAll("div")
+      .data(dataset)
+      .enter()
+      .append("div")
+      .attr("class", "bar")
+      // Ajoutez votre code sous cette ligne
+      .style("height", (d) => d + 'px');
+      // ou .style('height', d => `${d}px`);
+      // Ajoutez votre code au-dessus de cette ligne
+  </script>
+</body>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-Data_Visualization_with_D3-08a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-update-the-height-of-an-element-dynamically/301493)
+
+-----
+
+
+
+## 9. Modifier la présentation d'un graphique à barres
+
+[Learn Data Visualization with D3: Change the Presentation of a Bar Chart | freeCodeCamp.org](https://www.freecodecamp.org/learn/data-visualization/data-visualization-with-d3/change-the-presentation-of-a-bar-chart)
+
+Le dernier défi a créé un graphique à barres, mais quelques modifications de mise en forme
+pourraient l'améliorer :
+- Ajoutez un espace entre chaque barre pour les séparer visuellement, ce qui se fait en
+ajoutant une marge au CSS pour la classe `bar`.
+- Augmentez la hauteur des barres pour mieux montrer la différence de valeurs, ce qui se
+fait en multipliant la valeur par un nombre pour mettre à l'échelle la hauteur
+
+:::info instructions
+Tout d'abord, ajoutez une `margin` de 2 pixels à la classe `bar` dans la balise `style`.
+Ensuite, modifiez la fonction de rappel dans la méthode `style()` afin qu'elle renvoie une
+valeur 10 fois la valeur de données d'origine (plus le "px").<br />
+**Remarque :** La multiplication de chaque point de données par la même constante ne modifie
+que l'échelle. C'est comme un zoom avant et cela ne change pas la signification des données
+sous-jacentes.
+:::
+
+:::tip missions
+- Le premier `div` doit avoir une `height` de 120 pixels et une `margin` de 2 pixels.
+- Le deuxième `div` doit avoir une `height` de 310 pixels et une `margin` de 2 pixels.
+- Le troisième `div` doit avoir une `height` de 220 pixels et une `margin` de 2 pixels.
+- Le quatrième `div` doit avoir une `height` de 170 pixels et une `margin` de 2 pixels.
+- Le cinquième `div` doit avoir une `height` de 250 pixels et une `margin` de 2 pixels.
+- Le sixième `div` doit avoir une `height` de 180 pixels et une `margin` de 2 pixels.
+- Le septième `div` doit avoir une `height` de 290 pixels et une `margin` de 2 pixels.
+- Le huitième `div` doit avoir une `height` de 140 pixels et une `margin` de 2 pixels.
+- Le neuvième `div` doit avoir une `height` de 90 pixels et une `margin` de 2 pixels.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<style>
+  .bar {
+    width: 25px;
+    height: 100px;
+    /* Changer uniquement le code en dessous de cette ligne */
+    margin: 2px;
+    /* Ne changez le code qu'au-dessus de cette ligne */
+    display: inline-block;
+    background-color: blue;
+  }
+</style>
+<body>
+  <script>
+    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
+    d3.select("body").selectAll("div")
+      .data(dataset)
+      .enter()
+      .append("div")
+      .attr("class", "bar")
+      // Changer uniquement le code en dessous de cette ligne
+      .style("height", (d) => (d * 10 + "px"))
+      // Ne changez le code qu'au-dessus de cette ligne
+  </script>
+</body>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-Data_Visualization_with_D3-09a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-change-the-presentation-of-a-bar-chart/301481)
+
+-----
+
+
+
+## 10. En savoir plus sur SVG dans D3
+
+[Learn Data Visualization with D3: Learn About SVG in D3 | freeCodeCamp.org](https://www.freecodecamp.org/learn/data-visualization/data-visualization-with-d3/learn-about-svg-in-d3)
+
+SVG signifie *Scalable Vector Graphics* (images vectorielles évolutives).<br />
+Ici, "évolutif" signifie que si vous effectuez un zoom avant ou arrière sur un objet,
+il n'apparaîtra pas pixélisé. Il s'adapte au système d'affichage, que ce soit sur un petit
+écran mobile ou un grand écran de télévision.<br />
+SVG est utilisé pour créer des formes géométriques courantes. Puisque D3 mappe les données
+en une représentation visuelle, il utilise SVG pour créer les formes pour la visualisation.
+Les formes SVG d'une page Web doivent être placées dans une balise HTML `svg`.<br />
+CSS peut être évolutif lorsque les styles utilisent des unités relatives (telles que `vh`,
+`vw` ou pourcentages), mais l'utilisation de SVG est plus flexible pour créer des visualisations
+de données.
+
+:::info instructions
+Ajoutez un nœud `svg` au `body` en utilisant `append()`. Donnez-lui un attribut `width` défini
+sur la constante `w` fournie et un attribut `height` sur la constante `h` fournie en utilisant
+les méthodes `attr()` ou `style()` pour chacun. Vous le verrez dans la sortie car une `background-color`
+rose lui est appliquée dans la balise `style`.<br />
+**Remarque :** Lorsque vous utilisez `attr()`, les attributs `width` et `height` n'ont pas d'unités.
+C'est la pierre angulaire de la mise à l'échelle - l'élément aura toujours un rapport largeur/hauteur
+de 5:1, quel que soit le niveau de zoom.
+:::
+
+:::tip missions
+- Votre document doit avoir 1 élément `svg`.
+- L'élément `svg` doit avoir un attribut `width` défini sur 500 ou stylisé pour avoir une largeur de 500 pixels.
+- L'élément `svg` doit avoir un attribut `height` défini sur 100 ou stylisé pour avoir une hauteur de 100 pixels.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<style>
+  svg {
+    background-color: pink;
+  }
+</style>
+<body>
+  <script>
+    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
+    const w = 500;
+    const h = 100;
+
+    const svg = d3.select("body")
+                  // Ajoutez votre code sous cette ligne
+                  .append("svg")
+                  .attr("width",w)
+                  .attr("height",h);
+                  // Ajoutez votre code au-dessus de cette ligne
+  </script>
+</body>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-Data_Visualization_with_D3-10a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-learn-about-svg-in-d3/301489)
+
+-----
+
+
+
+## 11. Afficher les formes avec SVG
+
+[Learn Data Visualization with D3: Display Shapes with SVG | freeCodeCamp.org](https://www.freecodecamp.org/learn/data-visualization/data-visualization-with-d3/display-shapes-with-svg)
+
+Le dernier défi a créé un élément `svg` avec une largeur et une hauteur données, qui était
+visible car une `background-color` lui était appliquée dans la balise `style`. Le code a
+fait de la place pour la largeur et la hauteur données.<br />
+L'étape suivante consiste à créer une forme à mettre dans la zone `svg`. Il existe un certain
+nombre de formes prises en charge dans SVG, telles que les rectangles et les cercles. Ils
+sont utilisés pour afficher des données. Par exemple, une forme SVG rectangle (`<rect>`)
+peut créer une barre dans un graphique à barres.<br />
+Lorsque vous placez une forme dans la zone `svg`, vous pouvez spécifier où elle va avec
+les coordonnées `x` et `y`. Le point d'origine de (0, 0) se trouve dans le coin supérieur
+gauche. Les valeurs positives pour `x` poussent la forme vers la droite et les valeurs
+positives pour `y` poussent la forme vers le bas à partir du point d'origine.<br />
+Pour placer une forme au milieu du `svg` 500 (largeur) x 100 (hauteur) du dernier défi,
+la coordonnée `x` serait 250 et la coordonnée `y` serait 50.<br />
+Un `rect` SVG a quatre attributs. Il y a les coordonnées `x` et `y` de l'endroit où il
+est placé dans la zone `svg`. Il a également une `height` et une `width` pour spécifier
+la taille.
+
+:::info instructions
+Ajoutez une forme `rect` au `svg` en utilisant `append()`, et donnez-lui un attribut
+`width` de 25 et un attribut `height` de 100. De plus, donnez les attributs `rect` `x`
+et `y` chacun à 0.
+:::
+
+:::tip missions
+- Votre document doit avoir 1 élément `rect`.
+- L'élément `rect` doit avoir un attribut `width` défini sur 25.
+- L'élément `rect` doit avoir un attribut `y` défini sur 0.
+- L'élément `rect` doit avoir un attribut `height` défini sur 100.
+- L'élément `rect` doit avoir un attribut `x` défini sur 0.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<body>
+  <script>
+    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
+    const w = 500;
+    const h = 100;
+
+    const svg = d3.select("body")
+                  .append("svg")
+                  .attr("width", w)
+                  .attr("height", h)
+                  // Ajoutez votre code sous cette ligne
+                  .append("rect")
+                  .attr("x", 0)
+                  .attr("y", 0)
+                  .attr("height", 100)
+                  .attr("width", 25)
+                  // Ajoutez votre code au-dessus de cette ligne
+  </script>
+</body>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-Data_Visualization_with_D3-11a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-display-shapes-with-svg/301485)
+
+-----
+
+
+
+## 12. Créer une barre pour chaque point de données de l'ensemble
+
+[Learn Data Visualization with D3: Create a Bar for Each Data Point in the Set | freeCodeCamp.org](https://www.freecodecamp.org/learn/data-visualization/data-visualization-with-d3/create-a-bar-for-each-data-point-in-the-set)
+
+Le dernier défi n'a ajouté qu'un seul rectangle à l'élément `svg` pour représenter une barre.
+Ici, vous allez combiner ce que vous avez appris jusqu'à présent sur les formes `data()`,
+`enter()` et SVG pour créer et ajouter un rectangle pour chaque point de données dans
+l'ensemble de données.<br />
+Un défi précédent montrait le format pour créer et ajouter un `div` pour chaque élément de
+l'ensemble de données :
+
+```js
+d3.select("body").selectAll("div")
+  .data(dataset)
+  .enter()
+  .append("div")
+```
+
+Il existe quelques différences en travaillant avec des éléments `rect` au lieu de `divs`.
+Les `rects` doivent être ajoutés à un élément `svg`, pas directement au `body`. En outre,
+vous devez indiquer à D3 où placer chaque `rect` dans la zone `svg`. Le placement de la
+barre sera couvert dans le prochain défi.
+
+:::info instructions
+Utilisez les méthodes `data()`, `enter()` et `append()` pour créer et ajouter un `rect`
+pour chaque élément de `dataset`. Les barres doivent toutes s'afficher les unes sur les
+autres ; ceci sera corrigé dans le prochain défi.
+:::
+
+:::tip missions
+- Votre document doit avoir 9 éléments `rect`.
+- Votre code doit utiliser la méthode `data()`.
+- Votre code doit utiliser la méthode `enter()`.
+- Votre code doit utiliser la méthode `append()`.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<body>
+  <script>
+    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
+    const w = 500;
+    const h = 100;
+
+    const svg = d3.select("body")
+                  .append("svg")
+                  .attr("width", w)
+                  .attr("height", h);
+
+    svg.selectAll("rect")
+       // Ajoutez votre code sous cette ligne
+       .data(dataset)
+       .enter()
+       .append("rect")
+       // Ajoutez votre code au-dessus de cette ligne
+       .attr("x", 0)
+       .attr("y", 0)
+       .attr("width", 25)
+       .attr("height", 100);
+  </script>
+</body>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-Data_Visualization_with_D3-12a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-create-a-bar-for-each-data-point-in-the-set/301482)
+
+-----
+
+
+
+## 13. Définir dynamiquement les coordonnées de chaque barre
+
+[Learn Data Visualization with D3: Dynamically Set the Coordinates for Each Bar | freeCodeCamp.org](https://www.freecodecamp.org/learn/data-visualization/data-visualization-with-d3/dynamically-set-the-coordinates-for-each-bar)
+
+Le dernier défi a créé et ajouté un rectangle à l'élément `svg` pour chaque point de `dataset` pour
+représenter une barre. Malheureusement, ils étaient tous empilés les uns sur les autres.<br />
+Le placement d'un rectangle est géré par les attributs `x` et `y`. Ils indiquent à D3 par où
+commencer à dessiner la forme dans la zone `svg`. Le dernier défi les a mis à 0, donc chaque
+barre a été placée dans le coin supérieur gauche.<br />
+Pour un graphique à barres, toutes les barres doivent se trouver au même niveau vertical, ce
+qui signifie que la valeur `y` reste la même (à 0) pour toutes les barres. La valeur `x`,
+cependant, doit changer lorsque vous ajoutez de nouvelles barres. N'oubliez pas que des
+valeurs `x` plus élevées poussent les éléments plus loin vers la droite. Au fur et à mesure
+que vous parcourez les éléments du tableau dans l'ensemble de données, la valeur `x` doit augmenter.<br />
+La méthode `attr()` dans D3 accepte une fonction de rappel pour définir dynamiquement cet
+attribut. La fonction de rappel prend deux arguments, un pour le point de données lui-même
+(généralement `d`) et un pour l'index du point de données dans le tableau. Le deuxième
+argument de l'index est facultatif. Voici le format :
+
+```js
+selection.attr("property", (d, i) => {
+  / *
+  * d est la valeur du point de données
+  * i est l'indice du point de données dans le tableau
+  * /
+})
+```
+
+Il est important de noter que vous n'avez PAS besoin d'écrire une boucle for ou d'utiliser
+`forEach()` pour parcourir les éléments de l'ensemble de données. Rappelez-vous que la méthode
+`data()` analyse l'ensemble de données et que toute méthode chaînée après `data()` est exécutée
+une fois pour chaque élément de l'ensemble de données.
+
+:::info instructions
+Modifiez la fonction de rappel de l'attribut `x` pour qu'elle renvoie l'index 30 fois.<br />
+**Remarque :** Chaque barre a une largeur de 25, donc augmenter chaque valeur de `x` de 30
+ajoute un peu d'espace entre les barres. Toute valeur supérieure à 25 fonctionnerait dans cet exemple.
+:::
+
+:::tip missions
+- Le premier `rect` doit avoir une valeur `x` de 0.
+- Le deuxième `rect` doit avoir une valeur `x` de 30.
+- Le troisième `rect` doit avoir une valeur `x` de 60.
+- Le quatrième `rect` doit avoir une valeur `x` de 90.
+- Le cinquième `rect` doit avoir une valeur `x` de 120.
+- Le sixième `rect` doit avoir une valeur `x` de 150.
+- Le septième `rect` doit avoir une valeur `x` de 180.
+- Le huitième `rect` doit avoir une valeur `x` de 210.
+- Le neuvième `rect` doit avoir une valeur `x` de 240.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<body>
+  <script>
+    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
+    const w = 500;
+    const h = 100;
+
+    const svg = d3.select("body")
+                  .append("svg")
+                  .attr("width", w)
+                  .attr("height", h);
+
+    svg.selectAll("rect")
+       .data(dataset)
+       .enter()
+       .append("rect")
+       .attr("x", (d, i) => {
+         // Ajoutez votre code sous cette ligne
+         return i * 30
+         // Ajoutez votre code au-dessus de cette ligne
+       })
+       .attr("y", 0)
+       .attr("width", 25)
+       .attr("height", 100);
+  </script>
+</body>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-Data_Visualization_with_D3-13a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-dynamically-set-the-coordinates-for-each-bar/301487)
+
+-----
+
+
+
+## 14. Changer dynamiquement la hauteur de chaque barre
+
+[Learn Data Visualization with D3: Dynamically Change the Height of Each Bar | freeCodeCamp.org](https://www.freecodecamp.org/learn/data-visualization/data-visualization-with-d3/dynamically-change-the-height-of-each-bar)
+
+La hauteur de chaque barre peut être définie sur la valeur du point de données dans le tableau,
+de la même manière que la valeur `x` a été définie dynamiquement.
+
+```js
+selection.attr ("property", (d, i) = {
+  / *
+  * d est la valeur du point de données
+  * i est l'indice du point de données dans le tableau
+  * /
+})
+```
+
+:::info instructions
+Modifiez la fonction de rappel de l'attribut `height` pour renvoyer la valeur des données multipliée par 3.<br />
+**Remarque :** N'oubliez pas que la multiplication de tous les points de données par la même constante
+met à l'échelle les données (comme le zoom avant). Cela aide à voir les différences entre les valeurs
+de barre dans cet exemple.
+:::
+
+:::tip missions
+- Le premier `rect` doit avoir une `height` de 36.
+- Le deuxième `rect` doit avoir une `height` de 93.
+- Le troisième `rect` devrait avoir une `height` de 66.
+- Le quatrième `rect` devrait avoir une `height` de 51.
+- Le cinquième `rect` devrait avoir une `height` de 75.
+- Le sixième `rect` devrait avoir une `height` de 54.
+- Le septième `rect` devrait avoir une `height` de 87.
+- Le huitième `rect` devrait avoir une `height` de 42.
+- Le neuvième `rect` devrait avoir une `height` de 27.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<body>
+  <script>
+    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
+    const w = 500;
+    const h = 100;
+
+    const svg = d3.select("body")
+                  .append("svg")
+                  .attr("width", w)
+                  .attr("height", h);
+
+    svg.selectAll("rect")
+       .data(dataset)
+       .enter()
+       .append("rect")
+       .attr("x", (d, i) => i * 30)
+       .attr("y", 0)
+       .attr("width", 25)
+       .attr("height", (d, i) => {
+         // Ajoutez votre code sous cette ligne
+         return d * 3
+         // Ajoutez votre code au-dessus de cette ligne
+       });
+  </script>
+</body>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-Data_Visualization_with_D3-14a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-dynamically-change-the-height-of-each-bar/301486)
+
+-----
+
+
+
+## 15. Inverser les éléments SVG
+
+[Learn Data Visualization with D3: Invert SVG Elements | freeCodeCamp.org](https://www.freecodecamp.org/learn/data-visualization/data-visualization-with-d3/invert-svg-elements)
+
+Vous avez peut-être remarqué que le graphique à barres avait l'air d'être à l'envers ou inversé.
+Ceci est dû à la façon dont SVG utilise les coordonnées (x, y).<br />
+En SVG, le point d'origine des coordonnées se trouve dans le coin supérieur gauche. Une coordonnée
+`x` de 0 place une forme sur le bord gauche de la zone SVG. Une coordonnée `y` de 0 place une
+forme sur le bord supérieur de la zone SVG. Des valeurs `x` plus élevées poussent le rectangle
+vers la droite. Des valeurs `y` plus élevées poussent le rectangle vers le bas.<br />
+Pour que les barres soient orientées vers le haut, vous devez modifier la façon dont la coordonnée
+`y` est calculée. Il doit tenir compte à la fois de la hauteur de la barre et de la hauteur
+totale de la zone SVG.<br />
+La hauteur de la zone SVG est de 100. Si vous avez un point de données de 0 dans l'ensemble,
+vous voudrez que la barre commence en bas de la zone SVG (pas en haut). Pour ce faire, la
+coordonnée `y` a besoin d'une valeur de 100. Si la valeur du point de données était 1, vous
+commenceriez par une coordonnée `y` de 100 pour définir la barre en bas. Ensuite, vous devez
+tenir compte de la hauteur de la barre de 1, de sorte que la coordonnée `y` finale serait 99.<br />
+La coordonnée `y` qui est `y = heightOfSVG - heightOfBar` placerait les barres à droite.
+
+:::info instructions
+Modifiez la fonction de rappel de l'attribut `y` pour définir les barres à droite. N'oubliez
+pas que `height` de la barre est égale à 3 fois la valeur des données `d`.<br />
+**Remarque :** En général, la relation est `y = h - m * d`, où `m` est la constante qui met
+à l'échelle les points de données.
+:::
+
+:::tip missions
+- Le premier `rect` doit avoir une valeur `y` de 64.
+- Le deuxième `rect` doit avoir une valeur `y` de 7.
+- Le troisième `rect` doit avoir une valeur `y` de 34.
+- Le quatrième `rect` doit avoir une valeur `y` de 49.
+- Le cinquième `rect` doit avoir une valeur `y` de 25.
+- Le sixième `rect` doit avoir une valeur `y` de 46.
+- Le septième `rect` doit avoir une valeur `y` de 13.
+- Le huitième `rect` doit avoir une valeur `y` de 58.
+- Le neuvième `rect` doit avoir une valeur `y` de 73.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<body>
+  <script>
+    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
+    const w = 500;
+    const h = 100;
+
+    const svg = d3.select("body")
+                  .append("svg")
+                  .attr("width", w)
+                  .attr("height", h);
+
+    svg.selectAll("rect")
+       .data(dataset)
+       .enter()
+       .append("rect")
+       .attr("x", (d, i) => i * 30)
+       .attr("y", (d, i) => {
+         // Ajoutez votre code sous cette ligne
+         return h - 3 * d
+         // Ajoutez votre code au-dessus de cette ligne
+       })
+       .attr("width", 25)
+       .attr("height", (d, i) => 3 * d);
+  </script>
+</body>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-Data_Visualization_with_D3-15a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-invert-svg-elements/301488)
+
+-----
+
+
+
+## 16. Changer la couleur d'un élément SVG
+
+[Learn Data Visualization with D3: Change the Color of an SVG Element | freeCodeCamp.org](https://www.freecodecamp.org/learn/data-visualization/data-visualization-with-d3/change-the-color-of-an-svg-element)
+
+Les barres sont dans la bonne position, mais elles sont toutes de la même couleur noire.
+SVG a un moyen de changer la couleur des barres.<br />
+En SVG, une forme `rect` est colorée avec l'attribut `fill`. Il prend en charge les codes
+hexadécimaux, les noms de couleurs et les valeurs RVB, ainsi que des options plus complexes
+telles que les dégradés et la transparence.
+
+:::info instructions
+Ajoutez une méthode `attr()` pour définir le "fill" de toutes les barres sur la couleur "navy".
+:::
+
+:::tip missions
+- Les barres doivent toutes avoir une couleur de remplissage bleu marine ("navy").
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<body>
+  <script>
+    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
+    const w = 500;
+    const h = 100;
+
+    const svg = d3.select("body")
+                  .append("svg")
+                  .attr("width", w)
+                  .attr("height", h);
+
+    svg.selectAll("rect")
+       .data(dataset)
+       .enter()
+       .append("rect")
+       .attr("x", (d, i) => i * 30)
+       .attr("y", (d, i) => h - 3 * d)
+       .attr("width", 25)
+       .attr("height", (d, i) => 3 * d)
+       // Ajoutez votre code sous cette ligne
+       .attr("fill", "navy");
+       // Ajoutez votre code au-dessus de cette ligne
+  </script>
+</body>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-Data_Visualization_with_D3-16a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-change-the-color-of-an-svg-element/301480)
+
+-----
+
+
+
+## 17. Ajouter des étiquettes aux éléments D3
+
+[Learn Data Visualization with D3: Add Labels to D3 Elements | freeCodeCamp.org](https://www.freecodecamp.org/learn/data-visualization/data-visualization-with-d3/add-labels-to-d3-elements)
+
+D3 vous permet d'étiqueter un élément de graphique, comme une barre, à l'aide de l'élément `text` SVG.<br />
+Comme l'élément `rect`, un élément `text` doit avoir des attributs `x` et `y` pour le placer sur le
+canevas SVG. Il doit également accéder aux données pour afficher ces valeurs.<br />
+D3 vous donne un niveau élevé de contrôle sur la façon dont vous étiquetez vos barres.
+
+:::info instructions
+Le code dans l'éditeur lie déjà les données à chaque nouvel élément `text`. Tout d'abord, ajoutez
+des nœuds `text` au `svg`. Ensuite, ajoutez des attributs pour les coordonnées `x` et `y`. Ils
+doivent être calculés de la même manière que les `rect`, sauf que la valeur `y` du `text` doit
+faire en sorte que l'étiquette se trouve 3 unités plus haut que la barre. Enfin, utilisez la
+méthode D3 `text()` pour définir l'étiquette égale à la valeur du point de données.<br />
+**Remarque :** Pour que l'étiquette soit plus haute que la barre, décidez si la valeur `y`
+du `text` doit être 3 supérieure ou 3 inférieure à la valeur `y` de la barre.
+:::
+
+:::tip missions
+- Le premier élément de `text` doit avoir une étiquette de 12 et une valeur `y` de 61.
+- Le deuxième élément de `text` doit avoir une étiquette de 31 et une valeur `y` de 4.
+- Le troisième élément de `text` doit avoir une étiquette de 22 et une valeur `y` de 31.
+- Le quatrième élément de `text` doit avoir une étiquette de 17 et une valeur `y` de 46.
+- Le cinquième élément de `text` doit avoir une étiquette de 25 et une valeur `y` de 22.
+- Le sixième élément de `text` doit avoir une étiquette de 18 et une valeur `y` de 43.
+- Le septième élément de `text` doit avoir une étiquette de 29 et une valeur `y` de 10.
+- Le huitième élément de `text` doit avoir une étiquette de 14 et une valeur `y` de 55.
+- Le neuvième élément de `text` doit avoir une étiquette de 9 et une valeur `y` de 70.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<body>
+  <script>
+    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
+    const w = 500;
+    const h = 100;
+
+    const svg = d3.select("body")
+                  .append("svg")
+                  .attr("width", w)
+                  .attr("height", h);
+
+    svg.selectAll("rect")
+       .data(dataset)
+       .enter()
+       .append("rect")
+       .attr("x", (d, i) => i * 30)
+       .attr("y", (d, i) => h - 3 * d)
+       .attr("width", 25)
+       .attr("height", (d, i) => 3 * d)
+       .attr("fill", "navy");
+
+    svg.selectAll("text")
+       .data(dataset)
+       .enter()
+       // Ajoutez votre code sous cette ligne
+       .append("text")
+       .attr("x", (d, i) => i * 30)
+       .attr("y", (d, i) => h - 3 * d - 3)
+       .text((d, i) => d);
+       // Ajoutez votre code au-dessus de cette ligne
+  </script>
+<body>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-Data_Visualization_with_D3-17a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-add-labels-to-d3-elements/301476)
+
+-----
+
+
+
+## 18. Style D3 d'étiquettes
+
+Les méthodes D3 peuvent ajouter des styles aux étiquettes de barre. L'attribut `fill`
+définit la couleur du texte pour un nœud `text`. La méthode `style()` définit les règles
+CSS pour d'autres styles, tels que "font-family" ou "font-size".
+
+:::info instructions
+Définissez la `font-size` des éléments `text` sur 25px et la couleur du texte sur rouge.
+:::
+
+:::tip missions
+- Les étiquettes doivent toutes avoir un `fill` couleur rouge.
+- Les étiquettes doivent toutes avoir une `font-size` de 25 pixels.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<body>
+  <script>
+    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
+    const w = 500;
+    const h = 100;
+
+    const svg = d3.select("body")
+                  .append("svg")
+                  .attr("width", w)
+                  .attr("height", h);
+
+    svg.selectAll("rect")
+       .data(dataset)
+       .enter()
+       .append("rect")
+       .attr("x", (d, i) => i * 30)
+       .attr("y", (d, i) => h - 3 * d)
+       .attr("width", 25)
+       .attr("height", (d, i) => d * 3)
+       .attr("fill", "navy");
+
+    svg.selectAll("text")
+       .data(dataset)
+       .enter()
+       .append("text")
+       .text((d) => d)
+       .attr("x", (d, i) => i * 30)
+       .attr("y", (d, i) => h - (3 * d) - 3)
+       // Ajoutez votre code sous cette ligne
+       .attr("fill", "red")
+       .attr("font-size", "25px");
+       // Ajoutez votre code au-dessus de cette ligne
+  </script>
+</body>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-Data_Visualization_with_D3-18a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-style-d3-labels/301492)
+
+-----
+
+
+
+## 19. Ajouter un effet de survol à un élément D3
+
+[Learn Data Visualization with D3: Add a Hover Effect to a D3 Element | freeCodeCamp.org](https://www.freecodecamp.org/learn/data-visualization/data-visualization-with-d3/add-a-hover-effect-to-a-d3-element)
+
+Il est possible d'ajouter des effets qui mettent en évidence une barre lorsque l'utilisateur
+la survole avec la souris. Jusqu'à présent, le style des rectangles est appliqué avec les
+méthodes intégrées D3 et SVG, mais vous pouvez également utiliser CSS.<br />
+Vous définissez la classe CSS sur les éléments SVG avec la méthode `attr()`. Ensuite, la
+pseudo-classe `:hover` de votre nouvelle classe contient les règles de style pour tous les
+effets de survol.
+
+:::info instructions
+Utilisez la méthode `attr()` pour ajouter une classe `bar` à tous les éléments `rect`.
+Cela change la couleur de `fill` de la barre en marron lorsque vous passez la souris dessus.
+:::
+
+:::tip missions
+- Vos éléments `rect` doivent avoir une classe `bar`.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<style>
+  .bar:hover {
+    fill: brown;
+  }
+</style>
+<body>
+  <script>
+    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
+    const w = 500;
+    const h = 100;
+
+    const svg = d3.select("body")
+                  .append("svg")
+                  .attr("width", w)
+                  .attr("height", h);
+
+    svg.selectAll("rect")
+       .data(dataset)
+       .enter()
+       .append("rect")
+       .attr("x", (d, i) => i * 30)
+       .attr("y", (d, i) => h - 3 * d)
+       .attr("width", 25)
+       .attr("height", (d, i) => 3 * d)
+       .attr("fill", "navy")
+       // Ajoutez votre code sous cette ligne
+       .attr("class", "bar")
+       // Ajoutez votre code au-dessus de cette ligne
+
+    svg.selectAll("text")
+       .data(dataset)
+       .enter()
+       .append("text")
+       .text((d) => d)
+       .attr("x", (d, i) => i * 30)
+       .attr("y", (d, i) => h - (3 * d) - 3);
+
+  </script>
+</body>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-Data_Visualization_with_D3-19a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-add-a-hover-effect-to-a-d3-element/301469)
+
+-----
+
+
+
+## 20. Ajouter une info-bulle à un élément D3
+
+[Learn Data Visualization with D3: Add a Tooltip to a D3 Element | freeCodeCamp.org](https://www.freecodecamp.org/learn/data-visualization/data-visualization-with-d3/add-a-tooltip-to-a-d3-element)
+
+Une info-bulle affiche plus d'informations sur un élément sur une page lorsque l'utilisateur
+survole cet élément. Il existe plusieurs façons d'ajouter une info-bulle à une visualisation,
+ce défi utilise l'élément `title` SVG.<br />
+`title` s'associe à la méthode `text()` pour ajouter dynamiquement des données aux barres.
+
+:::info instructions
+Ajoutez un élément `title` sous chaque nœud `rect`. Appelez ensuite la méthode `text()` avec
+une fonction de rappel pour que le texte affiche la valeur des données.
+:::
+
+:::tip missions
+- Votre code doit avoir 9 éléments `title`.
+- Le premier élément `title` doit avoir un texte d'info-bulle de 12.
+- Le deuxième élément `title` doit avoir un texte d'info-bulle de 31.
+- Le troisième élément `title` doit avoir un texte d'info-bulle de 22.
+- Le quatrième élément `title` doit avoir un texte d'info-bulle de 17.
+- Le cinquième élément `title` doit avoir un texte d'info-bulle de 25.
+- Le sixième élément `title` doit avoir un texte d'info-bulle de 18.
+- Le septième élément `title` doit avoir un texte d'info-bulle de 29.
+- Le huitième élément `title` doit avoir le texte de l'info-bulle de 14.
+- Le neuvième élément `title` doit avoir le texte de l'info-bulle 9.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<style>
+  .bar:hover {
+    fill: brown;
+  }
+</style>
+<body>
+  <script>
+    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
+    const w = 500;
+    const h = 100;
+
+    const svg = d3.select("body")
+                  .append("svg")
+                  .attr("width", w)
+                  .attr("height", h);
+
+    svg.selectAll("rect")
+       .data(dataset)
+       .enter()
+       .append("rect")
+       .attr("x", (d, i) => i * 30)
+       .attr("y", (d, i) => h - 3 * d)
+       .attr("width", 25)
+       .attr("height", (d, i) => d * 3)
+       .attr("fill", "navy")
+       .attr("class", "bar")
+       // Ajoutez votre code sous cette ligne
+       .append("title")
+       .text((d) => d);
+       // Ajoutez votre code au-dessus de cette ligne
+
+    svg.selectAll("text")
+       .data(dataset)
+       .enter()
+       .append("text")
+       .text((d) => d)
+       .attr("x", (d, i) => i * 30)
+       .attr("y", (d, i) => h - (d * 3 + 3))
+
+  </script>
+</body>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-Data_Visualization_with_D3-20a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-add-a-tooltip-to-a-d3-element/301470)
+
+-----
+
+
+
+## 21. Créer un nuage de points avec des cercles SVG
+
+[Learn Data Visualization with D3: Create a Scatterplot with SVG Circles | freeCodeCamp.org](https://www.freecodecamp.org/learn/data-visualization/data-visualization-with-d3/create-a-scatterplot-with-svg-circles)
+
+Un nuage de points est un autre type de visualisation. Il utilise généralement des cercles
+pour mapper les points de données, qui ont chacun deux valeurs. Ces valeurs sont liées aux
+axes `x` et `y` et sont utilisées pour positionner le cercle dans la visualisation.<br />
+SVG a une étiquette `circle` pour créer la forme de cercle. Cela fonctionne beaucoup comme
+les éléments `rect` que vous avez utilisés pour le graphique à barres.
+
+:::info instructions
+Utilisez les méthodes `data()`, `enter()` et `append()` pour lier `dataset` à de nouveaux
+éléments `circle` qui sont ajoutés au canevas SVG.<br />
+**Remarque :** Les cercles ne seront pas visibles, car nous n'avons pas encore défini leurs
+attributs. Nous ferons cela dans le prochain défi.
+:::
+
+:::tip missions
+- Votre code doit avoir 10 éléments `circle`.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<body>
+  <script>
+    const dataset = [
+                  [ 34,    78 ],
+                  [ 109,   280 ],
+                  [ 310,   120 ],
+                  [ 79,    411 ],
+                  [ 420,   220 ],
+                  [ 233,   145 ],
+                  [ 333,   96 ],
+                  [ 222,   333 ],
+                  [ 78,    320 ],
+                  [ 21,    123 ]
+                ];
+
+    const w = 500;
+    const h = 500;
+
+    const svg = d3.select("body")
+                  .append("svg")
+                  .attr("width", w)
+                  .attr("height", h);
+
+    svg.selectAll("circle")
+       // Ajoutez votre code sous cette ligne
+       .data(dataset)
+       .enter()
+       .append("circle");
+       // Ajoutez votre code au-dessus de cette ligne
+
+  </script>
+</body>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-Data_Visualization_with_D3-21a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-create-a-scatterplot-with-svg-circles/301484)
+
+-----
+
+
+
+## 22. Ajouter des attributs aux éléments du cercle
+
+[Learn Data Visualization with D3: Add Attributes to the Circle Elements | freeCodeCamp.org](https://www.freecodecamp.org/learn/data-visualization/data-visualization-with-d3/add-attributes-to-the-circle-elements)
+
+Le dernier défi a créé les éléments `circle` pour chaque point de `dataset` et les a ajoutés
+au canevas SVG. Mais D3 a besoin de plus d'informations sur la position et la taille de chaque
+`circle` pour les afficher correctement.<br />
+Un `circle` en SVG a trois attributs principaux. Les attributs `cx` et `cy` sont les coordonnées.
+Ils indiquent à D3 où positionner le centre de la forme sur le canevas SVG. Le rayon (attribut `r`)
+donne la taille du cercle.<br />
+Tout comme la coordonnée `rect` `y`, l'attribut `cy` d'un `circle` est mesuré à partir du haut
+du canevas SVG, pas à partir du bas.<br />
+Les trois attributs peuvent utiliser une fonction de rappel pour définir leurs valeurs de manière
+dynamique. N'oubliez pas que toutes les méthodes enchaînées après les données (ensemble de données)
+s'exécutent une fois par élément dans `dataset`. Le paramètre `d` dans la fonction de rappel fait
+référence à l'élément actuel dans `dataset`, qui est un tableau pour chaque point. Vous utilisez
+la notation entre crochets, comme `d[0]`, pour accéder aux valeurs de ce tableau.
+
+:::info instructions
+Ajoutez les attributs `cx`, `cy` et `r` aux éléments `circle`. La valeur `cx` doit être le premier
+nombre du tableau pour chaque élément de `dataset`. La valeur `cy` doit être basée sur le deuxième
+nombre du tableau, mais assurez-vous d'afficher le graphique à droite et non inversé. La valeur `r`
+doit être de 5 pour tous les cercles.
+:::
+
+:::tip missions
+- Votre code doit avoir 10 éléments `circle`.
+- Le premier élément `circle` doit avoir une valeur `cx` de 34, une valeur `cy` de 422 et une valeur `r` de 5.
+- Le deuxième élément `circle` doit avoir une valeur `cx` de 109, une valeur `cy` de 220 et une valeur `r` de 5.
+- Le troisième élément `circle` doit avoir une valeur `cx` de 310, une valeur `cy` de 380 et une valeur `r` de 5.
+- Le quatrième élément `circle` doit avoir une valeur `cx` de 79, une valeur `cy` de 89 et une valeur `r` de 5.
+- Le cinquième élément `circle` doit avoir une valeur `cx` de 420, une valeur `cy` de 280 et une valeur `r` de 5.
+- Le sixième élément `circle` doit avoir une valeur `cx` de 233, une valeur `cy` de 355 et une valeur `r` de 5.
+- Le septième élément `circle` doit avoir une valeur `cx` de 333, une valeur `cy` de 404 et une valeur `r` de 5.
+- L'élément du huitième cercle doit avoir une valeur `cx` de 222, une valeur `cy` de 167 et une valeur `r` de 5.
+- Le neuvième élément `circle` doit avoir une valeur `cx` de 78, une valeur `cy` de 180 et une valeur `r` de 5.
+- Le dixième élément `circle` doit avoir une valeur `cx` de 21, une valeur `cy` de 377 et une valeur `r` de 5.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<body>
+  <script>
+    const dataset = [
+                  [ 34,    78 ],
+                  [ 109,   280 ],
+                  [ 310,   120 ],
+                  [ 79,    411 ],
+                  [ 420,   220 ],
+                  [ 233,   145 ],
+                  [ 333,   96 ],
+                  [ 222,   333 ],
+                  [ 78,    320 ],
+                  [ 21,    123 ]
+                ];
+
+    const w = 500;
+    const h = 500;
+
+    const svg = d3.select("body")
+                  .append("svg")
+                  .attr("width", w)
+                  .attr("height", h);
+
+    svg.selectAll("circle")
+       .data(dataset)
+       .enter()
+       .append("circle")
+       // Ajoutez votre code sous cette ligne
+       .attr("cx", (d) => d[0])
+       .attr("cy", (d) => h - d[1])
+       .attr("r", 5);
+       // Ajoutez votre code au-dessus de cette ligne
+
+  </script>
+</body>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-Data_Visualization_with_D3-22a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-add-attributes-to-the-circle-elements/301471)
+
+-----
+
+
+
+## 23. Ajouter des étiquettes aux cercles de nuage de points
+
+[Learn Data Visualization with D3: Add Labels to Scatter Plot Circles | freeCodeCamp.org](https://www.freecodecamp.org/learn/data-visualization/data-visualization-with-d3/add-labels-to-scatter-plot-circles)
+
+Vous pouvez ajouter du texte pour créer des étiquettes pour les points d'un nuage de points.<br />
+L'objectif est d'afficher les valeurs séparées par des virgules pour les premier (`x`) et second (`y`)
+champs de chaque élément de `dataset`.<br />
+Les nœuds `text` ont besoin des attributs `x` et `y` pour le positionner sur le canevas SVG. Dans ce
+défi, la valeur `y` (qui détermine la hauteur) peut utiliser la même valeur que `circle` utilise
+pour son attribut `cy`. La valeur `x` peut être légèrement supérieure à la valeur `cx` de `circle`,
+ainsi l'étiquette est visible. Cela poussera l'étiquette vers la droite du point tracé.
+
+:::info instructions
+Étiquetez chaque point du nuage de points à l'aide des éléments `text`. Le texte de l'étiquette
+doit être les deux valeurs séparées par une virgule et un espace. Par exemple, l'étiquette du
+premier point est "34, 78". Définissez l'attribut `x` de sorte qu'il soit 5 unités de plus que la
+valeur que vous avez utilisée pour l'attribut `cx` sur le `circle`. Définissez l'attribut `y` de
+la même manière que celui utilisé pour la valeur `cy` sur le cercle.
+:::
+
+:::tip missions
+- Votre code doit avoir 10 éléments `text`.
+- La première étiquette doit avoir le texte "34, 78", une valeur `x` de 39 et une valeur `y` de 422.
+- La deuxième étiquette doit avoir le texte "109, 280", une valeur `x` de 114 et une valeur `y` de 220.
+- La troisième étiquette doit avoir le texte "310, 120", une valeur `x` de 315 et une valeur `y` de 380.
+- La quatrième étiquette doit avoir le texte "79, 411", une valeur `x` de 84 et une valeur `y` de 89.
+- La cinquième étiquette doit avoir le texte "420, 220", une valeur `x` de 425 et une valeur `y` de 280.
+- La sixième étiquette doit avoir le texte "233, 145", une valeur `x` de 238 et une valeur `y` de 355.
+- La septième étiquette doit avoir le texte "333, 96", une valeur `x` de 338 et une valeur `y` de 404.
+- La huitième étiquette doit avoir le texte "222, 333", une valeur `x` de 227 et une valeur `y` de 167.
+- La neuvième étiquette doit avoir le texte "78, 320", une valeur `x` de 83 et une valeur `y` de 180.
+- La dixième étiquette doit avoir le texte "21, 123", une valeur `x` de 26 et une valeur `y` de 377.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<body>
+  <script>
+    const dataset = [
+                  [ 34,    78 ],
+                  [ 109,   280 ],
+                  [ 310,   120 ],
+                  [ 79,    411 ],
+                  [ 420,   220 ],
+                  [ 233,   145 ],
+                  [ 333,   96 ],
+                  [ 222,   333 ],
+                  [ 78,    320 ],
+                  [ 21,    123 ]
+                ];
+
+    const w = 500;
+    const h = 500;
+
+    const svg = d3.select("body")
+                  .append("svg")
+                  .attr("width", w)
+                  .attr("height", h);
+
+    svg.selectAll("circle")
+       .data(dataset)
+       .enter()
+       .append("circle")
+       .attr("cx", (d, i) => d[0])
+       .attr("cy", (d, i) => h - d[1])
+       .attr("r", 5);
+
+    svg.selectAll("text")
+       .data(dataset)
+       .enter()
+       .append("text")
+       // Ajoutez votre code sous cette ligne
+       .text((d) => d[0] + ", " + d[1])
+       .attr("x", (d, i) => d[0] + 5)
+       .attr("y", (d, i) => h - d[1]);
+       // Ajoutez votre code au-dessus de cette ligne
+  </script>
+</body>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-Data_Visualization_with_D3-23a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-add-labels-to-scatter-plot-circles/301477)
+
+-----
+
+
+
+## 24. Créer une échelle linéaire avec D3
+
+[Learn Data Visualization with D3: Create a Linear Scale with D3 | freeCodeCamp.org](https://www.freecodecamp.org/learn/data-visualization/data-visualization-with-d3/create-a-linear-scale-with-d3)
+
+Les graphiques à barres et à nuage de points ont tous deux tracé les données directement sur
+le canevas SVG. Cependant, si la hauteur d'une barre ou de l'un des points de données était
+plus grande que les valeurs de hauteur ou de largeur SVG, elle sortirait de la zone SVG.<br />
+Dans D3, il existe des échelles pour aider à tracer les données. `scales` sont des fonctions
+qui indiquent au programme comment mapper un ensemble de points de données brutes sur les
+pixels du canevas SVG.<br />
+Par exemple, supposons que vous ayez un canevas SVG de taille 100x500 et que vous souhaitiez
+tracer le Produit Intérieur Brut (PIB) pour un certain nombre de pays. L'ensemble des nombres
+serait de l'ordre du milliard ou du billion de dollars. Vous fournissez à D3 un type d'échelle
+pour lui indiquer comment placer les grandes valeurs de PIB dans cette zone de taille 100x500.<br />
+Il est peu probable que vous traciez les données brutes telles quelles. Avant de le tracer,
+vous définissez l'échelle de l'ensemble de votre ensemble de données, de sorte que les valeurs
+`x` et `y` correspondent à la largeur et à la hauteur de votre canevas.<br />
+D3 a plusieurs types d'échelle. Pour une échelle linéaire (généralement utilisée avec des données
+quantitatives), il existe la méthode D3 `scaleLinear()` :
+
+```js
+const scale = d3.scaleLinear()
+```
+
+Par défaut, une échelle utilise la relation d'identité. La valeur de l'entrée est la même que
+la valeur de la sortie. Un défi distinct couvre comment changer cela.
+
+:::info instructions
+Modifiez la variable `scale` pour créer une échelle linéaire. Définissez ensuite la variable
+`output` sur l'échelle appelée avec un argument d'entrée de 50.
+:::
+
+:::tip missions
+- Le texte dans `h2` doit être 50.
+- Votre code doit utiliser la méthode `scaleLinear()`.
+- La variable `output` doit appeler `scale` avec un argument de 50.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<body>
+  <script>
+    // Ajoutez votre code sous cette ligne
+    const scale = d3.scaleLinear(); // undefined; // Créez la balance ici
+    const output = scale(50); // Appelez l'échelle avec un argument ici
+    // Ajoutez votre code au-dessus de cette ligne
+
+    d3.select("body")
+      .append("h2")
+      .text(output);
+
+  </script>
+</body>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-Data_Visualization_with_D3-24a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-create-a-linear-scale-with-d3/301483)
+
+-----
+
+
+
+## 25. Définir un domaine et une plage sur une échelle
+
+[Learn Data Visualization with D3: Set a Domain and a Range on a Scale | freeCodeCamp.org](https://www.freecodecamp.org/learn/data-visualization/data-visualization-with-d3/set-a-domain-and-a-range-on-a-scale)
+
+Par défaut, les échelles utilisent la relation d'identité. Cela signifie que la valeur d'entrée
+correspond à la valeur de sortie. Cependant, les échelles peuvent être beaucoup plus flexibles
+et intéressantes.<br />
+Supposons qu'un ensemble de données ait des valeurs comprises entre 50 et 480. Il s'agit des
+informations d'entrée pour une échelle, également appelée *domaine*.<br />
+Vous souhaitez mapper ces points le long de l'axe `x` sur le canevas SVG, entre 10 unités et
+500 unités. Il s'agit des informations de sortie, également appelées *plage*.<br />
+Les méthodes `domain()` et `range()` définissent ces valeurs pour l'échelle. Les deux méthodes
+prennent un tableau d'au moins deux éléments comme argument. Voici un exemple :
+
+```js
+// Définir un domaine
+// Le domaine couvre l'ensemble des valeurs d'entrée
+scale.domain([50, 480]);
+// Définir une plage
+// La plage couvre l'ensemble des valeurs de sortie
+scale.range([10, 500]);
+scale(50) // Renvoie 10
+scale(480) // Renvoie 500
+scale(325) // Renvoie 323,37
+scale(750) // Renvoie 807,67
+d3.scaleLinear()
+```
+
+Notez que l'échelle utilise la relation linéaire entre les valeurs de domaine et de plage pour
+déterminer ce que doit être la sortie pour un nombre donné. La valeur minimale du domaine (50)
+correspond à la valeur minimale (10) de la plage.
+
+:::info instructions
+Créez une échelle et définissez son domaine sur `[250, 500]` et sa plage sur `[10, 150]`.
+**Remarque :** Vous pouvez chaîner les méthodes `domain()` et `range()` sur la variable `scale`.
+:::
+
+:::tip missions
+- Votre code doit utiliser la méthode `domain()`.
+- Le `domain()` de l'échelle doit être défini sur `[250, 500]`.
+- Votre code doit utiliser la méthode `range()`.
+- Le `range()` de l'échelle doit être définie sur `[10, 150]`.
+- Le texte dans le `h2` doit être -102.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<body>
+  <script>
+    // Ajoutez votre code sous cette ligne
+    const scale = d3.scaleLinear()
+      .domain([250, 500])
+      .range([10, 150]);
+    // Ajoutez votre code au-dessus de cette ligne
+    const output = scale(50);
+    d3.select("body")
+      .append("h2")
+      .text(output);
+  </script>
+</body>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-Data_Visualization_with_D3-25a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-set-a-domain-and-a-range-on-a-scale/301491)
+
+-----
+
+
+
+## 26. Utilisez les fonctions d3.max et d3.min pour rechercher les valeurs minimum et maximum dans un ensemble de données
+
+[Learn Data Visualization with D3: Use the d3.max and d3.min Functions to Find Minimum and Maximum Values in a Dataset | freeCodeCamp.org](https://www.freecodecamp.org/learn/data-visualization/data-visualization-with-d3/use-the-d3-max-and-d3-min-functions-to-find-minimum-and-maximum-values-in-a-dataset)
+
+Les méthodes D3 `domain()` et `range()` définissent ces informations pour votre balance en fonction
+des données. Il existe plusieurs méthodes pour rendre cela plus facile.<br />
+Souvent, lorsque vous définissez le domaine, vous souhaiterez utiliser les valeurs minimale et
+maximale dans l'ensemble de données. Essayer de trouver ces valeurs manuellement, en particulier
+dans un ensemble de données volumineux, peut entraîner des erreurs.<br />
+D3 a deux méthodes - `min()` et `max()` pour renvoyer ces informations. Voici un exemple :
+
+```js
+const exampleData = [34, 234, 73, 90, 6, 52];
+d3.min(exampleData) // Renvoie 6
+d3.max(exampleData) // Renvoie 234
+```
+
+Un jeu de données peut avoir des tableaux imbriqués, comme les paires de coordonnées [x, y] qui
+figuraient dans l'exemple de nuage de points. Dans ce cas, vous devez indiquer à D3 comment
+calculer le maximum et le minimum. Heureusement, les méthodes `min()` et `max()` acceptent une
+fonction de rappel. Dans cet exemple, l'argument `d` de la fonction de rappel est pour le
+tableau interne actuel. Le rappel doit renvoyer l'élément du tableau interne (la valeur x ou y)
+sur lequel vous souhaitez calculer le maximum ou le minimum. Voici un exemple pour savoir
+comment trouver les valeurs min et max avec un tableau de tableaux :
+
+```js
+const locationData = [[1, 7], [6, 3], [8, 3]];
+// Renvoie le plus petit nombre parmi les premiers éléments
+const minX = d3.min(locationData, (d) => d[0]);
+// minX a comparé 1, 6 et 8 et est défini sur 1
+```
+
+:::info instructions
+Le tableau `positionData` contient des sous-tableaux de coordonnées x, y et z. Utilisez une
+méthode D3 pour trouver la valeur maximale de la coordonnée z (la troisième valeur) à partir
+des tableaux et enregistrez-la dans la variable `output`.
+:::
+
+:::tip missions
+- Le texte dans le `h2` doit être 8.
+- Votre code doit utiliser la méthode `max()`.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<body>
+  <script>
+    const positionData = [[1, 7, -4],[6, 3, 8],[2, 9, 3]]
+    // Ajoutez votre code sous cette ligne
+    const output = d3.max(positionData, (d) => d[2]); // undefined; // Changer cette ligne
+    // Ajoutez votre code au-dessus de cette ligne
+    d3.select("body")
+      .append("h2")
+      .text(output);
+  </script>
+</body>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-Data_Visualization_with_D3-26a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-use-the-d3-max-and-d3-min-functions-to-find-minimum-and-maximum-values-in-a-dataset/301496)
+
+-----
+
+
+
+## 27. Utiliser des échelles dynamiques
+
+[Learn Data Visualization with D3: Use Dynamic Scales | freeCodeCamp.org](https://www.freecodecamp.org/learn/data-visualization/data-visualization-with-d3/use-dynamic-scales)
+
+Les méthodes D3 `min()` et `max()` sont utiles pour aider à définir l'échelle.<br />
+Étant donné un ensemble de données complexe, une priorité est de définir l'échelle de sorte
+que la visualisation corresponde à la largeur et à la hauteur du conteneur SVG. Vous voulez
+que toutes les données soient tracées dans le canevas SVG pour qu'elles soient visibles sur
+la page Web.<br />
+L'exemple ci-dessous définit l'échelle de l'axe x pour les données de nuage de points. La
+méthode `domain()` transmet des informations à l'échelle sur les valeurs de données brutes
+du tracé. La méthode `range()` lui donne des informations sur l'espace réel sur la page Web
+pour la visualisation.<br />
+Dans l'exemple, le domaine passe de 0 au maximum dans l'ensemble. Il utilise la méthode `max()`
+avec une fonction de rappel basée sur les valeurs x dans les tableaux. La plage utilise la
+largeur du canevas SVG (`w`), mais elle inclut également un peu de remplissage. Cela met de
+l'espace entre les points du nuage de points et le bord du canevas SVG.
+
+```js
+const dataset = [
+  [34, 78],
+  [109, 280],
+  [310, 120],
+  [79, 411],
+  [420, 220],
+  [233, 145],
+  [333, 96],
+  [222, 333],
+  [78, 320],
+  [21, 123]
+];
+const w = 500;
+const h = 500;
+
+// Remplissage entre la limite du canevas SVG et le tracé
+const padding = 30;
+const xScale = d3.scaleLinear()
+  .domain([0, d3.max(dataset, (d) => d[0])])
+  .range([padding, w - padding]);
+```
+
+Le remplissage (padding) peut être déroutant au début. Imaginez l'axe x comme une ligne horizontale
+de 0 à 500 (la valeur de largeur pour le canevas SVG). L'inclusion du remplissage dans la méthode
+`range()` force le tracé à commencer à 30 le long de cette ligne (au lieu de 0) et à se terminer à
+470 (au lieu de 500).
+
+:::info instructions
+Utilisez la variable `yScale` pour créer une échelle d'axe y linéaire. Le domaine doit commencer à
+zéro et atteindre la valeur y maximale de l'ensemble. La plage doit utiliser la hauteur SVG (`h`)
+et inclure un remplissage.<br />
+**Remarque :** N'oubliez pas de garder le tracé en haut à droite. Lorsque vous définissez la plage des
+coordonnées y, la valeur la plus élevée (hauteur moins le remplissage) est le premier argument et
+la valeur inférieure est le deuxième argument.
+:::
+
+:::tip missions
+- Le texte dans le `h2` doit être 30.
+- Le `domain()` de yScale doit être équivalent à `[0, 411]`.
+- Le `range()` de yScale doit être équivalente à `[470, 30]`.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<body>
+  <script>
+    const dataset = [
+                  [ 34,    78 ],
+                  [ 109,   280 ],
+                  [ 310,   120 ],
+                  [ 79,    411 ],
+                  [ 420,   220 ],
+                  [ 233,   145 ],
+                  [ 333,   96 ],
+                  [ 222,   333 ],
+                  [ 78,    320 ],
+                  [ 21,    123 ]
+                ];
+
+    const w = 500;
+    const h = 500;
+
+    // Remplissage entre la limite du canevas SVG et le tracé
+    const padding = 30;
+    // Créer une échelle x et y
+    const xScale = d3.scaleLinear()
+                     .domain([0, d3.max(dataset, (d) => d[0])])
+                     .range([padding, w - padding]);
+    // Ajoutez votre code sous cette ligne
+    const yScale = d3.scaleLinear() // undefined;
+                     .domain([0, d3.max(dataset, (d) => d[1])])
+                     .range([h - padding, padding]);
+    // Ajoutez votre code au-dessus de cette ligne
+    const output = yScale(411); // Renvoie 30
+    d3.select("body")
+      .append("h2")
+      .text(output);
+  </script>
+</body>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-Data_Visualization_with_D3-27a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-use-dynamic-scales/301495)
+
+-----
+
+
+
+## 28. Utiliser une échelle prédéfinie pour placer des éléments
+
+[Learn Data Visualization with D3: Use a Pre-Defined Scale to Place Elements | freeCodeCamp.org](https://www.freecodecamp.org/learn/data-visualization/data-visualization-with-d3/use-a-pre-defined-scale-to-place-elements)
+
+Une fois les échelles configurées, il est temps de cartographier à nouveau le nuage de points.
+Les échelles sont comme des fonctions de traitement qui transforment les données brutes x et y
+en valeurs qui s'ajustent et s'affichent correctement sur le canevas SVG. Ils conservent les
+données dans la zone de traçage de l'écran.<br />
+Vous définissez les valeurs d'attribut de coordonnées pour une forme SVG avec la fonction de
+mise à l'échelle. Cela inclut les attributs `x` et `y` pour les éléments `rect` ou `text`, ou
+`cx` et `cy` pour les cercles. Voici un exemple :
+
+```js
+shape
+  .attr("x", (d) => xScale(d[0]))
+```
+
+Les échelles définissent les attributs de coordonnées de forme pour placer les points de données
+sur le canevas SVG. Vous n'avez pas besoin d'appliquer des échelles lorsque vous affichez la
+valeur réelle des données, par exemple, dans la méthode `text()` pour une info-bulle ou une étiquette.
+
+:::info instructions
+Utilisez `xScale` et `yScale` pour positionner à la fois les formes `circle` et `text` sur le canevas
+SVG. Pour les `circles`, appliquez les échelles pour définir les attributs `cx` et `cy`. Donnez-leur
+aussi un rayon de 5 unités.<br />
+Pour les éléments `text`, appliquez les échelles pour définir les attributs `x` et `y`. Les
+étiquettes doivent être décalées à droite des points. Pour ce faire, ajoutez 10 unités à la valeur
+de données `x` avant de la transmettre à `xScale`.
+:::
+
+:::tip missions
+- Votre code doit avoir 10 éléments `circle`.
+- Le premier élément `circle` doit avoir une valeur `cx` d'environ 91 et une valeur `cy` d'environ 368 après l'application des échelles. Il doit également avoir une valeur `r` de 5.
+- Le deuxième élément `circle` doit avoir une valeur `cx` d'environ 159 et une valeur `cy` d'environ 181 après l'application des échelles. Il doit également avoir une valeur `r` de 5.
+- Le troisième élément `circle` doit avoir une valeur `cx` d'environ 340 et une valeur `cy` d'environ 329 après l'application des échelles. Il doit également avoir une valeur `r` de 5.
+- Le quatrième élément `circle` doit avoir une valeur `cx` d'environ 131 et une valeur `cy` d'environ 60 après l'application des échelles. Il doit également avoir une valeur `r` de 5.
+- Le cinquième élément `circle` doit avoir une valeur `cx` d'environ 440 et une valeur `cy` d'environ 237 après l'application des échelles. Il doit également avoir une valeur `r` de 5.
+- Le sixième élément `circle` doit avoir une valeur `cx` d'environ 271 et une valeur `cy` d'environ 306 après l'application des échelles. Il doit également avoir une valeur `r` de 5.
+- Le septième élément `circle` doit avoir une valeur `cx` d'environ 361 et une valeur `cy` d'environ 351 après l'application des échelles. Il doit également avoir une valeur `r` de 5.
+- Le huitième élément `circle` doit avoir une valeur `cx` d'environ 261 et une valeur `cy` d'environ 132 après l'application des échelles. Il doit également avoir une valeur `r` de 5.
+- Le neuvième élément `circle` doit avoir une valeur `cx` d'environ 131 et une valeur `cy` d'environ 144 après application des échelles. Il doit également avoir une valeur `r` de 5.
+- Le dixième élément `circle` doit avoir une valeur `cx` d'environ 79 et une valeur `cy` d'environ 326 après l'application des échelles. Il doit également avoir une valeur `r` de 5.
+- Votre code doit avoir 10 éléments `text`.
+- La première étiquette doit avoir une valeur `x` d'environ 100 et une valeur `y` d'environ 368 après l'application des échelles.
+- La deuxième étiquette doit avoir une valeur `x` d'environ 168 et une valeur `y` d'environ 181 après l'application des échelles.
+- La troisième étiquette doit avoir une valeur `x` d'environ 350 et une valeur `y` d'environ 329 après l'application des échelles.
+- La quatrième étiquette doit avoir une valeur `x` d'environ 141 et une valeur `y` d'environ 60 après l'application des échelles.
+- La cinquième étiquette doit avoir une valeur `x` d'environ 449 et une valeur `y` d'environ 237 après l'application des échelles.
+- La sixième étiquette doit avoir une valeur `x` d'environ 280 et une valeur `y` d'environ 306 après l'application des échelles.
+- La septième étiquette doit avoir une valeur `x` d'environ 370 et une valeur `y` d'environ 351 après l'application des échelles.
+- La huitième étiquette doit avoir une valeur `x` d'environ 270 et une valeur `y` d'environ 132 après l'application des échelles.
+- La neuvième étiquette doit avoir une valeur `x` d'environ 140 et une valeur `y` d'environ 144 après l'application des échelles.
+- La dixième étiquette doit avoir une valeur `x` d'environ 88 et une valeur `y` d'environ 326 après l'application des échelles.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<body>
+  <script>
+    const dataset = [
+                  [ 34,     78 ],
+                  [ 109,   280 ],
+                  [ 310,   120 ],
+                  [ 79,   411 ],
+                  [ 420,   220 ],
+                  [ 233,   145 ],
+                  [ 333,   96 ],
+                  [ 222,    333 ],
+                  [ 78,    320 ],
+                  [ 21,   123 ]
+                ];
+
+    const w = 500;
+    const h = 500;
+    const padding = 60;
+
+    const xScale = d3.scaleLinear()
+                     .domain([0, d3.max(dataset, (d) => d[0])])
+                     .range([padding, w - padding]);
+
+    const yScale = d3.scaleLinear()
+                     .domain([0, d3.max(dataset, (d) => d[1])])
+                     .range([h - padding, padding]);
+
+    const svg = d3.select("body")
+                  .append("svg")
+                  .attr("width", w)
+                  .attr("height", h);
+
+    svg.selectAll("circle")
+       .data(dataset)
+       .enter()
+       .append("circle")
+       // Ajoutez votre code sous cette ligne
+       .attr("cx", (d) => xScale(d[0]))
+       .attr("cy", (d) => yScale(d[1]))
+       .attr("r", 5);
+       // Ajoutez votre code au-dessus de cette ligne
+    svg.selectAll("text")
+       .data(dataset)
+       .enter()
+       .append("text")
+       .text((d) =>  (d[0] + ", " + d[1]))
+       // Ajoutez votre code sous cette ligne
+       .attr("x", (d) => xScale(d[0] + 10))
+       .attr("y", (d) => yScale(d[1]));
+       // Ajoutez votre code au-dessus de cette ligne
+  </script>
+</body>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-Data_Visualization_with_D3-28a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-use-a-pre-defined-scale-to-place-elements/301494)
+
+-----
+
+
+
+## 29. Ajouter des axes à une visualisation
+
+[Learn Data Visualization with D3: Add Axes to a Visualization | freeCodeCamp.org](https://www.freecodecamp.org/learn/data-visualization/data-visualization-with-d3/add-axes-to-a-visualization)
+
+Une autre façon d'améliorer le nuage de points consiste à ajouter un axe x et un axe y.<br />
+D3 a deux méthodes, `axisLeft()` et `axisBottom()`, pour rendre respectivement l'axe y et l'axe x.
+Voici un exemple pour créer l'axe des x basé sur `xScale` dans les défis précédents :
+
+```js
+const xAxis = d3.axisBottom(xScale);
+```
+
+L'étape suivante consiste à rendre l'axe sur le canevas SVG. Pour ce faire, vous pouvez utiliser
+un composant SVG général, l'élément `g`. Le `g` signifie groupe. Contrairement au `rect`, au `circle`
+et au `text`, un axe n'est qu'une ligne droite lorsqu'il est rendu. Parce que c'est une forme simple,
+l'utilisation de `g` fonctionne. La dernière étape consiste à appliquer un attribut `transform` pour
+positionner l'axe sur le canevas SVG au bon endroit. Sinon, la ligne serait rendue le long de la
+bordure du canevas SVG et ne serait pas visible. SVG prend en charge différents types de `transforms`,
+mais le positionnement d'un axe doit être `translate`. Lorsqu'il est appliqué à l'élément `g`, il
+déplace tout le groupe de haut en bas des montants donnés. Voici un exemple :
+
+```js
+const xAxis = d3.axisBottom(xScale);
+
+svg.append("g")
+   .attr("transform", "translate(0, " + (h - padding) + ")")
+   .call(xAxis);
+```
+
+Le code ci-dessus place l'axe x au bas du canevas SVG. Ensuite, il est passé en argument à la méthode
+`call()`. L'axe y fonctionne de la même manière, sauf que l'argument `translate` est de la forme (x,0).
+Comme `translate` est une chaîne dans la méthode `attr()` ci-dessus, vous pouvez utiliser la
+concaténation pour inclure des valeurs de variable pour ses arguments.
+
+:::info instructions
+Le nuage de points a maintenant un axe x. Créez un axe y dans une variable nommée `yAxis` à l'aide de
+la méthode `axisLeft()`. Ensuite, effectuez le rendu de l'axe en utilisant un élément `g`. Assurez-vous
+d'utiliser un attribut `transform` pour traduire l'axe par la quantité d'unités de remplissage vers la
+droite et de 0 unité vers le bas. N'oubliez pas de `call()` l'axe.
+:::
+
+:::tip missions
+- Votre code doit utiliser la méthode `axisLeft()` avec `yScale` passé comme argument.
+- L'élément `g` de l'axe y doit avoir un attribut `transform` pour traduire l'axe de (60, 0).
+- Votre code doit appeler le `yAxis`.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<body>
+  <script>
+    const dataset = [
+                  [ 34,     78 ],
+                  [ 109,   280 ],
+                  [ 310,   120 ],
+                  [ 79,   411 ],
+                  [ 420,   220 ],
+                  [ 233,   145 ],
+                  [ 333,   96 ],
+                  [ 222,    333 ],
+                  [ 78,    320 ],
+                  [ 21,   123 ]
+                ];
+
+    const w = 500;
+    const h = 500;
+    const padding = 60;
+
+    const xScale = d3.scaleLinear()
+                     .domain([0, d3.max(dataset, (d) => d[0])])
+                     .range([padding, w - padding]);
+
+    const yScale = d3.scaleLinear()
+                     .domain([0, d3.max(dataset, (d) => d[1])])
+                     .range([h - padding, padding]);
+
+    const svg = d3.select("body")
+                  .append("svg")
+                  .attr("width", w)
+                  .attr("height", h);
+
+    svg.selectAll("circle")
+       .data(dataset)
+       .enter()
+       .append("circle")
+       .attr("cx", (d) => xScale(d[0]))
+       .attr("cy",(d) => yScale(d[1]))
+       .attr("r", (d) => 5);
+
+    svg.selectAll("text")
+       .data(dataset)
+       .enter()
+       .append("text")
+       .text((d) =>  (d[0] + "," + d[1]))
+       .attr("x", (d) => xScale(d[0] + 10))
+       .attr("y", (d) => yScale(d[1]))
+
+    const xAxis = d3.axisBottom(xScale);
+    // Ajoutez votre code au-dessus de cette ligne
+    const yAxis = d3.axisLeft(yScale); // undefined;
+    // Ajoutez votre code au-dessus de cette ligne
+
+    svg.append("g")
+       .attr("transform", "translate(0," + (h - padding) + ")")
+       .call(xAxis);
+    // Ajoutez votre code au-dessus de cette ligne
+    svg.append("g")
+       .attr("transform", "translate(" + padding + ", 0)")
+       .call(yAxis);
+    // Ajoutez votre code au-dessus de cette ligne
+  </script>
+</body>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-Data_Visualization_with_D3-29a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-add-axes-to-a-visualization/301472)
