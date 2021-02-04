@@ -145,7 +145,7 @@ img[src*="#logo-accueil"] {
 }
 
 .github::before {
-  background-image: url(/img/fa-github.svg);
+  background-image: url(/MyWebDevWiki/img/fa-github.svg);
   content: "";
   width: 24px;
   height: 24px;
