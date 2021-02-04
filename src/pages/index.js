@@ -168,19 +168,19 @@ function Home() {
           <p className="hero__subtitle">{siteConfig.tagline}</p>
           <div class="jc-between d-flex m-auto fx-wrap">
             <div class="ta-center w-20p">
-              <img class="h-50" src="/MyWebDevWiki/img/logos/CSS3.svg" alt="CSS3" />
+              <img class="h-50" src="/img/logos/CSS3.svg" alt="CSS3" />
               <p class="uil-tt-upper uil-fw-semibold uil-lsp-big uil-ff-hind uil-color-telluric uil-fsz-11 lg:uil-fsz-12">CSS</p>
             </div>
             <div class="ta-center w-20p">
-              <img class="h-50" src="/MyWebDevWiki/img/logos/HTML5.svg" alt="HTML5" />
+              <img class="h-50" src="/img/logos/HTML5.svg" alt="HTML5" />
               <p class="uil-tt-upper uil-fw-semibold uil-lsp-big uil-ff-hind uil-color-telluric uil-fsz-11 lg:uil-fsz-12">HTML</p>
             </div>
             <div class="ta-center w-20p">
-              <img class="h-50" src="/MyWebDevWiki/img/logos/JavaScript.svg" alt="JavaScript" />
+              <img class="h-50" src="/img/logos/JavaScript.svg" alt="JavaScript" />
               <p class="uil-tt-upper uil-fw-semibold uil-lsp-big uil-ff-hind uil-color-telluric uil-fsz-11 lg:uil-fsz-12">JavaScript</p>
             </div>
             <div class="ta-center w-20p">
-              <img class="h-50" src="/MyWebDevWiki/img/logos/Python.svg" alt="Python" />
+              <img class="h-50" src="/img/logos/Python.svg" alt="Python" />
               <p class="uil-tt-upper uil-fw-semibold uil-lsp-big uil-ff-hind uil-color-telluric uil-fsz-11 lg:uil-fsz-12">Python</p>
             </div>
           </div>
@@ -200,67 +200,67 @@ function Home() {
             </style>
             <div class="topic-wrapper">
               <a class="topic" href="https://getbootstrap.com/" target="_blank">
-              <img src="/MyWebDevWiki/img/logos/bootstrap.jpg" />
+              <img src="/img/logos/bootstrap.jpg" />
               </a>
               <span class="topic-name">bootstrap</span>
             </div>
             <div class="topic-wrapper">
               <a class="topic" href="https://jquery.com/" target="_blank">
-                <img src="/MyWebDevWiki/img/logos/jquery.jpg" />
+                <img src="/img/logos/jquery.jpg" />
               </a>
               <span class="topic-name">jquery</span>
             </div>
             <div class="topic-wrapper">
               <a class="topic" href="https://sass-lang.com/" target="_blank">
-                <img src="/MyWebDevWiki/img/logos/sass.png" />
+                <img src="/img/logos/sass.png" />
               </a>
               <span class="topic-name">sass</span>
             </div>
             <div class="topic-wrapper">
               <a class="topic" href="https://fr.reactjs.org/" target="_blank">
-                <img src="/MyWebDevWiki/img/logos/react.jpg" />
+                <img src="/img/logos/react.jpg" />
               </a>
               <span class="topic-name">react</span>
             </div>
             <div class="topic-wrapper">
               <a class="topic" href="https://redux.js.org/" target="_blank">
-                <img src="/MyWebDevWiki/img/logos/redux.svg" />
+                <img src="/img/logos/redux.svg" />
               </a>
               <span class="topic-name">redux</span>
             </div>
             <div class="topic-wrapper">
               <a class="topic" href="https://git-scm.com/" target="_blank">
-                <img src="/MyWebDevWiki/img/logos/Git.png" />
+                <img src="/img/logos/Git.png" />
               </a>
               <span class="topic-name">git</span>
             </div>
             <div class="topic-wrapper">
               <a class="topic" href="https://nodejs.org/fr/" target="_blank">
-                <img src="/MyWebDevWiki/img/logos/NodeJS.svg" />
+                <img src="/img/logos/NodeJS.svg" />
               </a>
               <span class="topic-name">nodejs</span>
             </div>
             <div class="topic-wrapper">
               <a class="topic" href="https://classic.yarnpkg.com/fr/" target="_blank">
-                <img src="/MyWebDevWiki/img/logos/yarn.jpg" />
+                <img src="/img/logos/yarn.jpg" />
               </a>
               <span class="topic-name">yarn</span>
             </div>
             <div class="topic-wrapper">
               <a class="topic" href="https://www.npmjs.com/" target="_blank">
-                <img src="/MyWebDevWiki/img/logos/npm.png" />
+                <img src="/img/logos/npm.png" />
               </a>
               <span class="topic-name">npm</span>
             </div>
             <div class="topic-wrapper">
               <a class="topic" href="https://babeljs.io/" target="_blank">
-                <img src="/MyWebDevWiki/img/logos/babel.jpg" />
+                <img src="/img/logos/babel.jpg" />
               </a>
               <span class="topic-name">babel</span>
             </div>
             <div class="topic-wrapper">
               <a class="topic" href="https://d3js.org/" target="_blank">
-                <img src="/MyWebDevWiki/img/logos/D3.svg" />
+                <img src="/img/logos/D3.svg" />
               </a>
               <span class="topic-name">D3</span>
             </div>

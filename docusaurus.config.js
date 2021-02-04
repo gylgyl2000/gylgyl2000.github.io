@@ -2,7 +2,7 @@ module.exports = {
   title: 'Wiki développement web',
   tagline: 'HTML - CSS - JavaScript - Python',
   url: 'https://github.com/gylgyl2000/laloutre.github.io',
-  baseUrl: '/MyWebDevWiki/',
+  baseUrl: '/', // MyWebDevWiki/
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/otter-solid.svg',
