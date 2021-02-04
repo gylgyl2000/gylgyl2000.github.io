@@ -33,20 +33,20 @@ By the end of this, you would have 5 responsive websites under your belt that yo
 
 ```html
 <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
-<!-- 
+<!--
 Hello Camper !
-For now, the test suite only works in Chrome! Please read the README below in the JS Editor before beginning. Feel free to delete this message once you have read it. Good luck and Happy Coding ! 
-- The freeCodeCamp Team 
+For now, the test suite only works in Chrome! Please read the README below in the JS Editor before beginning. Feel free to delete this message once you have read it. Good luck and Happy Coding !
+- The freeCodeCamp Team
 -->
 ```
 
-<iframe height="300" style="width: 100%;" scrolling="no" title="FCC: Test Suite Template" src="https://codepen.io/gylgyl2000/pen/eYZwBqW">
+<iframe height="300" style={{width: '100%'}} scrolling="no" title="FCC: Test Suite Template" src="https://codepen.io/gylgyl2000/pen/eYZwBqW">
 </iframe>
 
 
 ```js
 // !! IMPORTANT README :
-// You may add additional external JS and CSS as needed to complete the project, however the current external resource MUST remain in place for the tests to work. BABEL must also be left in place. 
+// You may add additional external JS and CSS as needed to complete the project, however the current external resource MUST remain in place for the tests to work. BABEL must also be left in place.
 /***********
 INSTRUCTIONS :
   - Select the project you would like to complete from the dropdown menu.

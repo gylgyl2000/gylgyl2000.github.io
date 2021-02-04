@@ -53,7 +53,7 @@ Add the CSS property `display` to `#box-container` and set its value to `flex`.
   <div id="box-2"></div>
 </div>
 ```
-<iframe height="520" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Flexbox-01a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-01a.html" >
+<iframe height="520" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Flexbox-01a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-01a.html" >
 </iframe>
 
 
@@ -79,7 +79,7 @@ Add the CSS property `display` to `#box-container` and set its value to `flex`.
   <div id="box-2"></div>
 </div>
 ```
-<iframe height="520" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Flexbox-01b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-01b.html" >
+<iframe height="520" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Flexbox-01b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-01b.html" >
 </iframe>
 
 
@@ -158,10 +158,10 @@ Add the CSS property `display: flex` to all of the following items - note that t
 </footer>
 ```
 
-<iframe height="300" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Flexbox-02a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-02a.html" >
+<iframe height="300" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Flexbox-02a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-02a.html" >
 </iframe>
 
-<iframe height="350" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Flexbox-02a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-02a.html" >
+<iframe height="350" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Flexbox-02a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-02a.html" >
 </iframe>
 
 
@@ -215,7 +215,7 @@ Add the CSS property `display: flex` to all of the following items - note that t
 </footer>
 ```
 
-<iframe height="300" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Flexbox-02b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-02b.html" >
+<iframe height="300" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Flexbox-02b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-02b.html" >
 </iframe>
 
 -----
@@ -259,7 +259,7 @@ Add the CSS property `flex-direction` to the `#box-container` element, and give 
 </div>
 ```
 
-<iframe height="520" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Flexbox-03a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-03a.html" >
+<iframe height="520" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Flexbox-03a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-03a.html" >
 </iframe>
 
 ```html
@@ -286,7 +286,7 @@ Add the CSS property `flex-direction` to the `#box-container` element, and give 
 </div>
 ```
 
-<iframe height="520" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Flexbox-03b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-03b.html" >
+<iframe height="520" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Flexbox-03b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-03b.html" >
 </iframe>
 -----
 
@@ -399,7 +399,7 @@ Add the CSS property `flex-direction` to both the `header` and `footer` and set 
 </footer>
 ```
 
-<iframe height="520" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Flexbox-04a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-04a.html" >
+<iframe height="520" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Flexbox-04a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-04a.html" >
 </iframe>
 
 ```html
@@ -496,7 +496,7 @@ Add the CSS property `flex-direction` to both the `header` and `footer` and set 
   </footer>
 ```
 
-<iframe height="520" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Flexbox-04b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-04b.html" >
+<iframe height="520" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Flexbox-04b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-04b.html" >
 </iframe>
 -----
 
@@ -537,7 +537,7 @@ Add the CSS property `flex-direction` to the `#box-container` element, and give 
 </div>
 ```
 
-<iframe height="520" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Flexbox-05a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-05a.html" >
+<iframe height="520" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Flexbox-05a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-05a.html" >
 </iframe>
 
 ```html
@@ -564,7 +564,7 @@ Add the CSS property `flex-direction` to the `#box-container` element, and give 
 </div>
 ```
 
-<iframe height="520" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Flexbox-05b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-05b.html" >
+<iframe height="520" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Flexbox-05b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-05b.html" >
 </iframe>
 -----
 
@@ -673,7 +673,7 @@ Add the CSS property `flex-direction` to the header's `.profile-name` element an
 </footer>
 ```
 
-<iframe height="520" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Flexbox-06a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-06a.html" >
+<iframe height="520" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Flexbox-06a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-06a.html" >
 </iframe>
 
 ```html
@@ -767,7 +767,7 @@ Add the CSS property `flex-direction` to the header's `.profile-name` element an
 </footer>
 ```
 
-<iframe height="520" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Flexbox-06b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-06b.html" >
+<iframe height="520" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Flexbox-06b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-06b.html" >
 </iframe>
 -----
 
@@ -823,7 +823,7 @@ An example helps show this property in action. Add the CSS property `justify-con
 </div>
 ```
 
-<iframe height="520" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Flexbox-07a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-07a.html" >
+<iframe height="520" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Flexbox-07a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-07a.html" >
 </iframe>
 
 ```html
@@ -851,7 +851,7 @@ An example helps show this property in action. Add the CSS property `justify-con
 </div>
 ```
 
-<iframe height="520" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Flexbox-07b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-07b.html" >
+<iframe height="520" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Flexbox-07b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-07b.html" >
 </iframe>
 -----
 
@@ -922,7 +922,7 @@ Add the CSS property `justify-content` to the header's `.profile-name` element a
 </footer>
 ```
 
-<iframe height="520" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Flexbox-08a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-08a.html" >
+<iframe height="520" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Flexbox-08a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-08a.html" >
 </iframe>
 
 ```html
@@ -979,7 +979,7 @@ Add the CSS property `justify-content` to the header's `.profile-name` element a
 </footer>
 ```
 
-<iframe height="520" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Flexbox-08b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-08b.html" >
+<iframe height="520" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Flexbox-08b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-08b.html" >
 </iframe>
 -----
 
@@ -1031,7 +1031,7 @@ An example helps show this property in action. Add the CSS property `align-items
 </div>
 ```
 
-<iframe height="520" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Flexbox-09a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-09a.html" >
+<iframe height="520" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Flexbox-09a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-09a.html" >
 </iframe>
 
 ```html
@@ -1059,7 +1059,7 @@ An example helps show this property in action. Add the CSS property `align-items
 </div>
 ```
 
-<iframe height="520" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Flexbox-09b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-09b.html" >
+<iframe height="520" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Flexbox-09b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-09b.html" >
 </iframe>
 
 -----
@@ -1131,7 +1131,7 @@ Add the CSS property `align-items` to the header's `.follow-btn` element. Set th
 </footer>
 ```
 
-<iframe height="520" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Flexbox-10a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-10a.html" >
+<iframe height="520" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Flexbox-10a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-10a.html" >
 </iframe>
 
 ```html
@@ -1187,7 +1187,7 @@ Add the CSS property `align-items` to the header's `.follow-btn` element. Set th
 </footer>
 ```
 
-<iframe height="520" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Flexbox-10b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-10b.html" >
+<iframe height="520" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Flexbox-10b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-10b.html" >
 </iframe>
 
 -----
@@ -1237,7 +1237,7 @@ The current layout has too many boxes for one row. Add the CSS property `flex-wr
 </div>
 ```
 
-<iframe height="520" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Flexbox-11a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-11a.html" >
+<iframe height="520" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Flexbox-11a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-11a.html" >
 </iframe>
 
 ```html
@@ -1265,7 +1265,7 @@ The current layout has too many boxes for one row. Add the CSS property `flex-wr
 </div>
 ```
 
-<iframe height="520" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Flexbox-11b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-11b.html" >
+<iframe height="520" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Flexbox-11b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-11b.html" >
 </iframe>
 
 ------
@@ -1307,7 +1307,7 @@ Add the CSS property `flex-shrink` to both `#box-1` and `#box-2`. Give `#box-1` 
 </div>
 ```
 
-<iframe height="520" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Flexbox-12a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-12a.html" >
+<iframe height="520" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Flexbox-12a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-12a.html" >
 </iframe>
 
 ```html
@@ -1332,7 +1332,7 @@ Add the CSS property `flex-shrink` to both `#box-1` and `#box-2`. Give `#box-1` 
 </div>
 ```
 
-<iframe height="520" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Flexbox-12b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-12b.html" >
+<iframe height="520" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Flexbox-12b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-12b.html" >
 </iframe>
 
 -----
@@ -1371,7 +1371,7 @@ Add the CSS property `flex-grow` to both `#box-1` and `#box-2`. Give `#box-1` a 
 </div>
 ```
 
-<iframe height="520" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Flexbox-13a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-13a.html" >
+<iframe height="520" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Flexbox-13a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-13a.html" >
 </iframe>
 
 ```html
@@ -1394,7 +1394,7 @@ Add the CSS property `flex-grow` to both `#box-1` and `#box-2`. Give `#box-1` a 
 </div>
 ```
 
-<iframe height="520" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Flexbox-13b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-13b.html" >
+<iframe height="520" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Flexbox-13b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-13b.html" >
 </iframe>
 
 -----
@@ -1435,7 +1435,7 @@ Set the initial size of the boxes using `flex-basis`. Add the CSS property `flex
 </div>
 ```
 
-<iframe height="520" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Flexbox-14a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-14a.html" >
+<iframe height="520" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Flexbox-14a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-14a.html" >
 </iframe>
 
 ```html
@@ -1458,7 +1458,7 @@ Set the initial size of the boxes using `flex-basis`. Add the CSS property `flex
 </div>
 ```
 
-<iframe height="520" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Flexbox-14b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-14b.html" >
+<iframe height="520" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Flexbox-14b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-14b.html" >
 </iframe>
 
 -----
@@ -1500,7 +1500,7 @@ These values will cause `#box-1` to grow to fill the extra space at twice the ra
 </div>
 ```
 
-<iframe height="520" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Flexbox-15a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-15a.html" >
+<iframe height="520" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Flexbox-15a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-15a.html" >
 </iframe>
 
 ```html
@@ -1523,7 +1523,7 @@ These values will cause `#box-1` to grow to fill the extra space at twice the ra
 </div>
 ```
 
-<iframe height="520" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Flexbox-15b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-15b.html" >
+<iframe height="520" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Flexbox-15b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-15b.html" >
 </iframe>
 
 -----
@@ -1563,7 +1563,7 @@ Add the CSS property `order` to both `#box-1` and `#box-2`. Give `#box-1` a valu
 </div>
 ```
 
-<iframe height="520" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Flexbox-16a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-16a.html" >
+<iframe height="520" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Flexbox-16a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-16a.html" >
 </iframe>
 
 ```html
@@ -1588,7 +1588,7 @@ Add the CSS property `order` to both `#box-1` and `#box-2`. Give `#box-1` a valu
 </div>
 ```
 
-<iframe height="520" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Flexbox-16b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-16b.html" >
+<iframe height="520" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Flexbox-16b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-16b.html" >
 </iframe>
 
 -----
@@ -1629,7 +1629,7 @@ Add the CSS property `align-self` to both `#box-1` and `#box-2`. Give `#box-1` a
 </div>
 ```
 
-<iframe height="520" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Flexbox-17a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-17a.html" >
+<iframe height="520" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Flexbox-17a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-17a.html" >
 </iframe>
 
 ```html
@@ -1654,6 +1654,6 @@ Add the CSS property `align-self` to both `#box-1` and `#box-2`. Give `#box-1` a
 </div>
 ```
 
-<iframe height="520" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Flexbox-17b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-17b.html" >
+<iframe height="520" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Flexbox-17b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Flexbox-17b.html" >
 </iframe>
 

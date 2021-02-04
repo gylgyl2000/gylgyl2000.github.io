@@ -5,11 +5,11 @@ title: 2 - Répétitions d'instructions
 
 ## Du soutien au village
 
-### Histoire 
+### Histoire
 
 Vous avez raccompagné le chef au village, à la grande joie de ses  habitants qui vous sont très reconnaissants. Vous décidez de passer un  peu de temps avec ces villageois, pour comprendre leur mode de vie et  leurs coutumes en participant à leurs diverses activités quotidiennes.
 
-### Objectif 
+### Objectif
 
 Vous allez découvrir comment écrire de manière concise un programme  qui répète de nombreuses fois la même action, dans le but de traiter une tâche répétitive.
 
@@ -41,7 +41,7 @@ Votre programme doit écrire 135 fois la phrase : "Je dois respecter  le Grand S
 
 
 
-#### <img src="assets/livre48.png" alt="livre48" style="width:50px;" /> Répéter une action
+#### <img src="assets/livre48.png" alt="livre48" style={{width:'50px'}} /> Répéter une action
 
 Si pour vous il est rébarbatif de répéter une tâche de nombreuses fois, cela ne pose aucun problème à votre robot.   Celui-ci est donc très pratique pour cela.
 
@@ -281,7 +281,7 @@ Alors que vous cherchez un endroit tranquille pour vous reposer,   vous remarque
 
 #### Ce que doit faire votre programme
 
-Votre programme doit diriger le robot dans la rue schématisée ci-dessous : 
+Votre programme doit diriger le robot dans la rue schématisée ci-dessous :
 
 ![#P-D-----------------------------M#](assets/rue.png)
 
@@ -291,9 +291,9 @@ Votre programme ne doit pas faire plus d'une vingtaine de lignes.
 
 
 
-#### <img src="assets/roue.png" alt="livre48" style="width:50px;" /> Commandes pour cet exercice 
+#### <img src="assets/roue.png" alt="livre48" style={{width:'50px'}} /> Commandes pour cet exercice
 
-Pour résoudre ce problème, le robot va devoir effectuer les opérations suivantes :   
+Pour résoudre ce problème, le robot va devoir effectuer les opérations suivantes :
 
 ```python
 Aller à gauche
@@ -419,9 +419,9 @@ Votre programme ne doit pas faire plus d'une dizaine de lignes.
 
 
 
-#### <img src="assets/roue.png" alt="livre48" style="width:50px;" /> Commandes pour cet exercice
+#### <img src="assets/roue.png" alt="livre48" style={{width:'50px'}} /> Commandes pour cet exercice
 
-Pour résoudre ce problème, vous allez devoir : 
+Pour résoudre ce problème, vous allez devoir :
 
 ```python
 Aller à gauche
@@ -441,7 +441,7 @@ deposer()
 
 
 
-#### <img src="assets/livre48.png" alt="livre48" style="width:50px;" /> Répéter plusieurs actions                                 
+#### <img src="assets/livre48.png" alt="livre48" style={{width:'50px'}} /> Répéter plusieurs actions
 
 Il est souvent utile de répéter un groupe de plusieurs instructions, et non pas seulement une seule instruction.   Par exemple, supposons que l'on veuille afficher deux fois les textes « Bonjour ! » et « Comment vas-tu ? » :
 
@@ -520,13 +520,13 @@ Une fois toutes les bouses ramassées, vous suivez les villageois qui  emportent
 
 
 
-#### Algorithme 
+#### Algorithme
 
 Pour ramasser toutes les bouses, il suffit de répéter 15 fois de suite la séquence suivante :   se déplacer d'une case vers la droite, puis ramasser la bouse qui s'y trouve.   Ensuite, il suffit de se déplacer d'une case vers la droite, et de déposer toutes les bouses ramassées.
 
 
 
-#### Programme 
+#### Programme
 
 ```
 from robot import *
@@ -539,7 +539,7 @@ deposer()
 
 
 
-#### <img src="assets/culture.png" alt="culture" style="width:50px;" /> Un peu de culture 
+#### <img src="assets/culture.png" alt="culture" style={{width:'50px'}} /> Un peu de culture
 
 La [bouse de vache séchée](http://fr.wikipedia.org/wiki/Bouse) est utilisée comme combustible un peu partout dans le monde.      Elle est aussi appelée « bois de vache ». Elle peut aussi servir  de matériau de construction, d'engrais, d'antiseptique.      On a même découvert récemment qu'elle pouvait être utilisée dans  la fabrication de la vanilline à moindre coût, ainsi que pour parfumer  bougies et shampoings.   
 
@@ -589,7 +589,7 @@ Programmez votre robot pour qu'il mène le rocher tout en haut des 21  marches d
 
 ![ 45 23# 1### puis  65 87# 9###](assets/schema.png)
 
-#### <img src="assets/roue.png" alt="livre48" style="width:50px;" /> Commandes pour cet exercice
+#### <img src="assets/roue.png" alt="livre48" style={{width:'50px'}} /> Commandes pour cet exercice
 
 Utilisez les quatre instructions ci-dessous pour déplacer le robot de case en case dans les différentes directions :
 
@@ -600,7 +600,7 @@ gauche()
 droite()
 ```
 
-N'oubliez pas d'inclure la ligne suivante en haut de votre programme pour utiliser ces commandes :      
+N'oubliez pas d'inclure la ligne suivante en haut de votre programme pour utiliser ces commandes :
 
 ```python
 from robot import *
@@ -650,7 +650,7 @@ Pour faire monter le robot d'une marche, il faut aller vers le haut  puis vers l
 
 
 
-#### Programme 
+#### Programme
 
 ```python
 from robot import *
@@ -665,7 +665,7 @@ for loop in range(21):
 
 
 
-#### <img src="assets/culture.png" alt="culture" style="width:50px;" /> Un peu de culture
+#### <img src="assets/culture.png" alt="culture" style={{width:'50px'}} /> Un peu de culture
 
 Dans la mythologie grecque, [Sisyphe](http://fr.wikipedia.org/wiki/Sisyphe) se serait montré suffisamment malin pour, une fois son heure venue, enchaîner [Thanathos](http://fr.wikipedia.org/wiki/Thanatos) (la mort) et ainsi l'empêcher de l'emmener aux enfers. Mais se rendant compte du problème engendré (plus personne ne mourait), [Zeus](http://fr.wikipedia.org/wiki/Zeus), le roi des dieux de l'Olympe,      envoya [Hadès](http://fr.wikipedia.org/wiki/Hadès), maître des enfers, délivrer Thanathos. Sisyphe, prévoyant, avait convaincu sa femme de ne pas lui donner  de funérailles correctes. Il put ainsi convaincre Hadès de le laisser repartir sur Terre  pour remédier à cela. Mais Sisyphe refusa alors de retourner parmi les  morts. Cette fois, Thanathos vint le chercher de force. Pour sa défiance  envers les dieux, Sisyphe fut condamné à faire rouler un rocher jusqu'en haut d'une  colline du Tartare (une région des enfers), sachant que ce rocher dévale la colline chaque fois qu'il parvient au sommet.
 
@@ -695,10 +695,10 @@ Pour les y aider, vous souhaitez imprimer des pages d'écriture. Les  élèves d
 
 Votre programme doit écrire 3 lignes, chacune contenant plusieurs fois de suite une lettre suivie du caractère « _ » (*underscore* en anglais) :   la lettre « a » sur la première ligne, la lettre « b » sur la deuxième et la lettre « c » sur la troisième.
 
-Vous disposez déjà d'un modèle où chaque ligne contient 4 lettres : 
+Vous disposez déjà d'un modèle où chaque ligne contient 4 lettres :
 
 ```python
-↳ a_a_a_a_ 
+↳ a_a_a_a_
 ↳ b_b_b_b_
 ↳ c_c_c_c_
 ```
@@ -707,15 +707,15 @@ Cependant, vous vous dites qu'il serait mieux de mettre 30 lettres par ligne. É
 
 
 
-#### <img src="assets/livre48.png" alt="livre48" style="width:50px;" /> Afficher du texte sans retour à la ligne                                 
+#### <img src="assets/livre48.png" alt="livre48" style={{width:'50px'}} /> Afficher du texte sans retour à la ligne
 
- L'instruction ci-dessous : 
+ L'instruction ci-dessous :
 
 ```python
 print("Bonjour")
 ```
 
-effectue en fait deux choses distinctes : 
+effectue en fait deux choses distinctes :
 
 - premièrement, afficher le mot « Bonjour » ;
 - deuxièmement, passer à la ligne suivante ou, autrement dit, effectuer un *retour à la ligne*.
@@ -851,7 +851,7 @@ Votre programme doit afficher un damier de taille 40×40. Assurez-vous bien que 
 
 
 
-#### <img src="assets/livre48.png" alt="livre48" style="width:50px;" /> Répétitions imbriquées                                 
+#### <img src="assets/livre48.png" alt="livre48" style={{width:'50px'}} /> Répétitions imbriquées
 
 Imaginons qu'on souhaite écrire un programme dessinant un rectangle  rempli de X, haut de 5 lignes et large de 10 colonnes, c'est-à-dire :
 
@@ -957,7 +957,7 @@ for loop in range(20):
 
 
 
-#### <img src="assets/culture.png" alt="culture" style="width:50px;" /> Un peu de culture 
+#### <img src="assets/culture.png" alt="culture" style={{width:'50px'}} /> Un peu de culture
 
 Le [jeu de dames](http://fr.wikipedia.org/wiki/Dames) est très ancien. Les Égyptiens y jouaient déjà il y a près de 4 000 ans, avant les Grecs et les Romains.   
 
@@ -979,7 +979,7 @@ Lors d'une randonnée en montagne aux alentours du village, vous  entendez parle
 
    ![Mont Kailash](assets/Kailash.jpg)
 
-Photo par [Dirk Jenrich](http://www.panoramio.com/user/62557?with_photo_id=458255) 
+Photo par [Dirk Jenrich](http://www.panoramio.com/user/62557?with_photo_id=458255)
 
 Beaucoup de gens ne peuvent pas faire le pèlerinage car cela impose  de porter beaucoup de matériel (tente, vêtements, nourriture),   ce que peu de personnes ont la force de faire. Vous proposez l'aide  de votre robot,   qui portera une bonne masse de matériel, ce qui permettra à bien plus de fidèles de se joindre au voyage !
 
@@ -995,9 +995,9 @@ Le robot se trouve initialement en bas à gauche. Chaque case représente 1 km
 
 
 
-####  <img src="assets/roue.png" alt="livre48" style="width:50px;" /> Commandes pour cet exercice 
+####  <img src="assets/roue.png" alt="livre48" style={{width:'50px'}} /> Commandes pour cet exercice
 
-Utilisez les quatre instructions ci-dessous pour déplacer le robot d'une case dans une direction :   
+Utilisez les quatre instructions ci-dessous pour déplacer le robot d'une case dans une direction :
 
 ```python
 haut()
@@ -1059,7 +1059,7 @@ for loop in range(108):
 
 
 
-#### <img src="assets/culture.png" alt="culture" style="width:50px;" /> Un peu de culture
+#### <img src="assets/culture.png" alt="culture" style={{width:'50px'}} /> Un peu de culture
 
 Le [mont Kailash](http://www.sacred-destinations.com/tibet/mount-kailash) existe réellement. Cette montagne, qui se trouve au sud-ouest du Tibet, est un lieu  sacré pour quatre religions : les hindous, les bouddhistes, les fidèles  de bön et les jaïnistes. Un lieu tellement sacré que personne n'est jamais monté au sommet !
 
@@ -1083,7 +1083,7 @@ Par cette belle journée d'automne, vous accompagnez les villageois  qui partent
 
 #### Ce que doit faire votre programme
 
-Le champ est représenté ci-dessous : 
+Le champ est représenté ci-dessous :
 
 ![  1   2   3   4   5   6   7   8   9   10  11  12  13  14  15  16 | R | . | . | . | . | . | . | . | . | . | . | . | . | . | . | C |](assets/vendanges.png)
 
@@ -1096,9 +1096,9 @@ Le robot est initialement tout à gauche, là où se trouve un grand tas de rais
 
 
 
-#### <img src="assets/roue.png" alt="livre48" style="width:50px;" /> Commandes pour cet exercice 
+#### <img src="assets/roue.png" alt="livre48" style={{width:'50px'}} /> Commandes pour cet exercice
 
-Ici, vous allez : 
+Ici, vous allez :
 
 ```python
 Aller à gauche
@@ -1107,7 +1107,7 @@ Ramasser les raisins
 Déposer les raisins
 ```
 
-Ce qui correspond aux quatre instructions : 
+Ce qui correspond aux quatre instructions :
 
 ```python
 gauche()
@@ -1241,7 +1241,7 @@ Le chef vous prend alors à l'écart et vous explique son problème.  L'onguent 
 
 #### Ce que doit faire votre programme
 
-Le palais est un grand carré de taille 10×10, et le robot se trouve  au départ dans le coin en bas à gauche, comme représenté ci-dessous : 
+Le palais est un grand carré de taille 10×10, et le robot se trouve  au départ dans le coin en bas à gauche, comme représenté ci-dessous :
 
 ![Grille du palais](assets/robot_grid.png)
 
@@ -1249,7 +1249,7 @@ Votre robot doit passer une et une seule fois dans chacune des pièces, puis se 
 
 
 
-#### <img src="assets/roue.png" alt="livre48" style="width:50px;" /> Commandes pour cet exercice 
+#### <img src="assets/roue.png" alt="livre48" style={{width:'50px'}} /> Commandes pour cet exercice
 
 Les quatre instructions ci-dessous permettent de déplacer le robot d'une case dans une direction.
 
@@ -1335,13 +1335,13 @@ for loop in range(9):
 
 
 
-#### <img src="assets/culture.png" alt="culture" style="width:50px;" />Un peu de culture 
+#### <img src="assets/culture.png" alt="culture" style={{width:'50px'}} />Un peu de culture
 
-Vous avez réussi à le faire sur une grille de dimension 10 par 10. Pourriez-vous résoudre le même sujet sur une grille de dimension 9 par 9 ?   
+Vous avez réussi à le faire sur une grille de dimension 10 par 10. Pourriez-vous résoudre le même sujet sur une grille de dimension 9 par 9 ?
 
 
 
-**Il n'y a pas de solution !** 
+**Il n'y a pas de solution !**
 
 On peut prouver que, pour toute grille contenant un nombre  impair de cases, le problème n'a pas de solution. En effet, imaginons que la grille soit un damier. Sur un  damier, chaque changement de case donne lieu à un changement de couleur. Or, pour parcourir toutes les cases d'une grille contenant un  nombre impair de cases, il faut faire un nombre impair de changements de couleur. Et lorsqu'on fait un nombre impair de changements de couleur, on arrive forcément sur une case d'une couleur différente de  celle dont on est parti. Donc le problème n'a pas de solution.
 

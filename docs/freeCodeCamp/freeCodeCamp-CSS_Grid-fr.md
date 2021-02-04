@@ -54,7 +54,7 @@ Modifiez l'affichage du `div` avec la classe `container` en `grid`.
 </div>
 ```
 
-<iframe height="300" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Grid-01a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-01a.html" >
+<iframe height="300" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Grid-01a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-01a.html" >
 </iframe>
 
 ```html
@@ -80,7 +80,7 @@ Modifiez l'affichage du `div` avec la classe `container` en `grid`.
 </div>
 ```
 
-<iframe height="300" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Grid-01b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-01b.html" >
+<iframe height="300" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Grid-01b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-01b.html" >
 </iframe>
 
 -----
@@ -133,7 +133,7 @@ Donnez au conteneur de grille trois colonnes d'une largeur de `100px` chacune.
 </div>
 ```
 
-<iframe height="300" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Grid-02a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-02a.html" >
+<iframe height="300" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Grid-02a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-02a.html" >
 </iframe>
 
 ```html
@@ -160,7 +160,7 @@ Donnez au conteneur de grille trois colonnes d'une largeur de `100px` chacune.
 </div>
 ```
 
-<iframe height="200" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Grid-02b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-02b.html" >
+<iframe height="200" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Grid-02b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-02b.html" >
 </iframe>
 
 ------
@@ -205,7 +205,7 @@ Ajoutez deux lignes à la grille de `50px` chacune.
 </div>
 ```
 
-<iframe height="200" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Grid-03a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-03a.html" >
+<iframe height="200" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Grid-03a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-03a.html" >
 </iframe>
 
 ```html
@@ -233,7 +233,7 @@ Ajoutez deux lignes à la grille de `50px` chacune.
 </div>
 ```
 
-<iframe height="200" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Grid-03b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-03b.html" >
+<iframe height="200" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Grid-03b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-03b.html" >
 </iframe>
 
 -----
@@ -291,7 +291,7 @@ Créez une grille avec trois colonnes dont les largeurs sont les suivantes : 1fr
 </div>
 ```
 
-<iframe height="200" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Grid-04a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-04a.html" >
+<iframe height="200" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Grid-04a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-04a.html" >
 </iframe>
 
 ```html
@@ -319,7 +319,7 @@ Créez une grille avec trois colonnes dont les largeurs sont les suivantes : 1fr
 </div>
 ```
 
-<iframe height="200" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Grid-04b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-04b.html" >
+<iframe height="200" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Grid-04b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-04b.html" >
 </iframe>
 
 -----
@@ -372,7 +372,7 @@ Donnez aux colonnes de la grille un espace de `20px`.
 </div>
 ```
 
-<iframe height="350" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Grid-05a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-05a.html" >
+<iframe height="350" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Grid-05a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-05a.html" >
 </iframe>
 
 ```html
@@ -402,7 +402,7 @@ Donnez aux colonnes de la grille un espace de `20px`.
 </div>
 ```
 
-<iframe height="350" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Grid-05b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-05b.html" >
+<iframe height="350" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Grid-05b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-05b.html" >
 </iframe>
 
 -----
@@ -449,7 +449,7 @@ Créez un espace pour les lignes de `5px` de haut.
 </div>
 ```
 
-<iframe height="350" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Grid-06a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-06a.html" >
+<iframe height="350" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Grid-06a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-06a.html" >
 </iframe>
 
 ```html
@@ -479,7 +479,7 @@ Créez un espace pour les lignes de `5px` de haut.
 </div>
 ```
 
-<iframe height="350" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Grid-06b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-06b.html" >
+<iframe height="350" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Grid-06b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-06b.html" >
 </iframe>
 
 -----
@@ -526,7 +526,7 @@ Utilisez `grid-gap` pour introduire un espace de `10px` entre les lignes et de `
 </div>
 ```
 
-<iframe height="350" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Grid-07a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-07a.html" >
+<iframe height="350" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Grid-07a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-07a.html" >
 </iframe>
 
 ```html
@@ -556,7 +556,7 @@ Utilisez `grid-gap` pour introduire un espace de `10px` entre les lignes et de `
 </div>
 ```
 
-<iframe height="350" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Grid-07b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-07b.html" >
+<iframe height="350" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Grid-07b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-07b.html" >
 </iframe>
 
 -----
@@ -620,7 +620,7 @@ Faites en sorte que l'élément avec la classe `item5` consomme les deux derniè
 </div>
 ```
 
-<iframe height="350" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Grid-08a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-08a.html" >
+<iframe height="350" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Grid-08a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-08a.html" >
 </iframe>
 
 ```html
@@ -653,7 +653,7 @@ Faites en sorte que l'élément avec la classe `item5` consomme les deux derniè
 </div>
 ```
 
-<iframe height="350" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Grid-08b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-08b.html" >
+<iframe height="350" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Grid-08b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-08b.html" >
 </iframe>
 
 -----
@@ -705,7 +705,7 @@ Faites en sorte que l'élément avec la classe `item5` consomme les deux derniè
 </div>
 ```
 
-<iframe height="350" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Grid-09a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-09a.html" >
+<iframe height="350" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Grid-09a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-09a.html" >
 </iframe>
 
 ```html
@@ -739,7 +739,7 @@ Faites en sorte que l'élément avec la classe `item5` consomme les deux derniè
 </div>
 ```
 
-<iframe height="350" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Grid-09b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-09b.html" >
+<iframe height="350" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Grid-09b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-09b.html" >
 </iframe>
 
 -----
@@ -793,7 +793,7 @@ Utilisez la propriété `justify-self` pour centrer l'élément avec la classe `
 </div>
 ```
 
-<iframe height="350" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Grid-10a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-10a.html" >
+<iframe height="350" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Grid-10a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-10a.html" >
 </iframe>
 
 ```html
@@ -826,7 +826,7 @@ Utilisez la propriété `justify-self` pour centrer l'élément avec la classe `
 </div>
 ```
 
-<iframe height="350" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Grid-10b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-10b.html" >
+<iframe height="350" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Grid-10b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-10b.html" >
 </iframe>
 
 -----
@@ -876,7 +876,7 @@ Alignez verticalement l'élément avec `item3` à `end`.
 </div>
 ```
 
-<iframe height="350" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Grid-11a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-11a.html" >
+<iframe height="350" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Grid-11a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-11a.html" >
 </iframe>
 
 ```html
@@ -909,7 +909,7 @@ Alignez verticalement l'élément avec `item3` à `end`.
 </div>
 ```
 
-<iframe height="350" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Grid-11b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-11b.html" >
+<iframe height="350" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Grid-11b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-11b.html" >
 </iframe>
 
 -----
@@ -957,7 +957,7 @@ Utilisez cette propriété pour centrer tous nos articles horizontalement.
 </div>
 ```
 
-<iframe height="350" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Grid-12a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-12a.html" >
+<iframe height="350" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Grid-12a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-12a.html" >
 </iframe>
 
 ```html
@@ -988,7 +988,7 @@ Utilisez cette propriété pour centrer tous nos articles horizontalement.
 </div>
 ```
 
-<iframe height="350" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Grid-12b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-12b.html" >
+<iframe height="350" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Grid-12b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-12b.html" >
 </iframe>
 
 -----
@@ -1034,7 +1034,7 @@ Utilisez-le maintenant pour déplacer tous les éléments à la fin de chaque ce
 </div>
 ```
 
-<iframe height="350" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Grid-13a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-13a.html" >
+<iframe height="350" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Grid-13a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-13a.html" >
 </iframe>
 
 ```html
@@ -1065,7 +1065,7 @@ Utilisez-le maintenant pour déplacer tous les éléments à la fin de chaque ce
 </div>
 ```
 
-<iframe height="350" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Grid-13b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-13b.html" >
+<iframe height="350" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Grid-13b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-13b.html" >
 </iframe>
 
 -----
@@ -1126,7 +1126,7 @@ Placez le modèle de zone de sorte que la cellule étiquetée `advert` devienne 
 </div>
 ```
 
-<iframe height="350" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Grid-14a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-14a.html" >
+<iframe height="350" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Grid-14a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-14a.html" >
 </iframe>
 
 ```html
@@ -1160,7 +1160,7 @@ Placez le modèle de zone de sorte que la cellule étiquetée `advert` devienne 
 </div>
 ```
 
-<iframe height="350" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Grid-14b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-14b.html" >
+<iframe height="350" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Grid-14b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-14b.html" >
 </iframe>
 
 -----
@@ -1222,7 +1222,7 @@ Placez un élément avec la classe `item5` dans la zone `footer` à l'aide de la
 </div>
 ```
 
-<iframe height="350" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Grid-15a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-15a.html" >
+<iframe height="350" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Grid-15a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-15a.html" >
 </iframe>
 
 ```html
@@ -1259,7 +1259,7 @@ Placez un élément avec la classe `item5` dans la zone `footer` à l'aide de la
 </div>
 ```
 
-<iframe height="350" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Grid-15b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-15b.html" >
+<iframe height="350" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Grid-15b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-15b.html" >
 </iframe>
 
 -----
@@ -1321,7 +1321,7 @@ Ainsi, l'élément de l'exemple consommera les lignes entre les lignes 1 et 2 et
 </div>
 ```
 
-<iframe height="350" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Grid-16a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-16a.html" >
+<iframe height="350" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Grid-16a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-16a.html" >
 </iframe>
 
 ```html
@@ -1354,7 +1354,7 @@ Ainsi, l'élément de l'exemple consommera les lignes entre les lignes 1 et 2 et
 </div>
 ```
 
-<iframe height="350" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Grid-16b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-16b.html" >
+<iframe height="350" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Grid-16b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-16b.html" >
 </iframe>
 
 -----
@@ -1422,7 +1422,7 @@ Utilisez `repeat` pour supprimer la répétition de la propriété `grid-templat
 </div>
 ```
 
-<iframe height="350" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Grid-17a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-17a.html" >
+<iframe height="350" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Grid-17a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-17a.html" >
 </iframe>
 
 ```html
@@ -1452,7 +1452,7 @@ Utilisez `repeat` pour supprimer la répétition de la propriété `grid-templat
 </div>
 ```
 
-<iframe height="350" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Grid-17b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-17b.html" >
+<iframe height="350" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Grid-17b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-17b.html" >
 </iframe>
 
 -----
@@ -1506,7 +1506,7 @@ Dans le code ci-dessus, `grid-template-columns` est configuré pour créer deux 
 </div>
 ```
 
-<iframe height="350" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Grid-18a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-18a.html" >
+<iframe height="350" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Grid-18a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-18a.html" >
 </iframe>
 
 ```html
@@ -1536,7 +1536,7 @@ Dans le code ci-dessus, `grid-template-columns` est configuré pour créer deux 
 </div>
 ```
 
-<iframe height="350" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Grid-18b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-18b.html" >
+<iframe height="350" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Grid-18b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-18b.html" >
 </iframe>
 
 -----
@@ -1607,7 +1607,7 @@ Dans la première grille, utilisez `auto-fill` avec `repeat` pour remplir la gri
 </div>
 ```
 
-<iframe height="350" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Grid-19a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-19a.html" >
+<iframe height="350" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Grid-19a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-19a.html" >
 </iframe>
 
 ```html
@@ -1654,7 +1654,7 @@ Dans la première grille, utilisez `auto-fill` avec `repeat` pour remplir la gri
 </div>
 ```
 
-<iframe height="350" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Grid-19b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-19b.html" >
+<iframe height="350" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Grid-19b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-19b.html" >
 </iframe>
 
 -----
@@ -1720,7 +1720,7 @@ Dans la deuxième grille, utilisez `auto-fit` avec `repeat` pour remplir la gril
 </div>
 ```
 
-<iframe height="350" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Grid-20a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-20a.html" >
+<iframe height="350" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Grid-20a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-20a.html" >
 </iframe>
 
 ```html
@@ -1767,7 +1767,7 @@ Dans la deuxième grille, utilisez `auto-fit` avec `repeat` pour remplir la gril
 </div>
 ```
 
-<iframe height="350" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Grid-20b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-20b.html" >
+<iframe height="350" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Grid-20b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-20b.html" >
 </iframe>
 
 -----
@@ -1837,7 +1837,7 @@ Lorsque la largeur de la fenêtre est de `400px` ou plus, faites en sorte que la
 </div>
 ```
 
-<iframe height="350" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Grid-21a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-21a.html" >
+<iframe height="350" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Grid-21a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-21a.html" >
 </iframe>
 
 ```html
@@ -1888,7 +1888,7 @@ Lorsque la largeur de la fenêtre est de `400px` ou plus, faites en sorte que la
 </div>
 ```
 
-<iframe height="350" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Grid-21b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-21b.html" >
+<iframe height="350" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Grid-21b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-21b.html" >
 </iframe>
 
 ------
@@ -1950,7 +1950,7 @@ Transformez l'élément avec la classe `item3` en une grille avec deux colonnes 
 </div>
 ```
 
-<iframe height="350" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Grid-22a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-22a.html" >
+<iframe height="350" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Grid-22a.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-22a.html" >
 </iframe>
 
 ```html
@@ -1992,7 +1992,7 @@ Transformez l'élément avec la classe `item3` en une grille avec deux colonnes 
 </div>
 ```
 
-<iframe height="350" style="width: 100%;" scrolling="no" title="freeCodeCamp-CSS_Grid-22b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-22b.html" >
+<iframe height="350" style={{width: '100%'}} scrolling="no" title="freeCodeCamp-CSS_Grid-22b.html" src="HTML-Demo_embed/freeCodeCamp-CSS_Grid-22b.html" >
 </iframe>
 
 

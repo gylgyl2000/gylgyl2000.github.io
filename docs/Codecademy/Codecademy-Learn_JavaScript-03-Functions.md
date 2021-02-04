@@ -1,5 +1,5 @@
 ---
-id: Codecademy-Learn_JavaScript-03
+id: Codecademy-Learn_JavaScript-03-Functions
 title: Functions
 ---
 
