@@ -1,13 +1,13 @@
 module.exports = {
   title: 'Wiki développement web',
   tagline: 'HTML - CSS - JavaScript - Python',
-  url: 'https://monwikidevweb.la-loutre.fr/',
+  url: 'https://gylgyl2000.github.io/',
   baseUrl: '/', // MyWebDevWiki/
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/otter-solid.svg',
   organizationName: 'gylgyl2000', // Usually your GitHub org/user name.
-  projectName: 'laloutre.github.io', // Usually your repo name.
+  projectName: 'gylgyl2000.github.io', // Usually your repo name.
   themes: ['@docusaurus/theme-live-codeblock'],
   themeConfig: {
     hideableSidebar: true,
@@ -32,7 +32,7 @@ module.exports = {
         },
         /* {to: 'blog', label: 'Blog', position: 'left'}, */
         {
-          href: 'https://github.com/gylgyl2000/laloutre.github.io',
+          href: 'https://github.com/gylgyl2000/gylgyl2000.github.io',
           className:'github',
           position: 'right',
         },
