@@ -4,8 +4,8 @@
   <ShortName>Wiki développement web</ShortName>
   <Description>Search Wiki développement web</Description>
   <InputEncoding>UTF-8</InputEncoding>
-  <Image width="16" height="16" type="image/x-icon">https://monwikidevweb.la-loutre.fr/img/otter-solid.svg</Image>
-  <Url type="text/html" method="get" template="https://monwikidevweb.la-loutre.fr//search?q={searchTerms}"/>
-  <Url type="application/opensearchdescription+xml" rel="self" template="https://monwikidevweb.la-loutre.fr//opensearch.xml" />
-  <moz:SearchForm>https://monwikidevweb.la-loutre.fr/</moz:SearchForm>
+  <Image width="16" height="16" type="image/x-icon">https://gylgyl2000.github.io/img/otter-solid.svg</Image>
+  <Url type="text/html" method="get" template="https://gylgyl2000.github.io//search?q={searchTerms}"/>
+  <Url type="application/opensearchdescription+xml" rel="self" template="https://gylgyl2000.github.io//opensearch.xml" />
+  <moz:SearchForm>https://gylgyl2000.github.io/</moz:SearchForm>
 </OpenSearchDescription>
