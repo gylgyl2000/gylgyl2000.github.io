@@ -1,0 +1,95 @@
+---
+id: freeCodeCamp-Data_Visualization_Projects-fr
+title: Projets de visualisation de données
+---
+import { MDXProvider } from '@mdx-js/react';
+import { CodePen, Gist } from 'mdx-embed';
+
+
+
+## Introduction aux projets de visualisation de données
+
+[Data Visualization Projects | freeCodeCamp.org](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/)
+
+Ces défis vous permettent de tester vos compétences en visualisation de données et comment transférer
+et utiliser des données à l'aide des technologies AJAX.
+
+À la fin de cela, vous auriez 5 projets pour présenter vos compétences en visualisation de données que
+vous pouvez montrer à vos amis, votre famille, vos employeurs, etc. Amusez-vous et n'oubliez pas d'utiliser
+la méthode Lire-Rechercher-Demander ([Read-Search-Ask](https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck-coding/19514))
+si vous êtes bloqué.
+
+-----
+
+
+
+## 1. Visualiser des données avec un diagramme à barres
+
+[Data Visualization Projects - Visualize Data with a Bar Chart | Learn | freeCodeCamp.org](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-bar-chart)
+
+**Objectif :** créer une application [CodePen.io](https://codepen.io/) fonctionnellement
+similaire à celle-ci : https://codepen.io/freeCodeCamp/full/GrZVaM.
+
+Répondez aux [récits utilisateur](https://fr.wikipedia.org/wiki/R%C3%A9cit_utilisateur) ci-dessous
+et faites passer tous les tests. Donnez-lui votre propre style.
+
+Vous pouvez utiliser HTML, JavaScript, CSS et la bibliothèque de visualisation D3 svg.
+Les tests nécessitent que les axes soient générés à l'aide de la propriété d'axe D3, qui génère
+automatiquement des graduations le long de l'axe. Ces graduations sont nécessaires pour réussir
+les tests D3 car leurs positions sont utilisées pour déterminer l'alignement des éléments
+représentés sur le graphique. Vous trouverez des informations sur la génération d'axes sur
+https://github.com/d3/d3/blob/master/API.md#axes-d3-axis. Les éléments DOM obligatoires (non
+virtuels) sont interrogés au moment de chaque test. Si vous utilisez un framework frontend
+(comme Vue par exemple), les résultats du test peuvent être inexacts pour le contenu dynamique.
+Nous espérons les accueillir éventuellement, mais ces cadres ne sont actuellement pas pris en
+charge pour les projets D3.
+
+**User Story #1 :** Mon graphique doit avoir un titre avec un `id="title"` correspondant.
+
+**User Story #2 :** Mon graphique doit avoir un élément d'axe x `g` avec un `id="x-axis"` correspondant.
+
+**User Story #3 :** Mon graphique doit avoir un élément d'axe y `g` avec un `id="y-axis"` correspondant.
+
+**User Story #4 :** Les deux axes doivent contenir plusieurs étiquettes de graduation, chacune avec
+la `class="tick"` correspondante.
+
+**User Story #5 :** Mon graphique doit avoir un élément `rect` pour chaque point de données avec
+une `class="bar"` correspondante affichant les données.
+
+**User Story #6 :** Chaque barre doit avoir les propriétés `data-date` et `data-gdp` contenant
+les valeurs de date et de PIB.
+
+**User Story #7 :** Les propriétés `data-date` des éléments de barre doivent correspondre à
+l'ordre des données fournies.
+
+**User Story #8 :** Les propriétés `data-gdp` des éléments de la barre doivent correspondre à
+l'ordre des données fournies.
+
+**User Story #9 :** La hauteur de chaque élément de barre doit représenter avec précision le
+PIB correspondant aux données.
+
+**User Story #10 :** L'attribut `data-date` et son élément de barre correspondant doivent
+s'aligner sur la valeur correspondante sur l'axe des x.
+
+**User Story #11 :** L'attribut `data-gdp` et son élément de barre correspondant doivent
+s'aligner sur la valeur correspondante sur l'axe des y.
+
+**User Story #12 :** Je peux passer la souris sur une zone et voir une info-bulle avec un
+`id="tooltip"` correspondant qui affiche plus d'informations sur la zone.
+
+**User Story #13 :** Mon info-bulle doit avoir une propriété `data-date` qui correspond à
+la `data-date` de la zone active.
+
+Voici l'ensemble de données dont vous aurez besoin pour mener à bien ce projet :
+https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json.
+
+Vous pouvez créer votre projet en forkant [ce pen CodePen](https://codepen.io/freeCodeCamp/pen/MJjpwO).
+Ou vous pouvez utiliser ce lien CDN pour exécuter les tests dans n'importe quel environnement
+de votre choix : https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js.
+
+Une fois que vous avez terminé, soumettez l'URL à votre projet de travail avec tous ses tests réussis.
+
+<CodePen codePenId="GrZVaM" />
+
+-----
+

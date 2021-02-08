@@ -459,3 +459,672 @@ interne par la chaîne de données JSON.
 -----
 
 
+
+## 5. Accéder aux données JSON depuis une API
+
+[Learn JSON APIs and Ajax: Access the JSON Data from an API | freeCodeCamp.org](https://www.freecodecamp.org/learn/data-visualization/json-apis-and-ajax/access-the-json-data-from-an-api)
+
+Dans le défi précédent, vous avez vu comment obtenir des données JSON à partir de l'API freeCodeCamp Cat Photo.<br />
+Vous allez maintenant examiner de plus près les données renvoyées pour mieux comprendre le format JSON.
+Rappelez-vous quelques notations en JavaScript :
+
+```js
+[ ] - Les crochets représentent un tableau
+{ } - Les accolades représentent un objet
+" " - Les guillemets doubles représentent une chaîne. Ils sont également utilisés pour les noms de clés dans JSON
+```
+
+Il est important de comprendre la structure des données renvoyées par une API, car cela influence la
+manière dont vous récupérez les valeurs dont vous avez besoin.<br />
+Sur la droite, cliquez sur le bouton "Get Message" pour charger le JSON de l'API freeCodeCamp Cat Photo
+dans le HTML.<br />
+Le premier et le dernier caractère que vous voyez dans les données JSON sont des crochets `[ ]`. Cela
+signifie que les données renvoyées sont un tableau. Le deuxième caractère des données JSON est une
+accolade `{`, qui démarre un objet. En regardant de plus près, vous pouvez voir qu'il existe trois
+objets distincts. Les données JSON sont un tableau de trois objets, où chaque objet contient des
+informations sur une photo de chat.<br />
+Vous avez appris plus tôt que les objets contiennent des « paires clé-valeur » séparées par des virgules.
+Dans l'exemple Cat Photo, le premier objet a `"id":0` où "id" est une clé et 0 est sa valeur correspondante.
+De même, il existe des clés pour « imageLink », « altText » et « codeNames ». Chaque objet photo de chat a
+ces mêmes clés, mais avec des valeurs différentes.<br />
+Une autre "paire clé-valeur" ​​intéressante dans le premier objet est `"codeNames":["Juggernaut","Mrs. Wallace","ButterCup"]`.
+Ici, "codeNames" est la clé et sa valeur est un tableau de trois chaînes. Il est possible d'avoir des
+tableaux d'objets ainsi qu'une clé avec un tableau comme valeur.<br />
+N'oubliez pas comment accéder aux données dans les tableaux et les objets. Les tableaux utilisent la
+notation entre crochets pour accéder à un index spécifique d'un élément. Les objets utilisent la notation
+entre crochets ou points pour accéder à la valeur d'une propriété donnée. Voici un exemple qui imprime
+le "altText" de la première photo de chat - notez que les données JSON analysées dans l'éditeur sont
+enregistrées dans une variable appelée `json` :
+
+```js
+console.log(json[0].altText);
+// Imprime "A white cat wearing a green helmet shaped melon on its head."
+```
+
+:::info instructions
+Pour le chat avec le "id" 2, affichez sur la console la deuxième valeur du tableau `codeNames`.
+Vous devez utiliser la notation entre crochets et points sur l'objet (qui est enregistrée dans
+la variable `json`) pour accéder à la valeur.
+:::
+
+:::tip missions
+- Votre code doit utiliser la notation entre crochets et points pour accéder au nom de code approprié
+et imprimer "Loki" sur la console.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    document.getElementById('getMessage').onclick = function(){
+      const req = new XMLHttpRequest();
+      req.open("GET",'/json/cats.json', true);
+      req.send();
+      req.onload=function(){
+        const json = JSON.parse(req.responseText);
+        document.getElementsByClassName('message')[0].innerHTML = JSON.stringify(json);
+        // joutez votre code sous cette ligne
+        console.log(json[2].codeNames[1]);
+        // Ajoutez votre code au-dessus de cette ligne
+      };
+    };
+  });
+</script>
+
+<style>
+  body {
+    text-align: center;
+    font-family: "Helvetica", sans-serif;
+  }
+  h1 {
+    font-size: 2em;
+    font-weight: bold;
+  }
+  .box {
+    border-radius: 5px;
+    background-color: #eee;
+    padding: 20px 5px;
+  }
+  button {
+    color: white;
+    background-color: #4791d0;
+    border-radius: 5px;
+    border: 1px solid #4791d0;
+    padding: 5px 10px 8px 10px;
+  }
+  button:hover {
+    background-color: #0F5897;
+    border: 1px solid #0F5897;
+  }
+</style>
+
+<h1>Cat Photo Finder</h1>
+<p class="message box">
+  The message will go here
+</p>
+<p>
+  <button id="getMessage">
+    Get Message
+  </button>
+</p>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-JSON_APIs_and_AJAX-05a.html"></iframe>
+
+</div></nav>
+
+```shell title="console"
+Loki
+```
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-access-the-json-data-from-an-api/301499)
+
+-----
+
+
+
+## 6. Convertir les données JSON en HTML
+
+[Learn JSON APIs and Ajax: Convert JSON Data to HTML | freeCodeCamp.org](https://www.freecodecamp.org/learn/data-visualization/json-apis-and-ajax/convert-json-data-to-html)
+
+Maintenant que vous obtenez des données à partir d'une API JSON, vous pouvez les afficher dans le HTML.<br />
+Vous pouvez utiliser une méthode `forEach` pour parcourir les données car les objets photo de chat sont
+conservés dans un tableau. Lorsque vous arrivez à chaque élément, vous pouvez modifier les éléments HTML.<br />
+Commencez par déclarer une variable html avec `let html = "";`.<br />
+Ensuite, parcourez le JSON en ajoutant du HTML à la variable qui encapsule les noms de clés dans des
+balises `strong`, suivi de la valeur. Lorsque la boucle est terminée, vous la restituez.<br />
+Voici le code qui fait cela :
+
+```js
+let html = "";
+json.forEach(function(val) {
+  const keys = Object.keys(val);
+  html += "<div class = 'cat'>";
+  keys.forEach(function(key) {
+    html += "<strong>" + key + "</strong>: " + val[key] + "<br>";
+  });
+  html += "</div><br>";
+});
+
+```
+
+**Remarque :** Pour ce défi, vous devez ajouter de nouveaux éléments HTML à la page, vous ne pouvez
+donc pas vous fier à `textContent`. Au lieu de cela, vous devez utiliser `innerHTML`, ce qui peut
+rendre un site vulnérable aux attaques de script intersite.
+
+:::info instructions
+Ajoutez une méthode `forEach` pour boucler sur les données JSON et créer les éléments HTML pour
+les afficher.<br />
+Voici quelques exemples JSON :
+
+```json
+[
+  {
+    "id":0,
+      "imageLink":"https://s3.amazonaws.com/freecodecamp/funny-cat.jpg",
+      "altText":"A white cat wearing a green helmet shaped melon on its head. ",
+      "codeNames":[ "Juggernaut", "Mrs. Wallace", "Buttercup"
+    ]
+  }
+]
+```
+
+:::
+
+:::tip missions
+- Votre code doit stocker les données dans la variable `html`.
+- Votre code doit utiliser une méthode `forEach` pour parcourir les données JSON de l'API.
+- Votre code doit envelopper les noms de clé dans des balises `strong`.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    document.getElementById('getMessage').onclick = function(){
+      const req = new XMLHttpRequest();
+      req.open("GET",'/json/cats.json',true);
+      req.send();
+      req.onload = function(){
+        const json = JSON.parse(req.responseText);
+        let html = "";
+        // Add your code below this line
+        json.forEach(function(val) {
+          const keys = Object.keys(val);
+          html += "<div class = 'cat'>";
+          keys.forEach(function(key) {
+            html += "<strong>" + key + "</strong>:" + val[key] + "<br>";
+          })
+          html += "</div><br>";
+        });
+        // Add your code above this line
+        document.getElementsByClassName('message')[0].innerHTML = html;
+      };
+    };
+  });
+</script>
+
+<style>
+  body {
+    text-align: center;
+    font-family: "Helvetica", sans-serif;
+  }
+  h1 {
+    font-size: 2em;
+    font-weight: bold;
+  }
+  .box {
+    border-radius: 5px;
+    background-color: #eee;
+    padding: 20px 5px;
+  }
+  button {
+    color: white;
+    background-color: #4791d0;
+    border-radius: 5px;
+    border: 1px solid #4791d0;
+    padding: 5px 10px 8px 10px;
+  }
+  button:hover {
+    background-color: #0F5897;
+    border: 1px solid #0F5897;
+  }
+</style>
+
+<h1>Cat Photo Finder</h1>
+<p class="message box">
+  The message will go here
+</p>
+<p>
+  <button id="getMessage">
+    Get Message
+  </button>
+</p>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-JSON_APIs_and_AJAX-06a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-convert-json-data-to-html/16807)
+
+-----
+
+
+
+## 7. Rendu d'images à partir de sources de données
+
+[Learn JSON APIs and Ajax: Render Images from Data Sources | freeCodeCamp.org](https://www.freecodecamp.org/learn/data-visualization/json-apis-and-ajax/render-images-from-data-sources)
+
+Les derniers défis ont montré que chaque objet du tableau JSON contient une clé `imageLink`
+avec une valeur qui est l'URL de l'image d'un chat.<br />
+Lorsque vous parcourez ces objets en boucle, vous pouvez utiliser cette propriété `imageLink`
+pour afficher cette image dans un élément `img`.<br />
+Voici le code qui fait cela :
+
+```js
+html += "<img src = '" + val.imageLink + "' " + "alt='" + val.altText + "'>";
+```
+:::info instructions
+Ajoutez du code pour utiliser les propriétés `imageLink` et `altText` dans une balise `img`.
+:::
+
+:::tip missions
+- Vous devez utiliser la propriété `imageLink` pour afficher les images.
+- Vous devez utiliser `altText` pour les valeurs d'attribut `alt` des images.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    document.getElementById('getMessage').onclick = function(){
+      const req=new XMLHttpRequest();
+      req.open("GET",'/json/cats.json',true);
+      req.send();
+      req.onload = function(){
+        const json = JSON.parse(req.responseText);
+        let html = "";
+        json.forEach(function(val) {
+          html += "<div class = 'cat'>";
+          // Ajoutez votre code sous cette ligne
+          html += "<img src = '" + val.imageLink + "' " + "alt='" + val.altText + "'>";
+          // Ajoutez votre code au-dessus de cette ligne
+          html += "</div><br>";
+        });
+        document.getElementsByClassName('message')[0].innerHTML=html;
+      };
+     };
+  });
+</script>
+
+<style>
+  body {
+    text-align: center;
+    font-family: "Helvetica", sans-serif;
+  }
+  h1 {
+    font-size: 2em;
+    font-weight: bold;
+  }
+  .box {
+    border-radius: 5px;
+    background-color: #eee;
+    padding: 20px 5px;
+  }
+  button {
+    color: white;
+    background-color: #4791d0;
+    border-radius: 5px;
+    border: 1px solid #4791d0;
+    padding: 5px 10px 8px 10px;
+  }
+  button:hover {
+    background-color: #0F5897;
+    border: 1px solid #0F5897;
+  }
+</style>
+<h1>Cat Photo Finder</h1>
+<p class="message box">
+  The message will go here
+</p>
+<p>
+  <button id="getMessage">
+    Get Message
+  </button>
+</p>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-JSON_APIs_and_AJAX-07a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-render-images-from-data-sources/18265)
+
+-----
+
+
+
+## 8. Pré-filtrez JSON pour obtenir les données dont vous avez besoin
+
+[Learn JSON APIs and Ajax: Pre-filter JSON to Get the Data You Need | freeCodeCamp.org](https://www.freecodecamp.org/learn/data-visualization/json-apis-and-ajax/pre-filter-json-to-get-the-data-you-need)
+
+Si vous ne souhaitez pas rendre chaque photo de chat obtenue à partir de l'API freeCodeCamp
+Cat Photo, vous pouvez pré-filtrer le JSON avant de le parcourir.<br />
+Étant donné que les données JSON sont stockées dans un tableau, vous pouvez utiliser la
+méthode `filter` pour filtrer le chat dont la clé "id" a une valeur de 1.<br />
+Voici le code pour ce faire :
+
+```js
+json = json.filter(fonction (val) {
+  return (val.id !== 1);
+});
+```
+
+:::info instructions
+Ajoutez du code pour `filter` les données json pour supprimer le chat avec la valeur 'id' de 1.
+:::
+
+:::tip missions
+- Votre code doit utiliser la méthode `filter`.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    document.getElementById('getMessage').onclick = function(){
+      const req = new XMLHttpRequest();
+      req.open("GET",'/json/cats.json', true);
+      req.send();
+      req.onload=function(){
+        let json = JSON.parse(req.responseText);
+        let html = "";
+        // Ajoutez votre code sous cette ligne
+        json = json.filter(function(val) {
+          return (val.id !== 1);
+        });
+        // Ajoutez votre code au-dessus de cette ligne
+         json.forEach(function(val) {
+           html += "<div class = 'cat'>"
+
+           html += "<img src = '" + val.imageLink + "' " + "alt='" + val.altText + "'>"
+
+           html += "</div>"
+         });
+         document.getElementsByClassName('message')[0].innerHTML = html;
+       };
+     };
+  });
+</script>
+
+<style>
+  body {
+    text-align: center;
+    font-family: "Helvetica", sans-serif;
+  }
+  h1 {
+    font-size: 2em;
+    font-weight: bold;
+  }
+  .box {
+    border-radius: 5px;
+    background-color: #eee;
+    padding: 20px 5px;
+  }
+  button {
+    color: white;
+    background-color: #4791d0;
+    border-radius: 5px;
+    border: 1px solid #4791d0;
+    padding: 5px 10px 8px 10px;
+  }
+  button:hover {
+    background-color: #0F5897;
+    border: 1px solid #0F5897;
+  }
+</style>
+
+<h1>Cat Photo Finder</h1>
+<p class="message box">
+  The message will go here
+</p>
+<p>
+  <button id="getMessage">
+    Get Message
+  </button>
+</p>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-JSON_APIs_and_AJAX-08a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-pre-filter-json-to-get-the-data-you-need/18257)
+
+-----
+
+
+
+## 9. Obtenir des données de géolocalisation pour trouver les coordonnées GPS d'un utilisateur
+
+[Learn JSON APIs and Ajax: Get Geolocation Data to Find A User's GPS Coordinates | freeCodeCamp.org](https://www.freecodecamp.org/learn/data-visualization/json-apis-and-ajax/get-geolocation-data-to-find-a-users-gps-coordinates)
+
+Une autre chose intéressante que vous pouvez faire est d'accéder à l'emplacement actuel de
+votre utilisateur. Chaque navigateur a un navigateur intégré qui peut vous donner ces informations.<br />
+Le navigateur obtiendra la longitude et la latitude actuelles de l'utilisateur.<br />
+Vous verrez une invite pour autoriser ou empêcher ce site de connaître votre emplacement actuel.
+Le défi peut être complété de toute façon, tant que le code est correct.<br />
+En sélectionnant Autoriser, vous verrez le texte sur le téléphone de sortie changer en votre
+latitude et longitude.<br />
+Voici le code qui fait cela :
+
+```js
+if (navigator.geolocation){
+  navigator.geolocation.getCurrentPosition(function(position) {
+    document.getElementById('data').innerHTML="latitude: " + position.coords.latitude + "<br>longitude: " + position.coords.longitude;
+  });
+}
+
+```
+
+Tout d'abord, il vérifie si l'objet `navigator.geolocation` existe. Si tel est le cas, la méthode
+`getCurrentPosition` sur cet objet est appelée, ce qui lance une requête asynchrone pour la
+position de l'utilisateur. Si la demande aboutit, la fonction de rappel de la méthode s'exécute.
+Cette fonction accède aux valeurs de la latitude et de la longitude de l'objet `position` en
+utilisant la notation par points et met à jour le HTML.
+
+:::info instructions
+Ajoutez l'exemple de code à l'intérieur des balises `script` pour vérifier l'emplacement actuel
+d'un utilisateur et insérez-le dans le HTML.
+:::
+
+:::tip missions
+- Votre code doit utiliser `navigator.geolocation` pour accéder à l'emplacement actuel de l'utilisateur.
+- Votre code doit utiliser `position.coords.latitude` pour afficher l'emplacement latitudinal de l'utilisateur.
+- Votre code doit utiliser `position.coords.longitude` pour afficher l'emplacement longitudinal de l'utilisateur.
+- Vous devez afficher la position de l'utilisateur dans l'élément `div` `data`.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<script>
+  // Add your code below this line
+  if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(function(position) {
+    document.getElementById('data').innerHTML="latitude: " + position.coords.latitude + "<br>longitude: " + position.coords.longitude;
+  });
+}
+  // Add your code above this line
+</script>
+<h4>You are here:</h4>
+<div id="data">
+
+</div>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-JSON_APIs_and_AJAX-09a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-get-geolocation-data-to-find-a-users-gps-coordinates/18188)
+
+-----
+
+
+
+## 10. Publier des données avec la méthode JavaScript XMLHttpRequest
+
+[Learn JSON APIs and Ajax: Post Data with the JavaScript XMLHttpRequest Method | freeCodeCamp.org](https://www.freecodecamp.org/learn/data-visualization/json-apis-and-ajax/post-data-with-the-javascript-xmlhttprequest-method)
+
+Dans les exemples précédents, vous avez reçu des données d'une ressource externe. Vous pouvez
+également envoyer des données à une ressource externe, tant que cette ressource prend en
+charge les requêtes AJAX et que vous connaissez l'URL.<br />
+La méthode `XMLHttpRequest` de JavaScript est également utilisée pour publier des données
+sur un serveur. Voici un exemple :
+
+```js
+const xhr = new XMLHttpRequest();
+xhr.open('POST', url, true);
+xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+xhr.onreadystatechange = function () {
+  if (xhr.readyState === 4 && xhr.status === 201){
+    const serverResponse = JSON.parse(xhr.response);
+    document.getElementsByClassName('message')[0].textContent = serverResponse.userName + serverResponse.suffix;
+  }
+};
+const body = JSON.stringify({ userName: userName, suffix: ' loves cats!' });
+xhr.send(body);
+
+```
+
+Vous avez déjà vu plusieurs de ces méthodes. Ici, la méthode `open` initialise la requête
+en tant que "POST" à l'URL donnée de la ressource externe et utilise le booléen `true` pour
+la rendre asynchrone. La méthode `setRequestHeader` définit la valeur d'un en-tête de requête
+HTTP, qui contient des informations sur l'expéditeur et la requête. Il doit être appelé après
+la méthode `open`, mais avant la méthode `send`. Les deux paramètres sont le nom de l'en-tête
+et la valeur à définir comme corps de cet en-tête. Ensuite, l'écouteur d'événement
+`onreadystatechange` gère une modification de l'état de la demande. Un `readyState` de 4
+signifie que l'opération est terminée, et un `status` de 201 signifie qu'il s'agit d'une
+demande réussie. Le HTML du document peut être mis à jour. Enfin, la méthode `send` envoie
+la requête avec la valeur `body`, que la clé `userName` a été donnée par l'utilisateur dans
+le champ de saisie.
+
+:::info instructions
+Mettez à jour le code pour qu'il envoie une requête "POST" au point de terminaison de l'API.
+Tapez ensuite votre nom dans le champ de saisie et cliquez sur "Send Message". Votre fonction
+AJAX doit remplacer "Reply from Server will be here." avec les données du serveur. Formatez
+la réponse pour afficher votre nom avec "loves cats".
+:::
+
+:::tip missions
+- Votre code doit créer un nouveau `XMLHttpRequest`.
+- Votre code doit utiliser la méthode `open` pour initialiser une requête "POST" sur le serveur.
+- Votre code doit utiliser la méthode `setRequestHeader`.
+- Votre code doit avoir un gestionnaire d'événements `onreadystatechange` défini sur une fonction.
+- Votre code devrait obtenir l'élément avec la classe `message` et changer son `textContent` en
+"`userName` loves cats".
+- Votre code doit utiliser la méthode `send`.
+:::
+
+<nav class="code-col">
+<div class="code-col__item63">
+
+```html title="html"
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    document.getElementById('sendMessage').onclick = function(){
+
+      const userName = document.getElementById('name').value;
+      const url = 'https://jsonplaceholder.typicode.com/posts';
+      // Add your code below this line
+      const xhr = new XMLHttpRequest();
+      xhr.open('POST', url, true);
+      xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 201){
+          const serverResponse = JSON.parse(xhr.response);
+          document.getElementsByClassName('message')[0].textContent = serverResponse.userName + serverResponse.suffix;
+        }
+      };
+      const body = JSON.stringify({ userName: userName, suffix: ' loves cats!' });
+      xhr.send(body);
+      // Add your code above this line
+    };
+  });
+</script>
+
+<style>
+  body {
+    text-align: center;
+    font-family: "Helvetica", sans-serif;
+  }
+  h1 {
+    font-size: 2em;
+    font-weight: bold;
+  }
+  .box {
+    border-radius: 5px;
+    background-color: #eee;
+    padding: 20px 5px;
+  }
+  button {
+    color: white;
+    background-color: #4791d0;
+    border-radius: 5px;
+    border: 1px solid #4791d0;
+    padding: 5px 10px 8px 10px;
+  }
+  button:hover {
+    background-color: #0F5897;
+    border: 1px solid #0F5897;
+  }
+</style>
+
+<h1>Cat Friends</h1>
+<p class="message box">
+  Reply from Server will be here
+</p>
+<p>
+  <label for="name">Your name:
+    <input type="text" id="name"/>
+  </label>
+  <button id="sendMessage">
+    Send Message
+  </button>
+</p>
+```
+
+</div>
+<div class="code-col__item35-html">
+
+<iframe width="100%" height="100%" src="HTML-Demo_embed/freeCodeCamp-JSON_APIs_and_AJAX-10a.html"></iframe>
+
+</div></nav>
+
+[solutions](https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-post-data-with-the-javascript-xmlhttprequest-method/301504)

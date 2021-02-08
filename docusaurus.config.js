@@ -1,12 +1,12 @@
 module.exports = {
   title: 'Wiki développement web',
   tagline: 'HTML - CSS - JavaScript - Python',
-  url: 'https://github.com/gylgyl2000/laloutre.github.io',
+  url: 'https://monwikidevweb.la-loutre.fr/',
   baseUrl: '/', // MyWebDevWiki/
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/otter-solid.svg',
-  organizationName: 'LaLoutre', // Usually your GitHub org/user name.
+  organizationName: 'gylgyl2000', // Usually your GitHub org/user name.
   projectName: 'laloutre.github.io', // Usually your repo name.
   themes: ['@docusaurus/theme-live-codeblock'],
   themeConfig: {

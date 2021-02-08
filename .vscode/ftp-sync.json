@@ -1,0 +1,27 @@
+{
+    "remotePath": "/monwikidevweb",
+    "host": "ftp.cluster003.hosting.ovh.net",
+    "username": "laloutreis",
+    "password": "Merlin2004",
+    "port": 21,
+    "secure": false,
+    "protocol": "ftp",
+    "uploadOnSave": true,
+    "passive": true,
+    "debug": false,
+    "privateKeyPath": null,
+    "passphrase": null,
+    "agent": null,
+    "allow": [],
+    "ignore": [
+        "\\.vscode",
+        "\\.git",
+        "\\.DS_Store"
+    ],
+    "generatedFiles": {
+        "extensionsToInclude": [
+            ""
+        ],
+        "path": "/build"
+    }
+}

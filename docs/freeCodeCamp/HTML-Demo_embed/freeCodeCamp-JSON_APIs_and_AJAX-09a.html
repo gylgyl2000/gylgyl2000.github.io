@@ -1,0 +1,15 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
+
+<body style="margin:8px;">
+    <script>
+        if (navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(function(position) {
+          document.getElementById('data').innerHTML="latitude: " + position.coords.latitude + "<br>longitude: " + position.coords.longitude;
+        });
+      }
+    </script>
+    <h4>You are here:</h4>
+    <div id="data">
+    </div>
+</body>
