@@ -143,8 +143,8 @@ function Feature({imageUrl, title, description}) {
     <div className={clsx('col col--4', styles.feature)}>
       {imgUrl && (
         <div className="text--center">
-          <img className={styles.featureImage} src={imgUrl} alt={title} />
-        </div>
+          <img className={clsx('featureImage', styles.featureImage)} src={imgUrl} alt={title} />
+        </div> 
       )}
       <h3>{title}</h3>
       <p>{description}</p>
@@ -269,7 +269,7 @@ function Home() {
       </header>
       <main>
         {features && features.length > 0 && (
-          <section className={styles.features}>
+          <section className={clsx('features', styles.features)}>
             <div className="container">
               <div className="row">
                 {features.map((props, idx) => (
