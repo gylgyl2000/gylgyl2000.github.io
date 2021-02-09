@@ -93,7 +93,7 @@ module.exports = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/gylgyl2000/laloutre.github.io',
+              href: 'https://github.com/gylgyl2000/gylgyl2000.github.io',
             },
           ],
         },
@@ -109,7 +109,7 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/gylgyl2000/laloutre.github.io/edit/main/',
+            'https://github.com/gylgyl2000/gylgyl2000.github.io/edit/main/',
         },
         blog: {
           showReadingTime: true,
