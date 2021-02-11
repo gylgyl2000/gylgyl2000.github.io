@@ -1,0 +1,12 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js" type="text/javascript"></script>
+
+<body style="margin:8px;">
+    <script>
+        const positionData = [[1, 7, -4],[6, 3, 8],[2, 9, 3]]
+        const output = d3.max(positionData, (d) => d[2]);
+        d3.select("body")
+          .append("h2")
+          .text(output);
+    </script>
+</body>

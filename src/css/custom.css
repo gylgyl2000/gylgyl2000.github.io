@@ -60,10 +60,6 @@ html[data-theme='dark'] .DocSearch {
 }
 /* Algolia */
 
-
-
-
-
 .docusaurus-highlight-code-line {
   background-color: rgb(72, 77, 91);
   display: block;
@@ -76,28 +72,25 @@ html[data-theme='dark'] .DocSearch {
   padding: 0;
 }
 
-.sidebar_node_modules-\@docusaurus-theme-classic-lib-theme-DocSidebar- {
+div[class*="sidebar"] {
   width: 300px;
 }
-.docSidebarContainer_node_modules-\@docusaurus-theme-classic-lib-theme-DocPage- {
 
-}
-
-main {  
+main {
   padding: 0;
 }
 
-.docMainContainer_node_modules-\@docusaurus-theme-classic-lib-theme-DocPage- .container {
+div[class*="docItemWrapper"] {
   width: 100%;
   max-width: 100% !important;
   margin: 0 auto;
 }
 
-.features_src-pages- {
+.features {
   padding: 72px 0;
 }
 
-.features_src-pages- .container {
+.features .container {
   max-width: var(--ifm-container-width);
   width: 100%;
   text-align: center;
@@ -105,7 +98,7 @@ main {
   padding: 0 var(--ifm-spacing-horizontal);
 }
 
-.features_src-pages- .row {
+.features .row {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -119,10 +112,8 @@ main {
   margin: 0 auto;
 }
 
-
-
-.col.docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem- {
-    width: 31vw;
+div[class*="docItemCol"] {
+    width: 31vw !important;
 }
 
 img[src*="#logo-accueil"] {
