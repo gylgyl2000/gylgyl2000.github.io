@@ -25,6 +25,7 @@
     "@mdx-js/mdx": "^1.6.21",
     "@mdx-js/react": "^1.6.21",
     "@next/mdx": "^10.0.3",
+    "@types/react-dom": "^17.0.0",
     "animate.css": "^4.1.1",
     "bootstrap": "^5.0.0-beta1",
     "clsx": "^1.1.1",
