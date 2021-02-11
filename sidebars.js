@@ -56,6 +56,7 @@ module.exports = {
           items: [
             'freeCodeCamp/freeCodeCamp-Data_Visualization_with_D3-fr',
             'freeCodeCamp/freeCodeCamp-JSON_APIs_and_AJAX-fr',
+            'freeCodeCamp/freeCodeCamp-Data_Visualization_Projects-fr',
           ],
         },
       ],
