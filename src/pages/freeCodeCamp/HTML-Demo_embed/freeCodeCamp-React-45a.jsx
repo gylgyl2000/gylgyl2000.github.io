@@ -1,3 +1,5 @@
+import React from 'react';
+
 "use strict";
 
 var frontEndFrameworks = ['React', 'Angular', 'Ember', 'Knockout', 'Backbone', 'Vue'];
