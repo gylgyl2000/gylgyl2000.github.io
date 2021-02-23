@@ -1,0 +1,48 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:700|Exo+2:300,600);
+body {
+  font-family: "Exo 2", "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 1.2em;
+  line-height: 1.2em;
+  background: #333533;
+  color: #475B62;
+}
+strong {
+  font-weight: 600;
+}
+h2 {
+  font-family: 'Roboto Slab', "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 700;
+  color: #D16129;
+  font-size: 1.75em;
+  margin-bottom: .4em;
+}
+p {
+  margin-bottom: .5em;
+}
+.container {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 10px;
+  text-align:center;
+}
+.footer {
+  text-align: center;
+  margin: 0 auto;
+}
+h4 {
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  color: #D5D5B1
+}
+.myclass {
+  fill: #adaeb0;
+}
+.domain, .tick, line {
+  stroke: white!important;
+}

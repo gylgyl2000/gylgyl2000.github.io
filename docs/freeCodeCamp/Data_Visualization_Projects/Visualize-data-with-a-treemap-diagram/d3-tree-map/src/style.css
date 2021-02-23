@@ -1,0 +1,87 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:700|Exo+2:300,600);
+body {
+  font-family: "Exo 2", "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 1.2em;
+  line-height: 1.2em;
+  background: #162447;
+  color: #fff;
+}
+
+h2 {
+  font-family: 'Roboto Slab', "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 700;
+  color: #D16129;
+  font-size: 1.5em;
+  width: 45%;
+  float: left;
+  margin-top: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  margin-top: 10px;
+  text-align:center;
+}
+
+.main {
+  display: block;
+  margin: auto;
+  background-color:#1f4068;
+  height: 1000px;
+}
+
+svg {
+  font: 10px sans-serif;
+  text-align: center;
+  display: block;
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.tile-text {
+  cursor: default;
+  fill: #000;
+}
+
+#title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+#description {
+  padding-bottom: 1.5rem;
+}
+
+div.tooltip {
+  position: absolute;
+  padding: 10px;
+  font: 12px Arial;
+  background: rgba(255, 255, 204, 0.95);
+  box-shadow: 1px 1px 10px rgba(128, 128, 128, 0.6);
+  border: 0;
+  border-radius: 2px;
+  pointer-events: none;
+  color: #000;
+}
+
+#tree-map {
+  float: left;
+  padding: 20px;
+}
+
+#legend {
+  font-size: 15px;
+  text-align: center;
+  display: block;
+  margin: 0;
+  padding: 20px 0;
+  fill: #fff;
+  height: inherit;
+}

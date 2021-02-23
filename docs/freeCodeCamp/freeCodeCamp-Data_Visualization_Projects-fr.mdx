@@ -89,7 +89,324 @@ de votre choix : https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js
 
 Une fois que vous avez terminé, soumettez l'URL à votre projet de travail avec tous ses tests réussis.
 
+#### Des ressources :
+
+- [D3JS - Création d'une carte à partir d'un fichier geoJSON](https://www.datavis.fr/index.php?page=map-firststep)
+- [Drawing Charts in React with D3 | Pluralsight](https://www.pluralsight.com/guides/drawing-charts-in-react-with-d3)
+- [Tutorials · d3/d3 Wiki](https://github.com/d3/d3/wiki/Tutorials)
+- [How to get started with D3 and React](https://www.freecodecamp.org/news/how-to-get-started-with-d3-and-react-c7da74a5bd9f/)
+- [D3 / Observable](https://observablehq.com/@d3)
+- [D3 in Depth | In depth information on D3.js.](https://www.d3indepth.com/)
+- [D3.js 5 documentation — DevDocs](https://devdocs.io/d3~5/)
+- [D3 wiki](https://d3-wiki.readthedocs.io/zh_CN/master/)
+- [d3/d3: Bring data to life with SVG, Canvas and HTML.](https://github.com/d3/d3)
+- [D3.js Bar Chart](https://codepen.io/Jackel27/pen/Kzqxjo)
+
 <CodePen codePenId="GrZVaM" />
+
+
+<CodePen codePenId="KKNmdJx" />
 
 -----
 
+
+
+## 2. Visualiser les données avec un graphique en nuage de points
+
+[Data Visualization Projects - Visualize Data with a Scatterplot Graph | Learn | freeCodeCamp.org](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-scatterplot-graph)
+
+**Objectif :** créer une application [CodePen.io](https://codepen.io/) fonctionnellement
+similaire à celle-ci : https://codepen.io/freeCodeCamp/full/bgpXyK.
+
+Répondez aux [récits utilisateur](https://fr.wikipedia.org/wiki/R%C3%A9cit_utilisateur) ci-dessous
+et faites passer tous les tests. Donnez-lui votre propre style.
+
+Vous pouvez utiliser HTML, JavaScript, CSS et la bibliothèque de visualisation D3 svg. Les tests
+nécessitent que les axes soient générés à l'aide de la propriété d'axe D3, qui génère automatiquement
+des graduations le long de l'axe. Ces graduations sont nécessaires pour réussir les tests D3 car leurs
+positions sont utilisées pour déterminer l'alignement des éléments représentés sur le graphique. Vous
+trouverez des informations sur la génération d'axes sur https://github.com/d3/d3/blob/master/API.md#axes-d3-axis.
+Les éléments DOM obligatoires (non virtuels) sont interrogés au moment de chaque test. Si vous utilisez
+un framework frontend (comme Vue par exemple), les résultats du test peuvent être inexacts pour le contenu
+dynamique. Nous espérons les accueillir éventuellement, mais ces cadres ne sont actuellement pas pris en
+charge pour les projets D3.
+
+**User Story #1 :** Je peux voir un élément title qui a un `id="title"` correspondant.
+
+**User Story #2 :** Je peux voir un axe x qui a un `id="x-axis"` correspondant.
+
+**User Story #3 :** Je peux voir un axe y qui a un `id="y-axis"` correspondant.
+
+**User Story #4 :** Je peux voir des points, qui ont chacun une classe `dot`, qui représente les données tracées.
+
+**User Story #5 :** Chaque point doit avoir les propriétés `data-xvalue` et `data-yvalue` contenant leurs valeurs
+x et y correspondantes.
+
+**User Story #6 :** Les données `data-xvalue` et `data-yvalue` de chaque point doivent être dans la plage des
+données réelles et dans le format de données correct. Pour `data-xvalue`, des entiers (années complètes) ou
+des objets Date sont acceptables pour l'évaluation du test. Pour `data-yvalue` (minutes), utilisez des objets Date.
+
+**User Story #7 :** `data-xvalue` et son point correspondant doivent s'aligner avec le point/valeur correspondant
+sur l'axe des x.
+
+**User Story #8 :** `data-yvalue` et son point correspondant doivent s'aligner avec le point/valeur correspondant
+sur l'axe y.
+
+**User Story #9 :** Je peux voir plusieurs étiquettes de graduation sur l'axe y avec le format d'heure `%M:%S`.
+
+**User Story #10 :** Je peux voir plusieurs étiquettes de graduation sur l'axe des x qui indiquent l'année.
+
+**User Story #11 :** Je peux voir que la plage des étiquettes de l'axe des x est dans la plage des données
+réelles de l'axe des x.
+
+**User Story #12 :** Je peux voir que la plage des étiquettes de l'axe y est dans la plage des données réelles
+de l'axe y.
+
+**User Story #13 :** Je peux voir une légende contenant un texte descriptif avec `id="legend"`.
+
+**User Story #14 :** Je peux passer la souris sur une zone et voir une info-bulle avec un `id="tooltip"`
+correspondant qui affiche plus d'informations sur la zone.
+
+**User Story #15 :** Mon info-bulle doit avoir une propriété `data-year` qui correspond à `data-xvalue` de la zone active.
+
+Voici l'ensemble de données dont vous aurez besoin pour mener à bien ce projet :
+https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/cyclist-data.json
+
+Vous pouvez créer votre projet en forkant [ce pen CodePen](https://codepen.io/freeCodeCamp/pen/MJjpwO).
+Ou vous pouvez utiliser ce lien CDN pour exécuter les tests dans n'importe quel environnement
+de votre choix : https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js.
+
+Une fois que vous avez terminé, soumettez l'URL à votre projet de travail avec tous ses tests réussis.
+
+#### Des ressources :
+
+- [Colour scales in D3 Version 5 – The Chewett blog](https://chewett.co.uk/blog/1700/colour-scales-in-d3-version-5/)
+- [d3/d3-scale-chromatic: Sequential, diverging and categorical color scales.](https://github.com/d3/d3-scale-chromatic#categorical)
+
+<CodePen codePenId="bgpXyK" />
+
+
+<CodePen codePenId="WNoZQrb" />
+
+-----
+
+
+
+## 3. Visualisez les données avec une carte thermique
+
+[Data Visualization Projects - Visualize Data with a Heat Map | Learn | freeCodeCamp.org](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-heat-map)
+
+**Objectif :** créer une application [CodePen.io](https://codepen.io/) fonctionnellement
+similaire à celle-ci : https://codepen.io/freeCodeCamp/full/JEXgeY.
+
+Répondez aux [récits utilisateur](https://fr.wikipedia.org/wiki/R%C3%A9cit_utilisateur) ci-dessous
+et faites passer tous les tests. Donnez-lui votre propre style.
+
+Vous pouvez utiliser HTML, JavaScript, CSS et la bibliothèque de visualisation D3 svg. Les éléments
+DOM obligatoires (non virtuels) sont interrogés au moment de chaque test. Si vous utilisez un framework
+frontend (comme Vue par exemple), les résultats du test peuvent être inexacts pour le contenu dynamique.
+Nous espérons les accueillir éventuellement, mais ces cadres ne sont actuellement pas pris en charge
+pour les projets D3.
+
+**User Story #1 :** Ma carte de chaleur doit avoir un titre avec un `id="title"` correspondant.
+
+**User Story #2 :** Ma carte thermique devrait avoir une description avec un `id="description"` correspondant.
+
+**User Story #3 :** Ma carte de chaleur doit avoir un axe x avec un `id="x-axis"` correspondant.
+
+**User Story #4 :** Ma carte de chaleur doit avoir un axe y avec un `id="y-axis"` correspondant.
+
+**User Story #5 :** Ma carte de chaleur doit avoir des éléments `rect` avec une `class="cell"` qui
+représentent les données.
+
+**User Story #6 :** Il doit y avoir au moins 4 couleurs de remplissage différentes utilisées pour les cellules.
+
+**User Story #7 :** Chaque cellule aura les propriétés `data-month`, `data-year`, `data-temp` contenant
+leurs valeurs de mois, d'année et de température correspondantes.
+
+**User Story #8 :** Les `data-month`, `data-year` de chaque cellule doit être dans la plage des données.
+
+**User Story #9 :** Ma carte de chaleur doit avoir des cellules qui s'alignent avec le mois correspondant
+sur l'axe des y.
+
+**User Story #10 :** Ma carte de chaleur doit avoir des cellules qui s'alignent avec l'année correspondante
+sur l'axe des x.
+
+**User Story #11 :** Ma carte thermique doit avoir plusieurs étiquettes de graduation sur l'axe des y avec
+le nom complet du mois.
+
+**User Story #12 :** Ma carte de chaleur doit avoir plusieurs étiquettes de graduation sur l'axe des x avec
+les années entre 1754 et 2015.
+
+**User Story #13 :** Ma carte thermique devrait avoir une légende avec un `id="legend"` correspondant.
+
+**User Story #14 :** Ma légende doit contenir des éléments `rect`.
+
+**User Story #15 :** Les éléments `rect` dans la légende doivent utiliser au moins 4 couleurs de remplissage
+différentes.
+
+**User Story #16 :** Je peux passer la souris sur une zone et voir une info-bulle avec un `id="tooltip"`
+correspondant qui affiche plus d'informations sur la zone.
+
+**User Story #17 :** Mon info-bulle doit avoir une propriété `data-year` qui correspond à l'année de données
+de la zone active.
+
+Voici l'ensemble de données dont vous aurez besoin pour mener à bien ce projet :
+https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/global-temperature.json.
+
+Vous pouvez créer votre projet en forkant [ce pen CodePen](https://codepen.io/freeCodeCamp/pen/MJjpwO).
+Ou vous pouvez utiliser ce lien CDN pour exécuter les tests dans n'importe quel environnement de votre choix :
+https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js.
+
+Une fois que vous avez terminé, soumettez l'URL à votre projet de travail avec tous ses tests réussis.
+
+#### Des ressources :
+- [Threshold Key - bl.ocks.org](https://bl.ocks.org/mbostock/4573883)
+- [ColorBrewer: Color Advice for Maps](https://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3)
+
+
+<CodePen codePenId="JEXgeY" />
+
+
+<CodePen codePenId="OJbxORY" />
+
+-----
+
+
+
+## 4. Visualiser les données avec une carte choroplèthe
+
+[Data Visualization Projects - Visualize Data with a Choropleth Map | Learn | freeCodeCamp.org](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-choropleth-map)
+
+**Objectif :** créer une application [CodePen.io](https://codepen.io/) fonctionnellement
+similaire à celle-ci : https://codepen.io/freeCodeCamp/full/EZKqza.
+
+Répondez aux [récits utilisateur](https://fr.wikipedia.org/wiki/R%C3%A9cit_utilisateur) ci-dessous
+et faites passer tous les tests. Donnez-lui votre propre style.
+
+Vous pouvez utiliser HTML, JavaScript, CSS et la bibliothèque de visualisation D3 svg. Les éléments
+DOM obligatoires (non virtuels) sont interrogés au moment de chaque test. Si vous utilisez un framework
+frontend (comme Vue par exemple), les résultats du test peuvent être inexacts pour le contenu dynamique.
+Nous espérons les accueillir éventuellement, mais ces cadres ne sont actuellement pas pris en charge pour
+les projets D3.
+
+**User Story #1 :** Mon choroplèthe devrait avoir un titre avec un `id="title"` correspondant.
+
+**User Story #2 :** Mon choroplèthe devrait avoir un élément de description avec un `id="description"` correspondant.
+
+**User Story #3 :** Mon choroplèthe devrait avoir des comtés avec une `class="county"` correspondante
+qui représente les données.
+
+**User Story #4 :** Il devrait y avoir au moins 4 couleurs de remplissage différentes utilisées pour les comtés.
+
+**User Story #5 :** Mes comtés devraient chacun avoir des propriétés `data-fips` et `data-education`
+contenant leurs fips et leurs valeurs d'éducation correspondantes.
+
+**User Story #6 :** Mon choroplèthe devrait avoir un comté pour chaque point de données fourni.
+
+**User Story #7 :** Les comtés doivent avoir des valeurs `data-fips` et `data-education` qui
+correspondent aux données d'échantillon.
+
+**User Story #8 :** Mon choroplèthe doit avoir une légende avec un `id="legend"` correspondant.
+
+**User Story #9 :** Il doit y avoir au moins 4 couleurs de remplissage différentes utilisées pour la légende.
+
+**User Story #10 :** Je peux passer la souris sur une zone et voir une info-bulle avec un `id="tooltip"`
+correspondant qui affiche plus d'informations sur la zone.
+
+**User Story #11 :** Mon info-bulle doit avoir une propriété `data-education` qui correspond à `data-education`
+de la zone active.
+
+Voici les ensembles de données dont vous aurez besoin pour mener à bien ce projet :
+- Données sur l'éducation aux États-Unis : https://cdn.freecodecamp.org/testable-projects-fcc/data/choroplètheh_map/for_user_education.json.
+- Données du comté américain : https://cdn.freecodecamp.org/testable-projects-fcc/data/choroplètheh_map/counties.json.
+
+Vous pouvez créer votre projet en forkant [ce pen CodePen](https://codepen.io/freeCodeCamp/pen/MJjpwO).
+Ou vous pouvez utiliser ce lien CDN pour exécuter les tests dans n'importe quel environnement
+de votre choix : https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js.
+
+Une fois que vous avez terminé, soumettez l'URL à votre projet de travail avec tous ses tests réussis.
+
+#### Des ressources :
+- [D3.js 5 | d3-scale-chromatic - Résolu](https://code.i-harness.com/fr/docs/d3~5/d3-scale-chromatic)
+
+<CodePen codePenId="EZKqza" />
+
+
+<CodePen codePenId="gOLGKpG" />
+
+-----
+
+
+
+## 5. Visualiser les données avec une carte proportionnelle
+
+[Data Visualization Projects - Visualize Data with a Treemap Diagram | Learn | freeCodeCamp.org](https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-treemap-diagram)
+
+**Objectif :** créer une application [CodePen.io](https://codepen.io/) fonctionnellement
+similaire à celle-ci : https://codepen.io/freeCodeCamp/full/KaNGNR.
+
+Répondez aux [récits utilisateur](https://fr.wikipedia.org/wiki/R%C3%A9cit_utilisateur) ci-dessous
+et faites passer tous les tests. Donnez-lui votre propre style.
+
+Vous pouvez utiliser HTML, JavaScript, CSS et la bibliothèque de visualisation D3 svg. Les tests
+nécessitent que les axes soient générés à l'aide de la propriété d'axe D3, qui génère automatiquement
+des graduations le long de l'axe. Ces graduations sont nécessaires pour réussir les tests D3 car
+leurs positions sont utilisées pour déterminer l'alignement des éléments représentés sur le
+graphique. Vous trouverez des informations sur la génération d'axes sur :
+https://github.com/d3/d3/blob/master/API.md#axes-d3-axis.
+Les éléments DOM obligatoires (non virtuels) sont interrogés au moment de chaque test. Si vous
+utilisez un framework frontend (comme Vue par exemple), les résultats du test peuvent être inexacts
+pour le contenu dynamique. Nous espérons les accueillir éventuellement, mais ces cadres ne sont
+actuellement pas pris en charge pour les projets D3.
+
+**User Story #1 :** Ma carte proportionnelle devrait avoir un titre avec un `id="title"` correspondant.
+
+**User Story #2 :** Ma carte proportionnelle devrait avoir une description avec un `id="description"` correspondant.
+
+**User Story #3 :** Ma carte proportionnelle doit avoir des éléments `rect` avec une `class="tile"`
+correspondante qui représente les données.
+
+**User Story #4 :** Il devrait y avoir au moins 2 couleurs de remplissage différentes utilisées pour les tuiles.
+
+**User Story #5 :** Chaque tuile doit avoir les propriétés `data-name`, `data-category` et `data-value`
+contenant leur nom, catégorie et valeur correspondants.
+
+**User Story #6 :** La zone de chaque tuile doit correspondre à la quantité de valeur de données :
+les tuiles avec une valeur de données plus grande doivent avoir une plus grande surface.
+
+**User Story #7 :** Ma carte proportionnelle doit avoir une légende avec `id="legend"` correspondant.
+
+**User Story #8 :** Ma légende doit avoir des éléments `rect` avec une `class="legend-item"` correspondante.
+
+**User Story #9 :** Les éléments `rect` dans la légende doivent utiliser au moins 2 couleurs de remplissage
+différentes.
+
+**User Story #10 :** Je peux passer la souris sur une zone et voir une info-bulle avec un `id="tooltip"`
+correspondant qui affiche plus d'informations sur la zone.
+
+**User Story #11 :** Mon info-bulle doit avoir une propriété `data-value` qui correspond à `data-value`
+de la zone active.
+
+Pour ce projet, vous pouvez utiliser l'un des ensembles de données suivants :
+- Engagements de Kickstarter : https://cdn.freecodecamp.org/testable-projects-fcc/data/tree_map/kickstarter-funding-data.json.
+- Ventes de films : https://cdn.freecodecamp.org/testable-projects-fcc/data/tree_map/movie-data.json.
+- Ventes de jeux vidéo : https://cdn.freecodecamp.org/testable-projects-fcc/data/tree_map/video-game-sales-data.json.
+
+Vous pouvez créer votre projet en forkant [ce pen CodePen](https://codepen.io/freeCodeCamp/pen/MJjpwO).
+Ou vous pouvez utiliser ce lien CDN pour exécuter les tests dans n'importe quel environnement
+de votre choix : https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js.
+
+Une fois que vous avez terminé, soumettez l'URL à votre projet de travail avec tous ses tests réussis.
+
+#### Des ressources :
+- [Kickstarter — Wikipédia](https://fr.wikipedia.org/wiki/Kickstarter)
+- [Treemaps](http://using-d3js.com/06_03_treemaps.html)
+- [Treemap | the D3 Graph Gallery](https://www.d3-graph-gallery.com/treemap)
+
+<CodePen codePenId="KaNGNR" />
+
+
+<CodePen codePenId="dyOZNNm" />
+
+-----

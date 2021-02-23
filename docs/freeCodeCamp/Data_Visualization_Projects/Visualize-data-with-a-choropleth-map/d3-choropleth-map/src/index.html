@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Carte choroplèthe avec D3</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src='https://d3js.org/d3.v4.min.js'></script>
+  <script src='https://d3js.org/topojson.v2.min.js'></script>
+  <script src='https://d3js.org/d3-scale-chromatic.v1.min.js'></script>
+
+</head>
+<body>
+  <div class="container">
+    <h2 id="titleD3">Carte choroplèthe avec D3</h2>
+    <span id="title">Niveau de scolarité aux États-Unis</span><br />
+      <span id="description">
+        Pourcentage d'adultes de 25 ans et plus titulaires d'un baccalauréat ou plus (2010-2014)
+      </span>
+      <div class="main">
+        <svg></svg>
+      <div id="source">
+        Source : <a href="https://www.ers.usda.gov/data-products/county-level-data-sets/download-data.aspx">
+          USDA Economic Research Service</a>
+      </div>
+    </div>
+  </div>
+  <script src="./script.js"></script>
+
+  <!-- <script src='https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js'></script> -->
+</body>
+</html>
